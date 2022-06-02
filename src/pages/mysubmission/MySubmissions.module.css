@@ -1,0 +1,32 @@
+.Container {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.Video {
+    width: 80%;
+    height: 700px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Content {
+    margin-left: 20px;
+    border: 1px solid black;
+    width: calc(20% - 20px);
+}
+
+.ContentTitle {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.ContentItem {
+    padding: 10px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,17 @@
+.Days {
+    display: flex;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.DaySticky {
+    align-self: flex-start;
+    position: sticky;
+    top: 185px;
+    width: 40%;
+}
+
+.Drills {
+    /*height: 650px;*/
+    /*overflow-y: scroll;*/
+}

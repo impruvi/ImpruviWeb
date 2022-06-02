@@ -1,0 +1,5 @@
+@import './styles/Styles.module.css';
+
+.App {
+    min-height: 100vh;
+}

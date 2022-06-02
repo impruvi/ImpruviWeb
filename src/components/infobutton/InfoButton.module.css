@@ -1,0 +1,10 @@
+.Container {
+    color: #0173BA;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.Container:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,76 @@
+.Title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.List {
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Item {
+    display: flex;
+    box-shadow: 0 0 7px -3px #999;
+    padding: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #F9F9F9;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+
+.ImageContainer img {
+    height: 150px;
+}
+
+.ImageContainer {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TextContainer {
+    width: calc(100% - 150px);
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.Name {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.Description {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.Button {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.Info {
+    width: 100%;
+    margin-top: 10px;
+    color: #878D9C;
+    font-size: 13px;
+}
+
+.Info i {
+    margin-right: 5px;
+}

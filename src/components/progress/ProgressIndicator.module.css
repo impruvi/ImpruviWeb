@@ -1,0 +1,10 @@
+.Container {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.Container i {
+    font-size: 20px;
+    margin-left: 5px;
+}

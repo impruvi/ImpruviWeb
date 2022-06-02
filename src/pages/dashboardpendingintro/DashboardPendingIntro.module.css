@@ -1,0 +1,43 @@
+.Info {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    justify-content: center;
+    color: #878D9C;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Info img {
+    width: 500px;
+}
+
+.Bar {
+    display: flex;
+    width:  100%;
+    padding: 20px;
+    align-items: center;
+}
+
+.Title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.Pill {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #FFA500;
+    color: #FFA500;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.Pill img {
+    width: 20px;
+    margin-right: 10px;
+}

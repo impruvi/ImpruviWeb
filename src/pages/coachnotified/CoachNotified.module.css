@@ -1,0 +1,53 @@
+.Container {
+    width: 1000px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 7px -3px #999;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.SectionLeft {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.SectionRight {
+    width: 60%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.SectionRight img {
+    width: 100%;
+}
+
+.Title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Info {
+    margin-top: 10px;
+    color: #878D9C;
+    font-size: 13px;
+}
+
+.Info i {
+    margin-right: 5px;
+}
+
+.Resume {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Submit {
+    margin-top: 100px;
+}

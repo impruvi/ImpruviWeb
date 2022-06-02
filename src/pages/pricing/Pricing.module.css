@@ -1,0 +1,85 @@
+.Container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+.Title {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.PricingOption {
+    width: 350px;
+    box-shadow: 0 0 12px -3px #999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.PricingOptionInner {
+    padding: 20px;
+}
+
+.PricingIcon {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 20px 10px 20px;
+    box-sizing: border-box;
+    color: #ADADAD;
+}
+
+.PricingTitle {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.PricingDescription {
+    color: #97a4b4;
+    margin-bottom: 20px;
+}
+
+.PricingBar {
+    width: 100%;
+    height: 15px;
+}
+
+.PricingButton {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+.PricingCost {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.PricingCost span {
+    font-size: 12px;
+    margin-top: 10px;
+}

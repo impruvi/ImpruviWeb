@@ -1,0 +1,139 @@
+.Container {
+    padding-top: 200px;
+}
+
+.Section {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 200px;
+}
+
+.MainLeft {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.MainRight {
+    width: 50%;
+}
+
+.MainLeftInner {
+    max-width: 600px;
+}
+
+
+.PreviewImage {
+    height: 500px;
+}
+
+.FounderImage {
+    height: 300px;
+    margin-right: 20px;
+}
+
+.Title {
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.Subtitle {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.Buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ButtonBottom {
+    margin-top: 40px;
+}
+
+.ButtonPrimary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.Steps {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.Step {
+    width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+.StepText {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Quote {
+    width: 100%;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.SectionSubtitle {
+    font-weight: 800;
+    font-size: 40px;
+    width: 100%;
+}
+
+.SectionContent {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.Image {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.HowItWorksTitle {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.HowItWorksContent {
+    font-size: 18px;
+}
+
+.Step img {
+    max-height: 280px;
+}
+
+.FounderContainer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+

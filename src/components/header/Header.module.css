@@ -1,0 +1,50 @@
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 0 7px -3px #999;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+.Right {
+    display: flex;
+    align-items: center;
+}
+
+.Option {
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.ButtonPrimary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.Button {
+    cursor: pointer;
+}
+
+.Middle {
+    display: flex;
+}
+
+.Logo {
+    font-weight: 800;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.Logo img {
+    height: 35px;
+}

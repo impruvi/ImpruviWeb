@@ -1,0 +1,224 @@
+.Container {
+    margin: 20px 0 60px 0;
+}
+
+.Title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.Content {
+    display: flex;
+}
+
+.VideoContent {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.TextContent {
+    padding-left: 50px;
+}
+
+.Duration {
+    font-size: 14px;
+    color: #808080;
+}
+
+.Video {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 0 12px -3px #eee;
+}
+
+.Video video {
+    width: 100%;
+    display: block;
+}
+
+.Options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    width: 120px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to left,  rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+}
+
+
+.PlayIcon {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    z-index: 1000;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.Options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 80px;
+}
+
+.Option {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+    color: #17191E;
+    width: 80px;
+}
+
+.OptionSelected {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+    width: 80px;
+    color: var(--color-primary);
+}
+
+.Icon {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.OptionSelected .Icon {
+    background-color: var(--color-primary-washed);
+}
+
+.ButtonText {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.Buttons {
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+    padding: 10px 0 40px 0;
+}
+
+.ButtonPrimary {
+    cursor: pointer;
+    color: #eee;
+    border-radius: 20px;
+    padding: 10px 10px;
+    display: inline-block;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    transition: font-size 200ms;
+}
+
+.ButtonSecondary {
+    cursor: pointer;
+    transition: font-size 200ms;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px 10px;
+    display: inline-block;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.ButtonPrimary i, .ButtonSecondary i {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+
+
+
+.DrillName {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.DrillTextSection {
+    margin: 20px 0;
+}
+
+.DrillTextSectionFeedback {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 50px 20px 30px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4));
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.DrillTextSubtitle {
+    text-decoration: underline;
+}
+
+.DrillTextContent {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.DrillTextContentFeedback {
+    font-size: 15px;
+}
+
+.Coach {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    /*justify-content: flex-end;*/
+    align-items: center;
+}
+
+
+.Coach img {
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+}

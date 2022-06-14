@@ -19,6 +19,7 @@ import Questionnaire from "./pages/questionnaire/Questionnaire";
 import {VisitedProvider} from "./hooks/useVisited";
 import ContentAfter from "./pages/contentafter/ContentAfter";
 import Pricing from "./pages/pricing/Pricing";
+import PrivacyPolicy from "./pages/privacy/PrivacyPolicy";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/howitworks" component={HowItWorks} />
             <Route path="/questionnaire" component={Questionnaire} />
             <Route path="/pricing" component={Pricing} />
+            <Route path="/privacy" component={PrivacyPolicy} />
             <Route path="/" component={Landing} />
           </Switch>
         </div>

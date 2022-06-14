@@ -12,6 +12,7 @@ const Header = () => {
             </div>
 
             <div className={classes.Right}>
+                <div className={classes.Option} onClick={() => history.push('/privacy')}>Privacy</div>
                 <div className={classes.Option} onClick={() => history.push('/pricing')}>Pricing</div>
                 <div className={classes.ButtonPrimary} onClick={() => history.push('/signin')}>Sign in</div>
             </div>

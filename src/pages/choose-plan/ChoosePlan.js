@@ -6,6 +6,7 @@ import Plan from "../../components/plan/Plan";
 import {useParams} from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Spinner from "../../components/spinner/Spinner";
+import PlaceHolder from "./placeholder/PlaceHolder";
 
 const ChoosePlan = () => {
 
@@ -55,12 +56,11 @@ const ChoosePlan = () => {
     return (
         <div className={classes.Container}>
             <div className={classes.Title}>Choose your plan</div>
-            {isLoading && (
-                <Spinner />
-            )}
-            {!isLoading && (
                 <div className={classes.Plans}>
-                    {subscriptionPlans.map(plan => (
+                    {isLoading && (
+                        <PlaceHolder />
+                    )}
+                    {!isLoading && subscriptionPlans.map(plan => (
                         <div className={classes.PlanWrapper}>
                             <Plan player={player}
                                   plan={plan}
@@ -69,7 +69,6 @@ const ChoosePlan = () => {
                         </div>
                     ))}
                 </div>
-            )}
         </div>
     )
 };

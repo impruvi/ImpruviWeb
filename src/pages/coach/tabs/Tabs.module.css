@@ -1,0 +1,40 @@
+.Container {
+    margin-top: 60px;
+}
+
+.Tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.TabContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-right: 30px;
+}
+
+.Tab {
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    color: rgba(255,255,255,.6);
+}
+
+.TabActive {
+    color: white;
+}
+
+.Underline {
+    height: 2px;
+    width: 0;
+    background-color: var(--color-primary);
+    margin-top: 5px;
+}
+
+.UnderlineActive {
+    width: 100%;
+    transition: width 100ms linear;
+}

@@ -1,0 +1,97 @@
+.Container {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.ContainerInner {
+    padding: 10px 0;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LogoText {
+    height: 25px;
+    cursor: pointer;
+}
+
+.NavRight {
+    display: flex;
+    align-items: center;
+}
+
+.NavRightSmall {
+    display: none;
+}
+
+.Hamburger {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Hamburger:hover {
+    background-color: #eee;
+}
+
+.Hamburger img {
+    width: 25px;
+    object-fit: contain;
+}
+
+.NavRightOption {
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.NavRightOption:hover {
+    opacity: .6;
+    transition: opacity .2s;
+}
+
+.SignIn {
+    padding: 10px 20px;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    background-color: var(--color-primary);
+    border-radius: 40px;
+    opacity: 1;
+    transition: opacity .1s linear;
+    font-size: 14px;
+}
+
+.SignIn:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
+}
+
+.HeadshotWrapper {
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    .NavRight {
+        display: none;
+    }
+
+    .NavRightSmall {
+        display: flex;
+    }
+}

@@ -1,0 +1,51 @@
+.SpinnerContainer {
+    height: 100%;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+}
+.Container {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    box-sizing: border-box;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--color-primary);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity .1s linear;
+}
+
+.Container:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
+}
+
+.FullWidth {
+    width: 100%;
+}
+
+.Label {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContainerSubmitting {
+    background-color: white;
+    -webkit-box-shadow: 0 0 0 1px rgba(205, 214, 229, .55);
+    box-shadow: 0 0 0 1px rgba(205, 214, 229, .55);
+    color: #a8aebd;
+    cursor: default;
+}

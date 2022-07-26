@@ -1,0 +1,43 @@
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    background-color: black;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+.NavRightOption {
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+}
+
+.NavRightOption:hover {
+    opacity: .6;
+    transition: opacity .2s;
+}
+
+.Hamburger {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Hamburger:hover {
+    background-color: #222;
+}
+
+.Hamburger img {
+    width: 25px;
+    object-fit: contain;
+}

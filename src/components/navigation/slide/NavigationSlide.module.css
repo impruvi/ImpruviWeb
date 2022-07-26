@@ -1,0 +1,83 @@
+.ContainerActive {
+    position: fixed;
+    right: 0 !important;
+    z-index: 2000;
+    transition: right .2s;
+    box-shadow: 0 4px 20px 1px rgba(0,0,0, 0.3);
+}
+
+.Container {
+    position: fixed;
+    background-color: white;
+    width: 250px;
+    max-width: 100vw;
+    height: 100%;
+    top: 0;
+    right: -250px;
+    z-index: 100;
+    transition: right .2s;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.Backdrop {
+    background-color: black;
+    opacity: .1;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+}
+
+.Content {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding-top: 20px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.NavOption {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background: none;
+    transition: background-color .05s linear, color .05s linear;
+    font-weight: 500;
+}
+
+.NavOption:hover {
+    background-color: #eee;
+    transition: background-color .1s linear;
+}
+
+.NavOptionActive {
+    color: var(--color-primary);
+}
+
+.Footer {
+    padding: 0 15px;
+    margin-top: 30px;
+    color: #888;
+    font-size: 12px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.FooterOption {
+    padding: 4px 0;
+}
+
+.FooterOption a {
+    text-decoration: none;
+    color: inherit;
+}

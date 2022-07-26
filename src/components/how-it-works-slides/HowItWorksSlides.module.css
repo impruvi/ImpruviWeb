@@ -1,0 +1,73 @@
+.Container {
+    width: 100%;
+    background-color: #F6F6F6;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.ActiveSlide {
+    display: flex;
+    opacity: 1;
+    transition: opacity 300ms linear;
+}
+
+.TransitioningSlide {
+    display: flex;
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+
+.HiddenSlide {
+    display: none;
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+
+.Left {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 60px;
+    font-weight: 600;
+    padding: calc(35vh - 30px) 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.Right {
+    display: flex;
+    flex: 1;
+    font-size: 60px;
+    font-weight: 600;
+    padding: calc(35vh - 30px) 30px 30px 30px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.Arrows {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.ArrowContainer {
+    padding: 10px;
+}
+
+.Arrows img {
+    width: 50px;
+    margin: 0 10px;
+}
+
+.Arrow {
+    cursor: pointer;
+}
+
+.PhoneImage {
+    max-height: 800px;
+    height: 80vh;
+}

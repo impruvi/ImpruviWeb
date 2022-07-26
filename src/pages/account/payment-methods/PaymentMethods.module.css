@@ -1,0 +1,15 @@
+.Title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.PaymentMethodWrapper {
+    width: 100%;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 30px;
+    box-sizing: border-box;
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+.Options {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.Option {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    font-weight: 600;
+}
+
+.Option img {
+    width: 30px;
+    margin-right: 15px;
+}

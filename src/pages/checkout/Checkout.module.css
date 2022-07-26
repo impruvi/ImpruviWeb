@@ -1,0 +1,37 @@
+.Content {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 30px 100px 30px;
+    box-sizing: border-box;
+}
+
+.Title {
+    width: 100%;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.Left {
+    width: calc(50% - 40px);
+}
+
+.Right {
+    width: calc(50% - 40px);
+}
+
+@media (max-width: 700px) {
+    .Left {
+        width: 100%;
+    }
+
+    .Right {
+        width: 100%;
+        margin-top: 50px;
+    }
+}

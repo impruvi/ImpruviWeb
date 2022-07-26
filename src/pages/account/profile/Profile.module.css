@@ -1,0 +1,43 @@
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.HeadshotContainer {
+    margin-bottom: 20px;
+}
+
+.HeadshotContainer input {
+    display: none;
+}
+
+.ChangeHeadshot {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.SaveButton {
+    width: 150px;
+    margin-top: 15px;
+}
+
+.Error {
+    width: 100%;
+    text-align: center;
+    color: #D93025;
+    font-size: 14px;
+    margin-top: 10px;
+}

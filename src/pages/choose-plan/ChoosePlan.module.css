@@ -1,0 +1,46 @@
+.Container {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.Content {
+    padding-top: 50px;
+}
+
+.Title {
+    font-size: 35px;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.Plans {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.PlanWrapper {
+    width: calc(33% - 15px);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+    .PlanWrapper {
+        width: calc(50% - 15px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .PlanWrapper {
+        width: 100%;
+    }
+}

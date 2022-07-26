@@ -1,0 +1,91 @@
+.ScrollMenu {
+    flex: 1 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ScrollMenuContainer {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    flex-direction: row;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    min-width: 0;
+    min-height: 0;
+    position: relative;
+}
+
+.ScrollMenuContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.CoachCardWrapper {
+    margin: 0 10px;
+    min-width: 300px;
+}
+
+.ArrowLeftBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 120px;
+    pointer-events: none;
+    background-image: linear-gradient(to left, rgba(255,255,255, .0), rgba(255,255,255, 1));
+}
+
+.ArrowRightBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 120px;
+    pointer-events: none;
+    background-image: linear-gradient(to right, rgba(255,255,255, .0), rgba(255,255,255, 1));
+}
+
+.ArrowRight {
+    right: 20px;
+}
+
+.ArrowLeft {
+    left: 20px;
+}
+
+.Arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #17191e;
+    border-radius: 100%;
+    padding: 15px;
+}
+
+.Arrow:hover {
+    background-color: var(--color-primary);
+}
+
+.Arrow img {
+    width: 40px;
+}
+
+@media (max-width: 700px) {
+    .CoachCardWrapper {
+        min-width: 200px;
+    }
+
+    .Arrow {
+        padding: 10px;
+    }
+
+    .Arrow img {
+        width: 25px;
+    }
+}

@@ -1,0 +1,38 @@
+.Container {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding-top: 30px;
+}
+
+.Navigation {
+    width: 200px;
+}
+
+.NavOption {
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    color: #666;
+    transition: color .2s linear;
+}
+
+.NavOption:hover {
+    color: black;
+    transition: color .2s linear;
+}
+
+.NavOptionActive {
+    font-weight: 600;
+    color: var(--color-primary) !important;
+    transition: color .2s linear;
+}
+
+.Content {
+    width: calc(100% - 200px);
+    padding: 0 20px 50px 20px;
+    box-sizing: border-box;
+}

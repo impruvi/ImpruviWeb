@@ -1,0 +1,38 @@
+.Container {
+    background-color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    width: 600px;
+}
+
+.Title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.Subtitle {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.Text {
+    color: #666;
+    font-size: 14px;
+}
+
+.ActionButtons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ActionButton {
+    margin-left: 20px;
+    padding: 5px 15px;
+}
+
+.ActionButtonSecondary {
+    background: none;
+    color: black;
+}

@@ -1,0 +1,16 @@
+.Container {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #ddd;
+}
+
+.Knob {
+    width: 9px;
+    height: 9px;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+}

@@ -1,0 +1,13 @@
+.OptionContainer {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Text {
+    margin-left: 30px;
+}

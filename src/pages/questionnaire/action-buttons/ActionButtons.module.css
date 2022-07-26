@@ -1,0 +1,16 @@
+.Container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ContinueButton {
+    width: 200px;
+    border-radius: 30px;
+    margin: 15px auto 15px auto;
+}
+
+.ButtonSecondary {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+}

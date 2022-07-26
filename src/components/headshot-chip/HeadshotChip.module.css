@@ -1,0 +1,12 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.Container img {
+    object-fit: cover;
+    background-color: white;
+}

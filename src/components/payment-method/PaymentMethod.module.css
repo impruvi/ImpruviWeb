@@ -1,0 +1,18 @@
+.Container {
+    width: 100%;
+    display: flex;
+}
+
+.Container img {
+    height: 15px;
+    margin-right: 30px;
+}
+
+.CardNumber {
+    margin-right: 30px;
+}
+
+.ExpirationDate {
+    font-size: 14px;
+    color: #aaa;
+}

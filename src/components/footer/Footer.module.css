@@ -1,0 +1,24 @@
+.Container {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SectionTitle {
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.Option {
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.Option:hover {
+    text-decoration: underline;
+}
+

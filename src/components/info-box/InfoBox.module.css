@@ -1,0 +1,18 @@
+.Container {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #F1FAFF;
+    border: 1px solid #0173BB;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+}
+
+.Container img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.Content {
+
+}

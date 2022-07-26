@@ -1,0 +1,34 @@
+.Container {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+}
+
+.Title {
+    font-size: 35px;
+}
+
+.Pricing {
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.PricingSub {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.Trainings {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.SubText {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}

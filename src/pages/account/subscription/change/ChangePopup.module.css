@@ -1,0 +1,12 @@
+.Container {
+    background-color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    width: 600px;
+}
+
+.Title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}

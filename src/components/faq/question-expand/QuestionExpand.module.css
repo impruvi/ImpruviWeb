@@ -1,0 +1,27 @@
+.Container {
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+    color: black;
+}
+
+.Question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Question img {
+    width: 20px;
+}
+
+
+.Answer {
+    padding: 20px;
+    background-color: #eee;
+}

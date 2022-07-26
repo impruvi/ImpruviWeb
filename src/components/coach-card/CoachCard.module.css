@@ -1,0 +1,58 @@
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.Image {
+    width: 100%;
+    transition: width .2s linear;
+    object-fit: cover;
+}
+
+.ImageHovered {
+    width: 110%;
+    transition: width .2s linear;
+    object-fit: cover;
+}
+
+.Overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Name {
+    font-size: 37px;
+    font-weight: 600;
+    white-space: normal;
+}
+
+.Bar {
+    width: 30%;
+    height: 4px;
+    background-color: white;
+    margin: 10px auto 10px auto;
+}
+
+.Location {
+    font-style: italic;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.Team {
+    font-style: italic;
+    font-size: 20px;
+    margin: 10px 0;
+}

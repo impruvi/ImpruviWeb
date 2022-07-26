@@ -1,0 +1,50 @@
+.Container {
+    max-width: 400px;
+    width: 90vw;
+    background-color: white;
+    padding: 30px;
+    position: relative;
+}
+
+.CloseIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.CloseIcon:hover {
+    opacity: .7;
+}
+
+.CloseIcon img {
+    width: 15px;
+    object-fit: contain;
+}
+
+.IconContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.Icon {
+    width: 50px;
+    object-fit: contain;
+}
+
+.Title {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.Subtitle {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 14px;
+}

@@ -1,0 +1,110 @@
+.Title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.Content {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Badge {
+    margin-left: 20px;
+    font-size: 14px;
+    color: var(--color-primary);
+}
+
+.Section {
+    width: 33%;
+    padding: 20px 20px 20px 0;
+    box-sizing: border-box;
+}
+
+.SectionTitle {
+    font-weight: 500;
+}
+
+.SectionText {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.CancelledInfo {
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #F1FAFF;
+    border: 1px solid #0173BB;
+    border-radius: 5px;
+    display: flex;
+    margin: 20px 0;
+}
+
+.CancelledInfo img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.ActionButtons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ActionButton {
+    padding: 10px 20px;
+}
+
+.ActionButtonSecondary {
+    background: none;
+    color: black;
+    margin-left: 20px;
+}
+
+.NoSubscription {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.NoSubscriptionText {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.QueueSubscriptionContainer {
+    background-color: #F1FAFF;
+    border: 1px solid #0173BB;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.QueueSubscriptionContainer img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.QueueSubscriptionContent {
+    flex-wrap: wrap;
+    display: flex;
+}

@@ -1,0 +1,50 @@
+.Container {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.Content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Title {
+    font-size: 35px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+.Subtitle {
+    color: #68676C;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.Coaches {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.CoachCardWrapper {
+    margin: 10px 0;
+    width: calc(25% - 20px);
+}
+
+@media (max-width: 1000px) {
+    .CoachCardWrapper {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 700px) {
+    .CoachCardWrapper {
+        width: 100%;
+    }
+}

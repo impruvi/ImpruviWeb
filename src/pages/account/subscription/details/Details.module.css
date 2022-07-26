@@ -1,0 +1,39 @@
+.Container {
+    width: 100%;
+    display: flex;
+}
+
+.SectionLarge {
+    width: 50%;
+    padding: 20px 20px 20px 0;
+    box-sizing: border-box;
+}
+
+.SectionSmall {
+    width: 25%;
+    padding: 20px 20px 20px 0;
+    box-sizing: border-box;
+}
+
+.SectionTitle {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.SectionText {
+    font-size: 14px;
+    color: #666;
+}
+
+.PlanHeader {
+    display: flex;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.Headshot {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100%;
+    margin-right: 10px;
+}

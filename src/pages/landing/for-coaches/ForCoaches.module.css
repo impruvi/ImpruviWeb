@@ -1,0 +1,90 @@
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.Card {
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F6F6F6;
+}
+
+.CardLeft {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.CardLeft img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.CardRight {
+    width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.HeaderText {
+    font-size: 25px;
+}
+
+.Title {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.SubTitle {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.Break {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin: 30px 0 10px 0;
+}
+
+.Row {
+    display: flex;
+    justify-content: space-between;
+}
+.Button {
+    padding: 12px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    margin-top: 30px;
+    border-radius: 40px;
+    display: inline-block;
+    opacity: 1;
+    transition: opacity .1ms linear;
+    cursor: pointer;
+}
+
+.Button:hover {
+    opacity: .7;
+    transition: opacity .1ms linear;
+}
+
+@media (max-width: 700px) {
+    .CardLeft {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .CardRight {
+        width: 100%;
+    }
+}

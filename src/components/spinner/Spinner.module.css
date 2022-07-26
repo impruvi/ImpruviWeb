@@ -1,0 +1,31 @@
+.Container {
+    height: 13px;
+    width: 13px;
+    margin-left:-13px;
+    margin-top:-13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.Spinner:before {
+    content:"";
+    box-sizing: border-box;
+    position: absolute;
+    align-items: center;
+    height:13px;
+    width:13px;
+    border-radius: 50%;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

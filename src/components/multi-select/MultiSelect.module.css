@@ -1,0 +1,28 @@
+.OptionContainer {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.OptionToggle {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: #ddd;
+    margin-right: 30px;
+}
+
+.OptionToggleActive {
+    background-color: var(--color-primary);
+}
+
+.OptionToggle img {
+    width: 9px;
+}

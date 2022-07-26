@@ -1,0 +1,17 @@
+.Content {
+    padding: 30px;
+    margin-bottom: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.Subtitle {
+    text-align: center;
+    margin: 25px 0;
+}

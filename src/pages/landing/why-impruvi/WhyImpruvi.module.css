@@ -1,0 +1,44 @@
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.ContainerInner {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Title {
+    width: 100%;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.Section {
+    display: flex;
+    width: 50%;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.Section img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.SectionTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.SectionDescription {
+
+}

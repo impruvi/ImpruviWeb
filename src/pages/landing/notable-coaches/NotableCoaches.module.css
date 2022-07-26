@@ -5,7 +5,7 @@
 }
 
 .Content {
-    padding: 0 30px;
+    padding: 0 var(--desktop-container-padding);
     box-sizing: border-box;
 }
 
@@ -26,4 +26,18 @@
     width: 100%;
     max-width: 500px;
     margin: 15px auto 40px auto;
+}
+
+@media (max-width: 700px) {
+    .Content {
+        padding: 0 var(--mobile-container-padding);
+    }
+
+    .Title {
+        font-size: 30px;
+    }
+
+    .Subtitle {
+        font-size: 16px;
+    }
 }

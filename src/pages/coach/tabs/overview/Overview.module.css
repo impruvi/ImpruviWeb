@@ -1,3 +1,43 @@
 .Container {
     width: 75%;
 }
+
+.Bullets {
+    margin: 20px 0;
+}
+
+.Bullet {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.Bullet img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.Title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+@media (min-width: 700px) {
+    .Bullets {
+        display: none;
+    }
+
+    .Title {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .Container {
+        width: 100%;
+    }
+}

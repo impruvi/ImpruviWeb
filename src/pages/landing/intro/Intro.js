@@ -1,36 +1,22 @@
 import classes from "./Intro.module.css";
-import LandingMainImage from "../../../assets/LandingMain.png";
-import AppStoreActionButton from "../../../components/app-store-action-button/AppStoreActionButton";
-import {useHistory} from "react-router-dom";
-import ArrowRight from "../../../assets/ArrowRightWhiteThick.png";
+import Mobile from "./mobile/Mobile";
+import Desktop from "./desktop/Desktop";
+import AngleDown from '../../../assets/AngleDownThin.png';
 
-const Intro = () => {
-
-    const history = useHistory();
+const Intro = ({scrollToHowItWorks}) => {
 
     return (
-        <div className={classes.Content}>
-            <div className={classes.Left}>
-                <div>
-                    <div className={classes.Title}>
-                        Expert coaching in the palm of your hands.
-                    </div>
-                    <div className={classes.Subtitle}>
-                        Custom at-home training plans designed by expert coaches for you.
-                    </div>
-                    <div className={classes.ActionButtons}>
-                        <div className={classes.ButtonPrimary} onClick={() => history.push('/find-coach')}>
-                            Get started
-                            <img src={ArrowRight} />
-                        </div>
-                        <AppStoreActionButton />
-                    </div>
-                </div>
+        <>
+            <div className={classes.DesktopWrapper}>
+                <Desktop />
             </div>
-            <div className={classes.Right}>
-                <img src={LandingMainImage} className={classes.MainImage}/>
+            <div className={classes.MobileWrapper}>
+                <Mobile />
             </div>
-        </div>
+            <div>
+                <img src={AngleDown} className={classes.AngleDown} onClick={scrollToHowItWorks}/>
+            </div>
+        </>
     )
 }
 

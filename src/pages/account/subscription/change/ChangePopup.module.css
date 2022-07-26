@@ -2,11 +2,76 @@
     background-color: white;
     padding: 30px;
     box-sizing: border-box;
-    width: 600px;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 100vh;
+    justify-content: space-between;
+    position: relative;
 }
 
 .Title {
     font-size: 22px;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.Subtitle {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+
+.FindNewButton {
+    margin-left: 10px;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.PlanWrapper {
+    width: calc(33% - 15px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.Close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.Close:hover {
+    background-color: #ddd;
+}
+
+.Close img {
+    height: 16px;
+}
+
+@media (max-width: 1000px) {
+    .PlanWrapper {
+        width: calc(50% - 15px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .PlanWrapper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }

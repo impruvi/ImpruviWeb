@@ -64,6 +64,11 @@
     color: var(--color-primary);
 }
 
+.ButtonWrapper {
+    padding: 12px 15px;
+    box-sizing: border-box;
+}
+
 .Footer {
     padding: 0 15px;
     margin-top: 30px;
@@ -80,4 +85,8 @@
 .FooterOption a {
     text-decoration: none;
     color: inherit;
+}
+
+.FooterOptionClickable {
+    cursor: pointer;
 }

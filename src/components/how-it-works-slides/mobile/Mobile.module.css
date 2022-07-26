@@ -1,0 +1,48 @@
+.Title {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Subtitle {
+    padding: 0 30px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: #666;
+    text-align: center;
+}
+
+.ArrowContainer {
+    padding: 10px;
+}
+
+.ArrowContainer img {
+    width: 50px;
+    margin: 0 10px;
+}
+
+.ArrowContainerHidden {
+    visibility: hidden;
+}
+
+.Arrow {
+    cursor: pointer;
+}
+
+.PhoneImage {
+    max-height: 400px;
+    height: 80vh;
+}
+
+.Footer {
+    width: 100%;
+}

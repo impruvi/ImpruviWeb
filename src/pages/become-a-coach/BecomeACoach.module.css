@@ -1,17 +1,34 @@
-.Content {
-    padding: 30px;
-    margin-bottom: 100px;
+.Container {
     width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px var(--desktop-container-padding);
     box-sizing: border-box;
 }
 
 .Title {
+    width: 100%;
     font-size: 40px;
     font-weight: 700;
     text-align: center;
 }
 
 .Subtitle {
+    width: 100%;
     text-align: center;
     margin: 25px 0;
+}
+
+.ContactOptionsWrapper {
+    margin-bottom: 100px;
+}
+
+@media (max-width: 700px) {
+    .Container {
+        padding: 0 var(--mobile-container-padding);
+    }
 }

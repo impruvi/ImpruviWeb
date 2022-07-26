@@ -7,17 +7,21 @@ export const frequentlyAskedQuestions = [
         answer: (
             <div>
                 <div className={classes.AnswerSectionTitle}>On the website</div>
-                <div>
-                    • Choose your coach and your plan. Your coach will build you a custom,
-                    month long training plan based on your needs and availability.
-                </div>
+                <ul className={classes.List}>
+                    <li>
+                        Choose your coach and your plan. Your coach will build you a custom,
+                        month long training plan based on your needs and availability.
+                    </li>
+                </ul>
                 <div className={classes.AnswerSectionTitle}>On the app</div>
-                <div>
-                    • Watch videos of your coach complete each drill in your custom plan.
-                </div>
-                <div>
-                    • Watch videos of your coach complete each drill in your custom plan.
-                </div>
+                <ul className={classes.List}>
+                    <li>
+                        Watch videos of your coach complete each drill in your custom plan.
+                    </li>
+                    <li>
+                        Watch videos of your coach complete each drill in your custom plan.
+                    </li>
+                </ul>
             </div>
         )
     },
@@ -26,10 +30,20 @@ export const frequentlyAskedQuestions = [
         question: 'What is included in a subscription?',
         answer: (
             <div>
-                <div>• a customized training plan built by your chosen coach</div>
-                <div>• Weekly training sessions (# varies with plan) with 4-5 personalized drills</div>
-                <div>• Expert feedback for each drill you submit</div>
-                <div>• More content coming soon!</div>
+                <ul className={classes.List}>
+                    <li>
+                        a customized training plan built by your chosen coach
+                    </li>
+                    <li>
+                        Weekly training sessions (# varies with plan) with 4-5 personalized drills
+                    </li>
+                    <li>
+                        Expert feedback for each drill you submit
+                    </li>
+                    <li>
+                        More content coming soon!
+                    </li>
+                </ul>
             </div>
         )
     },
@@ -45,7 +59,7 @@ export const frequentlyAskedQuestions = [
     },
     {
         id: '4',
-        question: 'Can i change my coach?',
+        question: 'Can I change my coach?',
         answer: (
             <div>
                 Yes, you can always change you coach! The updated plan will start with the next
@@ -55,7 +69,7 @@ export const frequentlyAskedQuestions = [
     },
     {
         id: '5',
-        question: 'Can i change my subscription?',
+        question: 'Can I change my subscription?',
         answer: (
             <div>
                 Yes, you can upgrade or downgrade your plan at any time. Changes will go into effect
@@ -65,12 +79,20 @@ export const frequentlyAskedQuestions = [
     },
     {
         id: '6',
-        question: 'How do i cancel my subscription?',
+        question: 'How do I cancel my subscription?',
         answer: (
             <div>
-                <div>• Click your profile icon in the upper right of the website</div>
-                <div>• Click "Subscription"</div>
-                <div>• Click "Cancel subscription"</div>
+                <ul className={classes.List}>
+                    <li>
+                        Click your profile icon in the upper right of the website
+                    </li>
+                    <li>
+                        Click "Subscription"
+                    </li>
+                    <li>
+                        Click "Cancel subscription"
+                    </li>
+                </ul>
             </div>
         )
     }

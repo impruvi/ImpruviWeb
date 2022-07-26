@@ -6,9 +6,16 @@
     border-radius: 30px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    text-align: left;
     cursor: pointer;
     opacity: 1;
     transition: opacity .1s linear;
+}
+
+.ButtonAppleDark {
+    background-color: white;
+    color: black;
 }
 
 .ButtonApple:hover {

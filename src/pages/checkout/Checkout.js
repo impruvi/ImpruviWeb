@@ -52,26 +52,24 @@ const Checkout = () => {
     }, []);
 
     return (
-        <div>
-            <div className={classes.Content}>
-                <div className={classes.Title}>Checkout</div>
-                {isLoading && (
-                    <Spinner />
-                )}
-                {!isLoading && (
-                    <>
-                        {!!currentSubscription && (
-                            <CurrentSubscriptionWarning subscription={currentSubscription}/>
-                        )}
-                        <div className={classes.Left}>
-                            <Summary coach={coach} plan={plan}/>
-                        </div>
-                        <div className={classes.Right}>
-                            <Payment coach={coach} plan={plan} hasSubscription={!!currentSubscription}/>
-                        </div>
-                    </>
-                )}
-            </div>
+        <div className={classes.Container}>
+            <div className={classes.Title}>Checkout</div>
+            {isLoading && (
+                <Spinner />
+            )}
+            {!isLoading && (
+                <div className={classes.Content}>
+                    {!!currentSubscription && (
+                        <CurrentSubscriptionWarning subscription={currentSubscription}/>
+                    )}
+                    <div className={classes.Left}>
+                        <Summary coach={coach} plan={plan}/>
+                    </div>
+                    <div className={classes.Right}>
+                        <Payment coach={coach} plan={plan} hasSubscription={!!currentSubscription}/>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

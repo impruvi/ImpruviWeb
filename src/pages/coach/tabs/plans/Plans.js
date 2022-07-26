@@ -2,13 +2,14 @@ import classes from "./Plans.module.css";
 import {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../../../hooks/useHttpClient";
 import Plan from "../../../../components/plan/Plan";
-import useAuth from "../../../../hooks/useAuth";
 import Spinner from "../../../../components/spinner/Spinner";
+import useAuth from "../../../../hooks/useAuth";
+import PlaceHolder from "./placeholder/PlaceHolder";
 
-const Plans = ({coach}) => {
+const Plans = ({coach, player}) => {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [player, setPlayer] = useState();
+    const [currentSubscription, setCurrentSubscription] = useState();
     const [subscriptionPlans, setSubscriptionPlans] = useState([]);
 
     const {httpClient} = useHttpClient();
@@ -18,15 +19,16 @@ const Plans = ({coach}) => {
         setIsLoading(true);
         try {
             if (!!playerId) {
-                const player = await httpClient.getPlayer(playerId);
-                setPlayer(player);
+                const subscription = await httpClient.getSubscription();
+                setCurrentSubscription(subscription);
             }
+
             const plans = await Promise.all(
                 coach.subscriptionPlanRefs.map(subscriptionPlanRef => httpClient.getSubscriptionPlan(subscriptionPlanRef))
             );
-            setSubscriptionPlans(plans);
+            setSubscriptionPlans(plans.sort((p1, p2) => p1.unitAmount - p2.unitAmount));
         } catch (e) {
-
+            console.log(e);
         }
         setIsLoading(false);
     }, [httpClient, coach, playerId]);
@@ -37,12 +39,17 @@ const Plans = ({coach}) => {
 
     return (
         <div className={classes.Container}>
-            {isLoading && <Spinner />}
+            {isLoading && (
+                <PlaceHolder />
+            )}
             {!isLoading && (
                 <>
                     {subscriptionPlans.map(plan => (
                         <div className={classes.PlanWrapper}>
-                            <Plan player={player} plan={plan} coach={coach} />
+                            <Plan player={player}
+                                  plan={plan}
+                                  coach={coach}
+                                  isActive={!!currentSubscription && currentSubscription.plan.stripePriceId === plan.stripePriceId}/>
                         </div>
                     ))}
                 </>

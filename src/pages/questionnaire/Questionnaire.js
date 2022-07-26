@@ -169,87 +169,85 @@ const Questionnaire = () => {
     }, [player, activeSlide]);
 
     return (
-        <div>
-            <div className={classes.Container}>
-                <div className={classes.Content}>
-                    <div className={classes.ProgressBarContainer}>
-                        <div className={classes.ProgressBarInner} style={{width: `${Math.floor(slides.indexOf(activeSlide) / (slides.length - 1) * 100)}%`}}/>
-                    </div>
-                    {isLoading && (
-                        <Spinner />
-                    )}
-                    {!isLoading && slides.map(slide => (
-                        <div className={getContainerClassName(slide)}>
-                            <div className={classes.SlideContainer}>
-                                {slide === slideName.Intro && (
-                                    <Intro coach={coach}
-                                           advance={advance}/>
-                                )}
-                                {slide === slideName.Name && (
-                                    <Name firstName={firstName}
-                                          setFirstName={setFirstName}
-                                          lastName={lastName}
-                                          setLastName={setLastName}
-                                          advance={advance}
-                                          goBack={goBack}/>
-                                )}
-                                {slide === slideName.Position && (
-                                    <Position position={position}
-                                              setPosition={setPosition}
-                                              advance={advance}
-                                              goBack={goBack}/>
-                                )}
-                                {slide === slideName.Age && (
-                                    <Age ageRange={ageRange}
-                                         setAgeRange={setAgeRange}
-                                         advance={advance}
-                                         goBack={goBack}/>
-                                )}
-                                {slide === slideName.Equipment && (
-                                    <Equipment availableEquipment={availableEquipment}
-                                               setAvailableEquipment={setAvailableEquipment}
-                                               advance={advance}
-                                               goBack={goBack}/>
-                                )}
-                                {slide === slideName.Location && (
-                                    <Location trainingLocations={availableTrainingLocations}
-                                              setTrainingLocations={setAvailableTrainingLocations}
-                                              advance={advance}
-                                              goBack={goBack}/>
-                                )}
-                                {slide === slideName.ShortTermGoal && (
-                                    <ShortTermGoal shortTermGoal={shortTermGoal}
-                                                   setShortTermGoal={setShortTermGoal}
-                                                   advance={advance}
-                                                   goBack={goBack}/>
-                                )}
-                                {slide === slideName.LongTermGoal && (
-                                    <LongTermGoal longTermGoal={longTermGoal}
-                                                  setLongTermGoal={setLongTermGoal}
-                                                  advance={!!player ? () => onComplete(player, token) : advance}
-                                                  isSubmitting={isSubmitting}
-                                                  goBack={goBack}/>
-                                )}
-                                {slide === slideName.InitiateSignup && (
-                                    <InitiateSignup advance={advance}
-                                                    goBack={goBack}
-                                                    setPlayerId={setTempPlayerId}
-                                                    firstName={firstName}
-                                                    lastName={lastName}/>
-                                )}
-                                {slide === slideName.CompleteSignup && (
-                                    <CompleteSignup onComplete={onComplete}
-                                                    playerId={tempPlayerId}
-                                                    isSubmitting={isSubmitting}/>
-                                )}
-                                {slide === slideName.Done && (
-                                    <Done advance={advance}/>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div className={classes.Container}>
+            <div className={classes.ProgressBarContainer}>
+                <div className={classes.ProgressBarInner} style={{width: `${Math.floor(slides.indexOf(activeSlide) / (slides.length - 1) * 100)}%`}}/>
             </div>
+            {isLoading && (
+                <div className={classes.SpinnerContainer}>
+                    <Spinner />
+                </div>
+            )}
+            {!isLoading && slides.map(slide => (
+                <div className={getContainerClassName(slide)}>
+                    <div className={classes.SlideContainer}>
+                        {slide === slideName.Intro && (
+                            <Intro coach={coach}
+                                   advance={advance}/>
+                        )}
+                        {slide === slideName.Name && (
+                            <Name firstName={firstName}
+                                  setFirstName={setFirstName}
+                                  lastName={lastName}
+                                  setLastName={setLastName}
+                                  advance={advance}
+                                  goBack={goBack}/>
+                        )}
+                        {slide === slideName.Position && (
+                            <Position position={position}
+                                      setPosition={setPosition}
+                                      advance={advance}
+                                      goBack={goBack}/>
+                        )}
+                        {slide === slideName.Age && (
+                            <Age ageRange={ageRange}
+                                 setAgeRange={setAgeRange}
+                                 advance={advance}
+                                 goBack={goBack}/>
+                        )}
+                        {slide === slideName.Equipment && (
+                            <Equipment availableEquipment={availableEquipment}
+                                       setAvailableEquipment={setAvailableEquipment}
+                                       advance={advance}
+                                       goBack={goBack}/>
+                        )}
+                        {slide === slideName.Location && (
+                            <Location trainingLocations={availableTrainingLocations}
+                                      setTrainingLocations={setAvailableTrainingLocations}
+                                      advance={advance}
+                                      goBack={goBack}/>
+                        )}
+                        {slide === slideName.ShortTermGoal && (
+                            <ShortTermGoal shortTermGoal={shortTermGoal}
+                                           setShortTermGoal={setShortTermGoal}
+                                           advance={advance}
+                                           goBack={goBack}/>
+                        )}
+                        {slide === slideName.LongTermGoal && (
+                            <LongTermGoal longTermGoal={longTermGoal}
+                                          setLongTermGoal={setLongTermGoal}
+                                          advance={!!player ? () => onComplete(player, token) : advance}
+                                          isSubmitting={isSubmitting}
+                                          goBack={goBack}/>
+                        )}
+                        {slide === slideName.InitiateSignup && (
+                            <InitiateSignup advance={advance}
+                                            goBack={goBack}
+                                            setPlayerId={setTempPlayerId}
+                                            firstName={firstName}
+                                            lastName={lastName}/>
+                        )}
+                        {slide === slideName.CompleteSignup && (
+                            <CompleteSignup onComplete={onComplete}
+                                            playerId={tempPlayerId}
+                                            isSubmitting={isSubmitting}/>
+                        )}
+                        {slide === slideName.Done && (
+                            <Done advance={advance}/>
+                        )}
+                    </div>
+                </div>
+            ))}
         </div>
     )
 }

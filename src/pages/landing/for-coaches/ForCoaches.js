@@ -1,6 +1,7 @@
 import classes from './ForCoaches.module.css';
 import ForCoachesImage from '../../../assets/ForCoaches.png';
 import {useHistory} from "react-router-dom";
+import SubmitButton from "../../../components/submit-button/SubmitButton";
 
 const ForCoaches = () => {
 
@@ -25,9 +26,9 @@ const ForCoaches = () => {
                         <div>Expanded markets</div>
                         <div>Convenient coaching</div>
                     </div>
-                    <div className={classes.Button} onClick={() => history.push('/become-a-coach')}>
+                    <SubmitButton className={classes.Button} onClick={() => history.push('/become-a-coach')}>
                         Become a coach
-                    </div>
+                    </SubmitButton>
                 </div>
             </div>
         </div>

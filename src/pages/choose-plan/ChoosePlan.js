@@ -12,6 +12,7 @@ const ChoosePlan = () => {
     const {coachId} = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [subscriptionPlans, setSubscriptionPlans] = useState([]);
+    const [currentSubscription, setCurrentSubscription] = useState();
     const [player, setPlayer] = useState();
     const [coach, setCoach] = useState();
 
@@ -24,16 +25,18 @@ const ChoosePlan = () => {
         }
         setIsLoading(true);
         try {
-            const [coach, player] = await Promise.all([
+            const [coach, player, subscription] = await Promise.all([
                 httpClient.getCoach(coachId),
-                httpClient.getPlayer(playerId)
+                httpClient.getPlayer(playerId),
+                httpClient.getSubscription()
             ]);
             setPlayer(player);
             setCoach(coach);
+            setCurrentSubscription(subscription);
             const plans = await Promise.all(
                 coach.subscriptionPlanRefs.map(subscriptionPlanRef => httpClient.getSubscriptionPlan(subscriptionPlanRef))
             );
-            setSubscriptionPlans(plans);
+            setSubscriptionPlans(plans.sort((p1, p2) => p1.unitAmount - p2.unitAmount));
         } catch (e) {
             console.log(e);
         }
@@ -51,21 +54,22 @@ const ChoosePlan = () => {
 
     return (
         <div className={classes.Container}>
-            <div className={classes.Content}>
-                <div className={classes.Title}>Choose your plan</div>
-                {isLoading && (
-                    <Spinner />
-                )}
-                {!isLoading && (
-                    <div className={classes.Plans}>
-                        {subscriptionPlans.map(plan => (
-                            <div className={classes.PlanWrapper}>
-                                <Plan player={player} plan={plan} coach={coach}/>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
+            <div className={classes.Title}>Choose your plan</div>
+            {isLoading && (
+                <Spinner />
+            )}
+            {!isLoading && (
+                <div className={classes.Plans}>
+                    {subscriptionPlans.map(plan => (
+                        <div className={classes.PlanWrapper}>
+                            <Plan player={player}
+                                  plan={plan}
+                                  coach={coach}
+                                  isActive={!!currentSubscription && currentSubscription.plan.stripePriceId === plan.stripePriceId}/>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     )
 };

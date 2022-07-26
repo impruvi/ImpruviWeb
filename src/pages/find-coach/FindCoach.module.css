@@ -3,7 +3,7 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 30px;
+    padding: 0 var(--desktop-container-padding);
     box-sizing: border-box;
 }
 
@@ -20,7 +20,8 @@
 
 .Subtitle {
     color: #68676C;
-    font-size: 25px;
+    font-size: 22px;
+    font-weight: 500;
     margin-bottom: 10px;
 }
 
@@ -35,6 +36,7 @@
 .CoachCardWrapper {
     margin: 10px 0;
     width: calc(25% - 20px);
+    min-height: 100px;
 }
 
 @media (max-width: 1000px) {
@@ -44,7 +46,15 @@
 }
 
 @media (max-width: 700px) {
+    .Container {
+        padding: 0 var(--mobile-container-padding);
+    }
+
     .CoachCardWrapper {
         width: 100%;
+    }
+
+    .Subtitle {
+        font-size: 18px;
     }
 }

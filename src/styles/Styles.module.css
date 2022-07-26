@@ -1,4 +1,7 @@
 :root {
     --color-primary: #F35157;
     --color-primary-washed: #fbd0d2;
+
+    --desktop-container-padding: 30px;
+    --mobile-container-padding: 15px;
 }

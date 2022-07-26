@@ -1,0 +1,93 @@
+.Container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.Overview {
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    padding-top: 40vh;
+    padding-bottom: 30px;
+    text-align: center;
+    background-color: black;
+}
+
+.Title {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.Subtitle {
+    margin: 5px 0 25px 0;
+    font-size: 20px;
+}
+
+.ActionButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ButtonPrimary {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .1s linear;
+    font-size: 14px;
+}
+
+.ButtonPrimary:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
+}
+
+.ButtonPrimary img {
+    width: 15px;
+    margin-left: 10px;
+}
+
+.ButtonSecondary {
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity .1s linear;
+}
+
+.ButtonSecondary:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
+}
+
+.SpinnerContainer {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TabsWrapper {
+    margin: 30px 0 30px 0;
+    padding: 0 var(--mobile-container-padding);
+    box-sizing: border-box;
+}
+
+.FrequentlyAskedQuestionsContainer {
+    padding: 50px var(--mobile-container-padding);
+}
+
+.PaddedContainer {
+    padding: 0 var(--mobile-container-padding);
+    box-sizing: border-box;
+}

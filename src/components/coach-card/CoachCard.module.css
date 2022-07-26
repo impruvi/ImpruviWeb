@@ -7,6 +7,7 @@
     border-radius: 20px;
     position: relative;
     cursor: pointer;
+    max-height: 90vh;
 }
 
 .Image {
@@ -32,17 +33,35 @@
     text-align: center;
 }
 
+.OverlayLandscape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .Name {
     font-size: 37px;
     font-weight: 600;
     white-space: normal;
 }
 
-.Bar {
+.Overlay .Bar {
     width: 30%;
     height: 4px;
     background-color: white;
     margin: 10px auto 10px auto;
+}
+
+.OverlayLandscape .Bar {
+    width: 30%;
+    height: 2px;
+    background-color: white;
+    margin: 10px auto 10px 0;
 }
 
 .Location {

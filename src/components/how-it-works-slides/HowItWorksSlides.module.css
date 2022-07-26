@@ -1,73 +1,53 @@
 .Container {
     width: 100%;
     background-color: #F6F6F6;
-    padding: 40px 20px;
+    padding: 40px var(--desktop-container-padding);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
 }
 
 .ActiveSlide {
     display: flex;
+    flex-wrap: wrap;
     opacity: 1;
     transition: opacity 300ms linear;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 300ms;
 }
 
 .TransitioningSlide {
     display: flex;
+    flex-wrap: wrap;
     opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 300ms;
     transition: opacity 300ms linear;
 }
 
 .HiddenSlide {
     display: none;
     opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 300ms;
     transition: opacity 300ms linear;
 }
 
-.Left {
+.AppStoreActionButtonWrapper {
     display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    font-size: 60px;
-    font-weight: 600;
-    padding: calc(35vh - 30px) 30px 30px 30px;
-    box-sizing: border-box;
-}
-
-.Right {
-    display: flex;
-    flex: 1;
-    font-size: 60px;
-    font-weight: 600;
-    padding: calc(35vh - 30px) 30px 30px 30px;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.Arrows {
     width: 100%;
-    display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.ArrowContainer {
-    padding: 10px;
+@media (min-width: 700px) {
+    .MobileWrapper {
+        display: none;
+    }
 }
 
-.Arrows img {
-    width: 50px;
-    margin: 0 10px;
-}
-
-.Arrow {
-    cursor: pointer;
-}
-
-.PhoneImage {
-    max-height: 800px;
-    height: 80vh;
+@media (max-width: 700px) {
+    .DesktopWrapper {
+        display: none;
+    }
 }

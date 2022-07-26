@@ -3,6 +3,7 @@
     width: 90vw;
     background-color: white;
     padding: 30px;
+    box-sizing: border-box;
     position: relative;
 }
 
@@ -47,4 +48,11 @@
     font-weight: 500;
     margin-bottom: 20px;
     font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .Container {
+        width: 100vw;
+        height: 100vh;
+    }
 }

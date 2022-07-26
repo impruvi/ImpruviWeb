@@ -10,13 +10,13 @@ const BecomeACoach = () => {
     }, []);
 
     return (
-        <div>
-            <div className={classes.Content}>
-                <div className={classes.Title}>Become a coach</div>
-                <div className={classes.Subtitle}>
-                    Want to become a coach? Text or email us and we will start the process
-                    within 24 hours.
-                </div>
+        <div className={classes.Container}>
+            <div className={classes.Title}>Become a coach</div>
+            <div className={classes.Subtitle}>
+                Want to become a coach? Text or email us and we will start the process
+                within 24 hours.
+            </div>
+            <div className={classes.ContactOptionsWrapper}>
                 <ContactOptions />
             </div>
             <Footer />

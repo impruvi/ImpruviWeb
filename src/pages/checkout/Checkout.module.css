@@ -1,13 +1,16 @@
-.Content {
+.Container {
     width: 100%;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 var(--desktop-container-padding) 100px var(--desktop-container-padding);
+    box-sizing: border-box;
+}
+
+.Content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 30px 100px 30px;
-    box-sizing: border-box;
 }
 
 .Title {
@@ -26,6 +29,10 @@
 }
 
 @media (max-width: 700px) {
+    .Container {
+        padding: 0 var(--mobile-container-padding) 100px var(--mobile-container-padding);
+    }
+
     .Left {
         width: 100%;
     }

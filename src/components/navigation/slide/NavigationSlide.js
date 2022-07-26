@@ -8,15 +8,20 @@ import {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../../hooks/useHttpClient";
 
 
-const Option = ({path, text}) => {
+const Option = ({path, text, close}) => {
     const history = useHistory();
     const location = useLocation();
 
     const isActive = location.pathname === path;
 
+    const onClick = () => {
+        history.push(path);
+        close();
+    }
+
     return (
         <div className={isActive ? [classes.NavOption, classes.NavOptionActive].join(' ') : classes.NavOption}
-             onClick={() => history.push(path)}>
+             onClick={onClick}>
             {text}
         </div>
     )
@@ -26,17 +31,31 @@ const NavigationSlide = ({isOpen, close}) =>  {
 
     const [player, setPlayer] = useState();
 
+    const history = useHistory();
     const {playerId} = useAuth();
     const {httpClient} = useHttpClient();
     const {setOpenPopup} = useGlobalPopup();
+    const {signOut} = useAuth();
 
     const getPlayer = useCallback(async () => {
         if (!playerId) {
+            setPlayer(null);
             return;
         }
         const player = await httpClient.getPlayer(playerId);
         setPlayer(player);
-    }, [httpClient, playerId])
+    }, [httpClient, playerId]);
+
+    const onSignout = () => {
+        signOut();
+        history.push('/');
+        close();
+    }
+
+    const navigateToLink = (path) => {
+        history.push(path);
+        close();
+    }
 
     useEffect(() => {
         getPlayer();
@@ -50,25 +69,30 @@ const NavigationSlide = ({isOpen, close}) =>  {
             <div className={isOpen ? [classes.Container, classes.ContainerActive].join(' ') : classes.Container}>
                 <div className={classes.Content}>
                     {!!player && (
-                        <Option path={'/account'} text={'Account'}/>
+                        <Option path={'/account'} text={'Account'} close={close}/>
                     )}
-                    <Option path={'/how-it-works'} text={'How it works'}/>
-                    <Option path={'/find-coach'} text={'Find a coach'}/>
-                    <Option path={'/become-a-coach'} text={'Become a coach'}/>
-                    <Option path={'/contact'} text={'Contact'}/>
+                    <Option path={'/how-it-works'} text={'How it works'} close={close}/>
+                    <Option path={'/find-coach'} text={'Find a coach'} close={close}/>
+                    <Option path={'/become-a-coach'} text={'Become a coach'} close={close}/>
+                    <Option path={'/contact'} text={'Contact'}  close={close}/>
+                    {!!player && (
+                        <div className={classes.NavOption} onClick={onSignout}>Logout</div>
+                    )}
                     {!player &&
-                        <SubmitButton onClick={() => setOpenPopup(popups.SignIn)}>
-                            Sign in
-                        </SubmitButton>
+                        <div className={classes.ButtonWrapper}>
+                            <SubmitButton onClick={() => setOpenPopup(popups.SignIn)}>
+                                Sign in
+                            </SubmitButton>
+                        </div>
                     }
                     <div className={classes.Footer}>
                         <div className={classes.FooterOption}>
                             Seattle, WA
                         </div>
-                        <div className={classes.FooterOption}>
+                        <div className={[classes.FooterOption, classes.FooterOptionClickable].join(' ')}>
                             <a href="mailto:john@impruviapp.com?Subject=Hello%20Impruvi" target="_blank">john@impruviapp.com</a>
                         </div>
-                        <div className={classes.FooterOption}>
+                        <div className={[classes.FooterOption, classes.FooterOptionClickable].join(' ')} onClick={() => navigateToLink('/terms')}>
                             Terms of Service
                         </div>
                         <div className={classes.FooterOption}>

@@ -16,7 +16,7 @@ import ResetPassword from "./components/reset-password/ResetPassword";
 import Account from "./pages/account/Account";
 import NavigationBar from "./components/navigation/NavigationBar";
 import Terms from "./pages/terms/Terms";
-import PaymentSuccessful from "./pages/payment-successful/PaymentSuccessful";
+import SubscriptionUpdated from "./pages/subscription-updated/SubscriptionUpdated";
 
 
 const AppInner = () => {
@@ -34,7 +34,7 @@ const AppInner = () => {
                 <Route path="/terms" component={Terms} />
                 <Route path="/account" component={Account} />
                 <Route path="/coaches/:coachId/product/:productId/price/:priceId/checkout" component={Checkout} />
-                <Route path="/coaches/:coachId/product/:productId/price/:priceId/completed" component={PaymentSuccessful} />
+                <Route path="/coaches/:coachId/product/:productId/price/:priceId/:action" component={SubscriptionUpdated} />
                 <Route path="/coaches/:coachId/choose-plan" component={ChoosePlan} />
                 <Route path="/coaches/:coachId/questionnaire" component={Questionnaire} />
                 <Route path="/coaches/:coachId" component={Coach} />

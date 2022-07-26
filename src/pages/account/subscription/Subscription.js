@@ -46,6 +46,8 @@ const Subscription = () => {
                     stripePriceId: player.queuedSubscription.stripePriceId,
                 });
                 setQueuedSubscriptionPlan(subscriptionPlan);
+            } else {
+                setQueuedSubscriptionPlan(null);
             }
         } catch (e) {
             console.log(e);
@@ -129,7 +131,7 @@ const Subscription = () => {
                                 )}
                                 {!!queuedSubscriptionPlan && (
                                     <InfoBox icon={InfoIcon}>
-                                        <div>
+                                        <div className={classes.InfoBoxText}>
                                             Your subscription is set to update upon the next billing cycle to the following plan:
                                         </div>
                                         <Details subscriptionPlan={queuedSubscriptionPlan} nextPaymentDate={getNextPaymentDate()}/>

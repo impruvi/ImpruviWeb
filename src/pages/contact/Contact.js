@@ -11,12 +11,12 @@ const Contact = () => {
 
     return (
         <div className={classes.Container}>
-            <div className={classes.Content}>
-                <div className={classes.Title}>Contact us</div>
-                <div className={classes.Subtitle}>
-                    Any issues or questions? Text or email us and our team will
-                    get back to you within 24 hours.
-                </div>
+            <div className={classes.Title}>Contact us</div>
+            <div className={classes.Subtitle}>
+                Any issues or questions? Text or email us and our team will
+                get back to you within 24 hours.
+            </div>
+            <div className={classes.ContactOptionsWrapper}>
                 <ContactOptions />
             </div>
             <Footer />

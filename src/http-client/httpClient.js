@@ -157,6 +157,7 @@ class HttpClient {
     }
 
     listCoaches = async () => {
+        await this.stall();
         const response = await this.#client.invokeApi({}, '/coaches/list', 'POST', {}, {
             limit: -1
         });

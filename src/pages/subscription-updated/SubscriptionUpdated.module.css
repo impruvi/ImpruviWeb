@@ -1,0 +1,33 @@
+.Container {
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 30px 50px 30px;
+    box-sizing: border-box;
+}
+
+.Title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.Subtitle {
+    margin-bottom: 50px;
+}
+
+.ActionButton {
+    display: flex;
+    justify-content: center;
+}
+
+.Info {
+    width: 100%;
+    max-width: 400px;
+    color: #666;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

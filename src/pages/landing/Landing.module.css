@@ -5,7 +5,26 @@
     justify-content: center;
 }
 
+.HowItWorksWrapper {
+    width: 100%;
+}
+
 .FrequentlyAskedQuestionsWrapper {
-    padding: 0 30px;
+    padding: 40px var(--desktop-container-padding);
+}
+
+.PaddedContainer {
+    width: 100%;
+    padding: 0 var(--desktop-container-padding);
     box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+    .FrequentlyAskedQuestionsWrapper {
+        padding: 40px var(--mobile-container-padding);
+    }
+
+    .PaddedContainer {
+        padding: 0 var(--mobile-container-padding);
+    }
 }

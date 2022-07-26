@@ -6,40 +6,29 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.Content {
-    padding: 30px;
+    padding: 30px var(--desktop-container-padding);
     box-sizing: border-box;
-    margin-bottom: 100px;
-    width: 100%;
 }
 
 .Title {
+    width: 100%;
     font-size: 40px;
     font-weight: 700;
     text-align: center;
 }
 
 .Subtitle {
+    width: 100%;
     text-align: center;
     margin: 25px 0;
 }
 
-.Options {
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
+.ContactOptionsWrapper {
+    margin-bottom: 100px;
 }
 
-.Option {
-    display: flex;
-    margin: 20px 0;
-    align-items: center;
-    font-weight: 600;
-}
-
-.Option img {
-    width: 30px;
-    margin-right: 15px;
+@media (max-width: 700px) {
+    .Container {
+        padding: 0 var(--mobile-container-padding);
+    }
 }

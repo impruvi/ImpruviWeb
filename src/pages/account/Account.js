@@ -6,15 +6,23 @@ import classes from './Account.module.css';
 import useAuth from "../../hooks/useAuth";
 import FrequentlyAskedQuestions from "./faq/FrequentlyAskedQuestions";
 
-const NavigationOption = ({path, text}) => {
+const NavigationOption = ({path, text, isMobileHidden}) => {
 
     const history = useHistory();
     const location = useLocation();
 
     const isActive = location.pathname === path;
 
+    const classNames = [classes.NavOption];
+    if (isActive) {
+        classNames.push(classes.NavOptionActive);
+    }
+    if (isMobileHidden) {
+        classNames.push(classes.MobileHidden)
+    }
+
     return (
-        <div className={isActive ? [classes.NavOption, classes.NavOptionActive].join(' ') : classes.NavOption} onClick={() => history.push(path)}>
+        <div className={classNames.join(' ')} onClick={() => history.push(path)}>
             {text}
         </div>
     )
@@ -35,9 +43,9 @@ const Account = () => {
             <div className={classes.Navigation}>
                 <NavigationOption path={'/account/profile'} text={'Profile'}/>
                 <NavigationOption path={'/account/subscription'} text={'Subscription'}/>
-                <NavigationOption path={'/account/payment-methods'} text={'Payment methods'}/>
+                <NavigationOption path={'/account/payment-methods'} text={'Payment methods'} isMobileHidden={true}/>
                 <NavigationOption path={'/account/faq'} text={'FAQ'}/>
-                <div className={classes.NavOption} onClick={onSignout}>Logout</div>
+                <div className={[classes.NavOption, classes.MobileHidden].join(' ')} onClick={onSignout}>Logout</div>
             </div>
             <div className={classes.Content}>
                 <Switch>

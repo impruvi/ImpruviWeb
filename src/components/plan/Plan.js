@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom";
 import SubmitButton from "../submit-button/SubmitButton";
 import {hasPlayerCompletedQuestionnaire} from "../../util/playerUtil";
 
-const Plan = ({player, plan, coach}) => {
+const Plan = ({player, plan, coach, isActive}) => {
 
     const history = useHistory();
 
@@ -21,15 +21,17 @@ const Plan = ({player, plan, coach}) => {
                 {plan.type}
             </div>
             <div className={classes.Pricing}>
-                ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(2)}/training
+                ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(0)}/training
             </div>
             <div className={classes.PricingSub}>
                 or ${Math.floor(plan.unitAmount / 100)} per month
             </div>
             <div className={classes.Trainings}>
-                {plan.numberOfTrainings / 4} training per week ({plan.numberOfTrainings} per month)
+                {plan.numberOfTrainings} trainings per month
             </div>
-            <SubmitButton onClick={navigateToPlan}>Select</SubmitButton>
+            <SubmitButton onClick={navigateToPlan} isDisabled={isActive}>
+                {isActive ? 'Active' : 'Select'}
+            </SubmitButton>
             <div className={classes.SubText}>
                 Subscriptions renew automatically until cancelled. Cancel anytime.
             </div>

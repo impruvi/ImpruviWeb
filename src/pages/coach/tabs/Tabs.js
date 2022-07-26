@@ -8,7 +8,7 @@ const tabs = {
     Plans: 'Plans'
 }
 
-const Tabs = ({coach}) => {
+const Tabs = ({coach, player}) => {
 
     const [selectedTab, setSelectedTab] = useState(tabs.Overview);
 
@@ -29,7 +29,7 @@ const Tabs = ({coach}) => {
                 <Overview coach={coach}/>
             )}
             {selectedTab === tabs.Plans && (
-                <Plans coach={coach}/>
+                <Plans coach={coach} player={player}/>
             )}
         </div>
     )

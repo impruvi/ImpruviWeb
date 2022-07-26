@@ -88,4 +88,13 @@
     .Arrow img {
         width: 25px;
     }
+
+    .ArrowLeftBackground {
+        width: 70px;
+    }
+
+    .ArrowRightBackground {
+        width: 70px;
+    }
+
 }

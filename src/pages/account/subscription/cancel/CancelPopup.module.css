@@ -2,7 +2,8 @@
     background-color: white;
     padding: 30px;
     box-sizing: border-box;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .Title {
@@ -35,4 +36,10 @@
 .ActionButtonSecondary {
     background: none;
     color: black;
+}
+
+@media (max-width: 700px) {
+    .Container {
+        height: 100vh;
+    }
 }

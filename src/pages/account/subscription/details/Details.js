@@ -1,6 +1,7 @@
 import classes from "./Details.module.css";
 import {useEffect, useState} from "react";
 import useHttpClient from "../../../../hooks/useHttpClient";
+import HeadshotChip from "../../../../components/headshot-chip/HeadshotChip";
 
 const Details = ({subscriptionPlan, nextPaymentDate}) => {
 
@@ -17,8 +18,8 @@ const Details = ({subscriptionPlan, nextPaymentDate}) => {
             <div className={classes.SectionLarge}>
                 <div className={classes.SectionTitle}>Overview</div>
                 <div className={classes.PlanHeader}>
-                    <img src={coach?.headshot?.fileLocation} className={classes.Headshot}/>
-                    <div>
+                    <HeadshotChip image={coach?.headshot?.fileLocation} firstName={coach?.firstName} lastName={coach?.lastName}/>
+                    <div className={classes.Overview}>
                         <div>
                             {coach?.firstName} {coach?.lastName} {subscriptionPlan.type} plan
                         </div>

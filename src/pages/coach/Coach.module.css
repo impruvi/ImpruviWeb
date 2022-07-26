@@ -1,106 +1,11 @@
-.Container {
-    background-color: black;
-    width: 100%;
-    min-height: 100vh;
-    z-index: -1;
+@media (min-width: 700px) {
+    .Mobile {
+        display: none;
+    }
 }
 
-.BackgroundImage {
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-.ContentOuter {
-    width: 100%;
-    padding: 50px 30px 0 30px;
-    box-sizing: border-box;
-}
-
-.Content {
-    max-width: 1000px;
-    width: 100%;
-    color: white;
-    z-index: 1;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.Title {
-    font-size: 50px;
-    font-weight: 600;
-}
-
-.Subtitle {
-    margin: 5px 0 25px 0;
-    font-size: 20px;
-}
-
-.Bullets {
-    margin: 20px 0;
-}
-
-.Bullet {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    font-weight: 600;
-}
-
-.Bullet img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-    margin-right: 15px;
-}
-
-.ActionButtons {
-    display: flex;
-    align-items: center;
-    margin: 40px 0 30px 0;
-}
-
-.ButtonPrimary {
-    background-color: var(--color-primary);
-    color: white;
-    font-weight: 600;
-    padding: 10px 15px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity .1s linear;
-    font-size: 14px;
-}
-
-.ButtonPrimary:hover {
-    opacity: .7;
-    transition: opacity .1s linear;
-}
-
-.ButtonPrimary img {
-    width: 15px;
-    margin-left: 10px;
-}
-
-.ButtonSecondary {
-    font-weight: 600;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    opacity: 1;
-    transition: opacity .1s linear;
-}
-
-.ButtonSecondary:hover {
-    opacity: .7;
-    transition: opacity .1s linear;
-}
-
-.TabsWrapper {
-    margin-bottom: 100px;
+@media (max-width: 700px) {
+    .Desktop {
+        display: none;
+    }
 }

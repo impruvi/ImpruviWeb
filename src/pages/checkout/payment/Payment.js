@@ -72,7 +72,11 @@ const Payment = ({plan, coach, hasSubscription}) => {
                 stripeProductId: plan.stripeProductId
             });
 
-            history.push(`/coaches/${coach.coachId}/product/${plan.stripeProductId}/price/${plan.stripePriceId}/completed`)
+            if (hasSubscription) {
+                history.push(`/coaches/${coach.coachId}/product/${plan.stripeProductId}/price/${plan.stripePriceId}/updated`)
+            } else {
+                history.push(`/coaches/${coach.coachId}/product/${plan.stripeProductId}/price/${plan.stripePriceId}/created`)
+            }
         } catch (e) {
             console.error(e);
         }

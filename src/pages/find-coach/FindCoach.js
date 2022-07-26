@@ -1,18 +1,31 @@
 import classes from './FindCoach.module.css';
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../hooks/useHttpClient";
-import RedCircleCheck from '../../assets/RedCircleCheck.png';
 import CoachCard from "../../components/coach-card/CoachCard";
 import Footer from "../../components/footer/Footer";
+import Spinner from "../../components/spinner/Spinner";
+import PlaceHolder from "./placeholder/PlaceHolder";
 
 const FindCoach = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
     const [coaches, setCoaches] = useState([]);
     const {httpClient} = useHttpClient();
 
-    useEffect(() => {
-        httpClient.listCoaches().then(setCoaches);
+    const initialize = useCallback(async () => {
+        setIsLoading(true);
+        try {
+            const coaches = await httpClient.listCoaches();
+            setCoaches(coaches);
+        } catch (e) {
+            console.log(e);
+        }
+        setIsLoading(false);
     }, [httpClient]);
+
+    useEffect(() => {
+        initialize();
+    }, [initialize]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,9 +42,12 @@ const FindCoach = () => {
                     Submit videos to your coach and get expert feedback.
                 </div>
                 <div className={classes.Coaches}>
-                    {coaches.map(coach => (
+                    {isLoading && (
+                        <PlaceHolder />
+                    )}
+                    {!isLoading && coaches.map(coach => (
                         <div className={classes.CoachCardWrapper}>
-                            <CoachCard coach={coach}/>
+                            <CoachCard coach={coach} shouldConvertToLandscapeOnMobile={true}/>
                         </div>
                     ))}
                 </div>

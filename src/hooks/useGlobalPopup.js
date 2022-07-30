@@ -1,5 +1,4 @@
-import React, {createContext, useContext, useMemo} from 'react';
-import {useState} from "react";
+import React, {createContext, useContext, useMemo, useState} from 'react';
 
 const GlobalPopupContext = createContext({});
 

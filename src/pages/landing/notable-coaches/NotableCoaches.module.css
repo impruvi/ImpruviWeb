@@ -13,11 +13,11 @@
     font-size: 55px;
     text-align: center;
     width: 100%;
+    font-weight: 700;
 }
 
 .Highlight {
     color: var(--color-primary);
-    font-weight: 700;
 }
 
 .Subtitle {

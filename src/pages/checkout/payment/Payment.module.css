@@ -70,3 +70,9 @@
 .SubmitButtonWrapper {
     margin-top: 15px;
 }
+
+.Error {
+    color: #D93025;
+    font-size: 14px;
+    margin-top: 10px;
+}

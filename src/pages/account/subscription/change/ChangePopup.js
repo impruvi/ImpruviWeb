@@ -1,8 +1,7 @@
 import Popup from "../../../../components/popup/Popup";
 import classes from "./ChangePopup.module.css";
 import useAuth from "../../../../hooks/useAuth";
-import {useState} from "react";
-import {useCallback, useEffect} from "react";
+import {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../../../hooks/useHttpClient";
 import Plan from "../../../../components/plan/Plan";
 import Spinner from "../../../../components/spinner/Spinner";
@@ -30,7 +29,7 @@ const ChangePopup = ({close}) => {
             const player = await httpClient.getPlayer(playerId);
             setPlayer(player);
             const [subscription, coach] = await Promise.all([
-                httpClient.getSubscription(),
+                httpClient.getSubscription(playerId),
                 httpClient.getCoach(player.coachId)
             ]);
             setCurrentSubscription(subscription);

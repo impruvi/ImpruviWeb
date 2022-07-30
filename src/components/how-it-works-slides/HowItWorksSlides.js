@@ -1,4 +1,8 @@
 import classes from './HowItWorksSlides.module.css';
+import IntroImage from '../../assets/how-it-works/Impruvi.png';
+import FindCoachImage from '../../assets/how-it-works/FindCoach.png';
+import DemoImage from '../../assets/how-it-works/Demos.png';
+import FeedbackImage from '../../assets/how-it-works/Feedback.png';
 import HowItWorksImage from '../../assets/HowItWorks.png';
 import {useState} from "react";
 import Desktop from "./desktop/Desktop";
@@ -17,7 +21,7 @@ const slides = [
                 <AppStoreActionButton />
             </div>
         ),
-        media: HowItWorksImage
+        media: IntroImage
     },
     {
         id: 2,
@@ -25,7 +29,7 @@ const slides = [
         titleLeft: 'Choose',
         titleRight: 'your coach',
         subTitle: 'Choose among our professional and Division 1 players! Your expert coach will develop a custom at-home training plan based on your needs and availability',
-        media: HowItWorksImage
+        media: FindCoachImage
     },
     {
         id: 3,
@@ -33,7 +37,7 @@ const slides = [
         titleLeft: 'Train like a pro',
         titleRight: 'with the pros',
         subTitle: 'Download the app and watch videos of your coach perform the drills in your custom plan. Practice, then submit a video for your coach to review.',
-        media: HowItWorksImage
+        media: DemoImage
     },
     {
         id: 4,
@@ -41,7 +45,7 @@ const slides = [
         titleLeft: 'Improve',
         titleRight: 'your game',
         subTitle: 'Your coach will send you video feedback on what you did well and areas you can improve. Explore your drill bank and track progress.',
-        media: HowItWorksImage
+        media: FeedbackImage
     }
 ]
 

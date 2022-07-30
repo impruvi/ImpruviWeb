@@ -25,6 +25,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
     const [paymentMethods, setPaymentMethods] = useState([]);
     const [nameOnCard, setNameOnCard] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [hadSubmissionError, setHadSubmissionError] = useState(false);
 
     const initialize = useCallback(async () => {
         if (!playerId) {
@@ -48,6 +49,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
     }, [httpClient, playerId]);
 
     const submit = async () => {
+        setHadSubmissionError(false);
         setIsSubmitting(true);
 
         try {
@@ -79,6 +81,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
             }
         } catch (e) {
             console.error(e);
+            setHadSubmissionError(true);
         }
 
         setIsSubmitting(false);
@@ -161,6 +164,11 @@ const Payment = ({plan, coach, hasSubscription}) => {
                         {hasSubscription ? 'Update subscription' : 'Start subscription'}
                     </SubmitButton>
                 </div>
+                {hadSubmissionError && (
+                    <div className={classes.Error}>
+                        An unexpected error occurred. Please try again.
+                    </div>
+                )}
             </div>
             <div className={classes.SubText}>
                 By clicking "Start subscription" you agree to our

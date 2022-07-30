@@ -84,11 +84,19 @@ class HttpClient {
         return response.data.player;
     }
 
-    getSubscription = async () => {
-        const response = await this.#client.invokeApi({}, '/player/subscription/get', 'POST', {}, {
-            token: this.#authToken,
-        });
-        return response.data.subscription;
+    getSubscription = async (playerId) => {
+        try {
+            const response = await this.#client.invokeApi({}, '/player/subscription/get', 'POST', {}, {
+                playerId: playerId,
+            });
+            return response.data.subscription;
+        } catch(err) {
+            if (err.response.status === 404) {
+                return null;
+            }
+
+            throw err
+        }
     }
 
     cancelSubscription = async () => {

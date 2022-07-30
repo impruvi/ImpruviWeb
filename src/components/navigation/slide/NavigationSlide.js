@@ -1,10 +1,9 @@
-import React from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import classes from "./NavigationSlide.module.css";
 import {useHistory, useLocation} from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import useGlobalPopup, {popups} from "../../../hooks/useGlobalPopup";
 import SubmitButton from "../../submit-button/SubmitButton";
-import {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../../hooks/useHttpClient";
 
 

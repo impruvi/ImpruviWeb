@@ -22,6 +22,12 @@ const SigninPopup = () => {
     const [isSubmissionErrorShowing, setIsSubmissionErrorShowing] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await submit();
+        }
+    };
+
     const onEmailChange = (event) => {
         if (isValidEmail(event.target.value)) {
             const errors = validationErrors.filter(err => err !== 'email');
@@ -85,6 +91,7 @@ const SigninPopup = () => {
                        type="email"
                        value={email}
                        onChange={onEmailChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={isSubmitting}/>
             <TextInput
                 error={hasError('password') ? 'Please enter a password' : null}
@@ -93,6 +100,7 @@ const SigninPopup = () => {
                 type="password"
                 value={password}
                 onChange={onPasswordChange}
+                onKeyDown={handleKeyDown}
                 isDisabled={isSubmitting}/>
             <SubmitButton isSubmitting={isSubmitting}
                           onClick={submit}

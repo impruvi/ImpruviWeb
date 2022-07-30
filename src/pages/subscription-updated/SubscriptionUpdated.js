@@ -32,7 +32,7 @@ const SubscriptionUpdated = () => {
             } else {
                 const [coach, subscription] = await Promise.all([
                     httpClient.getCoach(coachId),
-                    httpClient.getSubscription()
+                    httpClient.getSubscription(playerId)
                 ]);
                 setCoach(coach);
                 setCurrentSubscription(subscription);

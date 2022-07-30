@@ -42,7 +42,7 @@
 
 .Title {
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 10px 0;
 }
 
@@ -61,15 +61,31 @@
 .Row {
     display: flex;
     justify-content: space-between;
+    color: #666;
 }
+
 .Button {
-    padding: 12px 20px;
+    padding: 10px 15px;
     font-weight: 600;
     margin-top: 30px;
     border-radius: 40px;
 }
 
 @media (max-width: 700px) {
+    .HeaderText {
+        font-size: 20px;
+    }
+
+    .Title {
+        font-size: 30px;
+        margin: 5px 0;
+    }
+
+    .SubTitle {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
     .Container {
         padding: 30px var(--mobile-container-padding);
     }

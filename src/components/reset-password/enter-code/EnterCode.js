@@ -31,6 +31,12 @@ const EnterCode = ({onComplete, email, code, setCode}) => {
         return validationErrors.filter(err => err === error).length > 0;
     };
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await validateVerificationCode();
+        }
+    };
+
     const validateVerificationCode = async () => {
         setIsSubmissionErrorShowing(false);
 
@@ -59,6 +65,7 @@ const EnterCode = ({onComplete, email, code, setCode}) => {
                        label="Enter code"
                        value={code}
                        onChange={onCodeChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={setIsValidating}/>
 
             <SubmitButton isSubmitting={isValidating}

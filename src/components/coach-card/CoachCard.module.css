@@ -8,18 +8,21 @@
     position: relative;
     cursor: pointer;
     max-height: 90vh;
+    background-color: #ddd;
 }
 
 .Image {
     width: 100%;
     transition: width .2s linear;
     object-fit: cover;
+    background-color: #ddd;
 }
 
 .ImageHovered {
     width: 110%;
     transition: width .2s linear;
     object-fit: cover;
+    background-color: #ddd;
 }
 
 .Overlay {

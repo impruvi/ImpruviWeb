@@ -44,6 +44,12 @@ const Reset = ({onComplete, email, code}) => {
         return validationErrors.filter(err => err === error).length > 0;
     };
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await submit();
+        }
+    };
+
     const submit = async () => {
         setIsSubmissionErrorShowing(false);
 
@@ -78,6 +84,7 @@ const Reset = ({onComplete, email, code}) => {
                 type="password"
                 value={password}
                 onChange={onPasswordChange}
+                onKeyDown={handleKeyDown}
                 isDisabled={isSubmitting}/>
             <TextInput
                 error={hasError('confirmedPassword') ? 'Passwords do not match' : null}
@@ -86,6 +93,7 @@ const Reset = ({onComplete, email, code}) => {
                 type="password"
                 value={confirmedPassword}
                 onChange={onConfirmedPasswordChange}
+                onKeyDown={handleKeyDown}
                 isDisabled={isSubmitting}/>
             <SubmitButton isSubmitting={isSubmitting}
                           onClick={submit}

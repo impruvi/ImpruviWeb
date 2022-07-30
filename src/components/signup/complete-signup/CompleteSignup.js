@@ -34,6 +34,12 @@ const CompleteSignup = ({onComplete, playerId}) => {
         return validationErrors.filter(err => err === error).length > 0;
     };
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await validateVerificationCode();
+        }
+    };
+
     const validateVerificationCode = async () => {
         setIsSubmissionErrorShowing(false);
 
@@ -64,6 +70,7 @@ const CompleteSignup = ({onComplete, playerId}) => {
                        label="Enter code"
                        value={code}
                        onChange={onCodeChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={setIsValidating}/>
 
             <SubmitButton isSubmitting={isValidating}

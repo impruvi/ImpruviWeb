@@ -1,6 +1,12 @@
 import classes from './Terms.module.css';
+import {useEffect} from "react";
 
 const Terms = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className={classes.Container}>
             <div className={classes.Section}>

@@ -36,7 +36,7 @@ const Subscription = () => {
         try {
             const [player, subscription] = await Promise.all([
                 httpClient.getPlayer(playerId),
-                httpClient.getSubscription(),
+                httpClient.getSubscription(playerId),
             ]);
             setPlayer(player);
             setSubscription(subscription);
@@ -104,7 +104,7 @@ const Subscription = () => {
                                 <div className={classes.NoSubscriptionText}>
                                     You don't have any active subscription
                                 </div>
-                                <SubmitButton onClick={() => history.push('/find-coach')}>
+                                <SubmitButton onClick={() => history.push('/find-coach')} className={classes.ButtonPrimary}>
                                     Choose a coach
                                 </SubmitButton>
                             </div>

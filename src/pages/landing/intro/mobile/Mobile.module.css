@@ -22,9 +22,10 @@
 }
 
 .Subtitle {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     margin-top: 10px;
+    font-weight: 500;
     color: #666;
 }
 
@@ -43,9 +44,16 @@
 .ButtonPrimary {
     padding: 12px 15px;
     border-radius: 40px;
+    font-weight: 600;
 }
 
 .ButtonPrimary img {
     width: 15px;
     margin-left: 10px;
+}
+
+@media (max-width: 700px) {
+    .Content {
+        padding: 0 20px;
+    }
 }

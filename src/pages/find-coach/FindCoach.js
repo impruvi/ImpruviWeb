@@ -3,7 +3,6 @@ import React, {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../hooks/useHttpClient";
 import CoachCard from "../../components/coach-card/CoachCard";
 import Footer from "../../components/footer/Footer";
-import Spinner from "../../components/spinner/Spinner";
 import PlaceHolder from "./placeholder/PlaceHolder";
 
 const FindCoach = () => {
@@ -35,7 +34,7 @@ const FindCoach = () => {
         <div className={classes.Container}>
             <div className={classes.Content}>
                 <div className={classes.Title}>
-                    Find your perfect coach
+                    Choose your expert coach
                 </div>
                 <div className={classes.Subtitle}>
                     Receive a custom training plan with videos for each drill.<br />

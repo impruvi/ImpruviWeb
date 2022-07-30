@@ -85,6 +85,12 @@ const InitiateSignup = ({setPlayerId, email, setEmail}) => {
         return validationErrors.filter(err => err === error).length > 0;
     };
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await submit();
+        }
+    };
+
     const submit = async () => {
         setIsSubmissionErrorShowing(false);
 
@@ -126,12 +132,14 @@ const InitiateSignup = ({setPlayerId, email, setEmail}) => {
                        icon="fas fa-user"
                        value={firstName}
                        onChange={onFirstNameChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={isSubmitting}/>
             <TextInput error={hasError('lastName') ? 'Please provide the player\'s last name' : null}
                        label="Player's last name"
                        icon="fas fa-user"
                        value={lastName}
                        onChange={onLastNameChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={isSubmitting}/>
             <TextInput error={hasError('email') ? 'Please provide a valid email' : null}
                        label="Email"
@@ -139,6 +147,7 @@ const InitiateSignup = ({setPlayerId, email, setEmail}) => {
                        type="email"
                        value={email}
                        onChange={onEmailChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={isSubmitting}/>
             <TextInput
                 error={hasError('password') ? 'Please enter a password' : null}
@@ -147,6 +156,7 @@ const InitiateSignup = ({setPlayerId, email, setEmail}) => {
                 type="password"
                 value={password}
                 onChange={onPasswordChange}
+                onKeyDown={handleKeyDown}
                 isDisabled={isSubmitting}/>
             <TextInput
                 error={hasError('confirmedPassword') ? 'Passwords do not match' : null}
@@ -155,6 +165,7 @@ const InitiateSignup = ({setPlayerId, email, setEmail}) => {
                 type="password"
                 value={confirmedPassword}
                 onChange={onConfirmedPasswordChange}
+                onKeyDown={handleKeyDown}
                 isDisabled={isSubmitting}/>
 
             <SubmitButton isSubmitting={isSubmitting}

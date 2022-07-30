@@ -1,8 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classes from './BasicTextInput.module.css';
-import emailRegex from 'email-regex';
-import urlRegex from 'url-regex';
-import {InputType} from '../../constants/inputTypes.constants';
 
 const BasicTextInput = ({isDisabled, type, value, error, onChange, placeholder, maxLength}) => {
 

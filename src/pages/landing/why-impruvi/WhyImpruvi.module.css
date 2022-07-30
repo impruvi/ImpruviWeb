@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 30px var(--desktop-container-padding);
+    padding: 60px var(--desktop-container-padding);
 }
 
 .ContainerInner {
@@ -41,11 +41,28 @@
 }
 
 @media (max-width: 700px) {
+    .Title {
+        font-size: 30px;
+    }
+
     .Container {
         padding: 30px var(--mobile-container-padding);
     }
 
     .Section {
         width: 100%;
+        font-size: 14px;
+    }
+
+    .Section img {
+        width: 40px;
+        height: auto;
+        margin-right: 15px;
+    }
+
+    .SectionTitle {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 7px;
     }
 }

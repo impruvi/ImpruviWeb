@@ -49,6 +49,7 @@
 .PhoneImage {
     max-height: 800px;
     height: 80vh;
+    margin-right: -5vh;
 }
 
 .Footer {

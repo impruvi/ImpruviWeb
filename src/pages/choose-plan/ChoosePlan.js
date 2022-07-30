@@ -1,11 +1,9 @@
 import classes from './ChoosePlan.module.css';
-import Footer from "../../components/footer/Footer";
 import useHttpClient from "../../hooks/useHttpClient";
 import {useCallback, useEffect, useState} from "react";
 import Plan from "../../components/plan/Plan";
 import {useParams} from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import Spinner from "../../components/spinner/Spinner";
 import PlaceHolder from "./placeholder/PlaceHolder";
 
 const ChoosePlan = () => {
@@ -29,7 +27,7 @@ const ChoosePlan = () => {
             const [coach, player, subscription] = await Promise.all([
                 httpClient.getCoach(coachId),
                 httpClient.getPlayer(playerId),
-                httpClient.getSubscription()
+                httpClient.getSubscription(playerId)
             ]);
             setPlayer(player);
             setCoach(coach);
@@ -56,19 +54,22 @@ const ChoosePlan = () => {
     return (
         <div className={classes.Container}>
             <div className={classes.Title}>Choose your plan</div>
-                <div className={classes.Plans}>
-                    {isLoading && (
-                        <PlaceHolder />
-                    )}
-                    {!isLoading && subscriptionPlans.map(plan => (
-                        <div className={classes.PlanWrapper}>
-                            <Plan player={player}
-                                  plan={plan}
-                                  coach={coach}
-                                  isActive={!!currentSubscription && currentSubscription.plan.stripePriceId === plan.stripePriceId}/>
-                        </div>
-                    ))}
-                </div>
+            {!!coach && (
+                <div className={classes.Subtitle}>Choose from one of the plans offered by {coach.firstName} {coach.lastName}</div>
+            )}
+            <div className={classes.Plans}>
+                {isLoading && (
+                    <PlaceHolder />
+                )}
+                {!isLoading && subscriptionPlans.map(plan => (
+                    <div className={classes.PlanWrapper}>
+                        <Plan player={player}
+                              plan={plan}
+                              coach={coach}
+                              isActive={!!currentSubscription && currentSubscription.plan.stripePriceId === plan.stripePriceId}/>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 };

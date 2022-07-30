@@ -1,7 +1,7 @@
 import classes from './MultiSelect.module.css';
 import Check from '../../assets/CheckWhite.png';
 
-const MultiSelect = ({options, values, onChange}) => {
+const MultiSelect = ({options, values, onChange, convertToDisplay}) => {
 
     const optionClicked = (option) => {
         if (!!values && values.indexOf(option) >= 0) {
@@ -24,7 +24,7 @@ const MultiSelect = ({options, values, onChange}) => {
                             <img src={Check} />
                         )}
                     </div>
-                    <div>{option}</div>
+                    <div>{!!convertToDisplay ? convertToDisplay(option) : option}</div>
                 </div>
             ))}
         </div>

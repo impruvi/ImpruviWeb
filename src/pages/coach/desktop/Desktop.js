@@ -6,6 +6,7 @@ import Tabs from "../tabs/Tabs";
 import FrequentlyAskedQuestions from "../../../components/faq/FrequentlyAskedQuestions";
 import Footer from "../../../components/footer/Footer";
 import {useHistory} from "react-router-dom";
+import SubmitButton from "../../../components/submit-button/SubmitButton";
 
 const Desktop = ({coach, player, isLoading, onChooseCoach}) => {
 
@@ -27,7 +28,7 @@ const Desktop = ({coach, player, isLoading, onChooseCoach}) => {
                     <>
                         <div className={classes.Overview}>
                             <div className={classes.Title}>{coach.firstName} {coach.lastName}</div>
-                            <div className={classes.Subtitle}>Improves your finishing, dribbling, ball mastery and speed</div>
+                            <div className={classes.Subtitle}>Improves your {!!coach.focusAreas && coach.focusAreas.join(', ').replace(/, ([^,]*)$/, ' and $1')}</div>
 
                             <div className={classes.Bullets}>
                                 <div className={classes.Bullet}>
@@ -49,10 +50,15 @@ const Desktop = ({coach, player, isLoading, onChooseCoach}) => {
                             </div>
 
                             <div className={classes.ActionButtons}>
-                                <div className={classes.ButtonPrimary} onClick={onChooseCoach}>
+                                <SubmitButton className={classes.ButtonPrimary} onClick={onChooseCoach}>
                                     Choose coach
                                     <img src={ArrowRight} />
-                                </div>
+                                </SubmitButton>
+
+                                {/*<div className={classes.ButtonPrimary} onClick={onChooseCoach}>*/}
+                                {/*    Choose coach*/}
+                                {/*    <img src={ArrowRight} />*/}
+                                {/*</div>*/}
                                 <div className={classes.ButtonSecondary} onClick={() => history.push('/how-it-works')}>
                                     How it works
                                 </div>

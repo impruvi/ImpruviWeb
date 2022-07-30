@@ -28,7 +28,7 @@ const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
 
     useEffect(() => {
         onResize();
-    }, [ref]);
+    }, [onResize]);
 
     useEffect(() => {
         window.addEventListener('resize', onResize);
@@ -42,12 +42,12 @@ const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
              onMouseEnter={() => setIsHovered(true)}
              onMouseLeave={() => setIsHovered(false)} onClick={() => history.push(`/coaches/${coach.coachId}`)}>
             {(!isMobile || !shouldConvertToLandscapeOnMobile) && (
-                <img src={coach.cardImagePortrait.fileLocation}
+                <img src={coach.cardImagePortrait?.fileLocation}
                      className={isHovered ? classes.ImageHovered : classes.Image}
                 />
             )}
             {isMobile && shouldConvertToLandscapeOnMobile && (
-                <img src={coach.cardImageLandscape.fileLocation}
+                <img src={coach.cardImageLandscape?.fileLocation}
                      className={isHovered ? classes.ImageHovered : classes.Image}
                 />
             )}

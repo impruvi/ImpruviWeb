@@ -2,7 +2,6 @@ import classes from "./Plans.module.css";
 import {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../../../hooks/useHttpClient";
 import Plan from "../../../../components/plan/Plan";
-import Spinner from "../../../../components/spinner/Spinner";
 import useAuth from "../../../../hooks/useAuth";
 import PlaceHolder from "./placeholder/PlaceHolder";
 
@@ -19,7 +18,7 @@ const Plans = ({coach, player}) => {
         setIsLoading(true);
         try {
             if (!!playerId) {
-                const subscription = await httpClient.getSubscription();
+                const subscription = await httpClient.getSubscription(playerId);
                 setCurrentSubscription(subscription);
             }
 

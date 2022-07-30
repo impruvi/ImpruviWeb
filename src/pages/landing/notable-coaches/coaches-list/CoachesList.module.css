@@ -25,6 +25,7 @@
 .CoachCardWrapper {
     margin: 0 10px;
     min-width: 300px;
+    max-width: 25%;
 }
 
 .ArrowLeftBackground {

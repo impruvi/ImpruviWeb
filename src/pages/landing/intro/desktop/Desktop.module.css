@@ -55,6 +55,7 @@
 .ButtonPrimary {
     padding: 12px 15px;
     border-radius: 40px;
+    font-weight: 600;
 }
 
 .ButtonPrimary img {

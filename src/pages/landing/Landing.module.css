@@ -10,7 +10,7 @@
 }
 
 .FrequentlyAskedQuestionsWrapper {
-    padding: 40px var(--desktop-container-padding);
+    padding: 80px var(--desktop-container-padding) 40px var(--desktop-container-padding);
 }
 
 .PaddedContainer {
@@ -21,7 +21,7 @@
 
 @media (max-width: 700px) {
     .FrequentlyAskedQuestionsWrapper {
-        padding: 40px var(--mobile-container-padding);
+        padding: 60px var(--mobile-container-padding) 40px var(--mobile-container-padding);
     }
 
     .PaddedContainer {

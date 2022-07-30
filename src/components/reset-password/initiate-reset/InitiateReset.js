@@ -27,6 +27,12 @@ const InitiateReset = ({onComplete, email, setEmail}) => {
         return validationErrors.filter(err => err === error).length > 0;
     };
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await initiatePasswordReset();
+        }
+    };
+
     const initiatePasswordReset = async () => {
         setIsSubmissionErrorShowing(false);
 
@@ -57,6 +63,7 @@ const InitiateReset = ({onComplete, email, setEmail}) => {
                        type="email"
                        value={email}
                        onChange={onEmailChange}
+                       onKeyDown={handleKeyDown}
                        isDisabled={isSubmitting}/>
 
             <SubmitButton isSubmitting={isSubmitting}

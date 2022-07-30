@@ -19,9 +19,19 @@ export const frequentlyAskedQuestions = [
                         Watch videos of your coach complete each drill in your custom plan.
                     </li>
                     <li>
-                        Watch videos of your coach complete each drill in your custom plan.
+                        Send videos to your coach of you completing each drill. Do this from anywhere! Garage, backyard, local park
+                    </li>
+                    <li>
+                        Receive video feedback for each drill you submit
+                    </li>
+                    <li>
+                        New  plans every month!
+                    </li>
+                    <li>
+                        More content coming soon!
                     </li>
                 </ul>
+                <div>Check the <a href={'/how-it-works'} className={classes.Link}>How it works</a> page for more details.</div>
             </div>
         )
     },

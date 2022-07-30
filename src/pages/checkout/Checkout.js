@@ -26,7 +26,7 @@ const Checkout = () => {
         setIsLoading(true);
         try {
             const [subscription, coach, plan] = await Promise.all([
-                httpClient.getSubscription(),
+                httpClient.getSubscription(playerId),
                 httpClient.getCoach(coachId),
                 httpClient.getSubscriptionPlan({
                     stripeProductId: productId,
@@ -55,7 +55,9 @@ const Checkout = () => {
         <div className={classes.Container}>
             <div className={classes.Title}>Checkout</div>
             {isLoading && (
-                <Spinner />
+                <div className={classes.SpinnerContainer}>
+                    <Spinner />
+                </div>
             )}
             {!isLoading && (
                 <div className={classes.Content}>

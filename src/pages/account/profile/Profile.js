@@ -1,12 +1,11 @@
 import useAuth from "../../../hooks/useAuth";
 import HeadshotChip from "../../../components/headshot-chip/HeadshotChip";
 import BasicTextInput from "../../../components/basic-text-input/BasicTextInput";
-import {useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import classes from './Profile.module.css';
 import SubmitButton from "../../../components/submit-button/SubmitButton";
 import useHttpClient from "../../../hooks/useHttpClient";
 import Image from '../../../model/Image';
-import {useCallback, useEffect} from "react";
 import Spinner from "../../../components/spinner/Spinner";
 
 const Profile = () => {

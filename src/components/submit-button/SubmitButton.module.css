@@ -24,8 +24,8 @@
 }
 
 .Container:hover {
-    opacity: .7;
-    transition: opacity .1s linear;
+    background-color: #f57074;
+    transition: background-color .1s linear;
 }
 
 .FullWidth {
@@ -43,9 +43,9 @@
 }
 
 .ContainerSubmitting {
-    background-color: white;
+    background-color: white !important;
     -webkit-box-shadow: 0 0 0 1px rgba(205, 214, 229, .55);
     box-shadow: 0 0 0 1px rgba(205, 214, 229, .55);
-    color: #a8aebd;
+    color: #a8aebd !important;
     cursor: default;
 }

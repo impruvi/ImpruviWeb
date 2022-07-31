@@ -1,7 +1,7 @@
 import classes from './NotableCoaches.module.css';
 import CoachesList from "./coaches-list/CoachesList";
 import useHttpClient from "../../../hooks/useHttpClient";
-import {useCallback, useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import PlaceHolder from "./placeholder/PlaceHolder";
 
 const NotableCoaches = () => {
@@ -13,7 +13,10 @@ const NotableCoaches = () => {
     const getCoaches = async () => {
         setIsLoading(true);
         try {
+            const start = Date.now();
             const coaches = await httpClient.listCoaches();
+            const end = Date.now();
+            console.log('total time: ', end - start);
             setCoaches(coaches);
         } catch (e) {
             console.log(e);

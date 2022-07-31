@@ -165,7 +165,6 @@ class HttpClient {
     }
 
     listCoaches = async () => {
-        await this.stall();
         const response = await this.#client.invokeApi({}, '/coaches/list', 'POST', {}, {
             limit: -1
         });
@@ -192,6 +191,7 @@ class HttpClient {
                 'Content-Type': 'application/octet-stream',
             }
         };
+        console.log(file);
 
         return axios.put(url, file, config);
     };

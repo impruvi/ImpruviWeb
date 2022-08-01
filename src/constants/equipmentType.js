@@ -11,12 +11,12 @@ export const getEquipmentTypeDisplayValue = (equipmentType) => {
         return null;
     }
     if (equipmentType === EquipmentType.Ball) {
-        return 'ball'
+        return 'Ball'
     } else if (equipmentType === EquipmentType.Cone) {
-        return 'cones'
+        return 'Cones'
     } else if (equipmentType === EquipmentType.Goal) {
-        return 'goal'
+        return 'Goal'
     } else if (equipmentType === EquipmentType.AgilityLadder) {
-        return 'agility ladder'
+        return 'Agility ladder'
     }
 }

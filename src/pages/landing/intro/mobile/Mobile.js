@@ -18,7 +18,7 @@ const Mobile = () => {
                     Expert coaching in the palm of your hands.
                 </div>
                 <div className={classes.Subtitle}>
-                    Custom at-home training plans designed by expert coaches for you.
+                    At-home training plans custom designed for you.
                 </div>
                 <div className={classes.ActionButtons}>
                     <div className={classes.ActionButtonWrapper}>

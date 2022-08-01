@@ -38,7 +38,7 @@ const FindCoach = () => {
                 </div>
                 <div className={classes.Subtitle}>
                     Receive a custom training plan with videos for each drill.<br />
-                    Submit videos to your coach and get expert feedback.
+                    Submit videos performing drills to your coach and receive video feedback.
                 </div>
                 <div className={classes.Coaches}>
                     {isLoading && (

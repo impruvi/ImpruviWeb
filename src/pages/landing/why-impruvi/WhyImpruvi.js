@@ -10,14 +10,14 @@ const WhyImpruvi = () => {
     return (
         <div className={classes.Container}>
             <div className={classes.ContainerInner}>
-                <div className={classes.Title}>Why Impruvi?</div>
+                <div className={classes.Title}>Why imprüvi?</div>
                 <div className={classes.Section}>
                     <img src={PersonalizedIcon} />
                     <div>
                         <div className={classes.SectionTitle}>Personalized coaching</div>
                         <div>
                             Your coach will build you a custom plan tailored to your
-                            exact needs, providing expert feedback each step along
+                            exact needs, providing feedback each step along
                             the way
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const WhyImpruvi = () => {
                     <div>
                         <div className={classes.SectionTitle}>Improvement</div>
                         <div>
-                            Interact with your coach to track your progress and see real improvement in your game.
+                            Track your monthly drill and session progress and see improvement in your game.
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ export const frequentlyAskedQuestions = [
                 <ul className={classes.List}>
                     <li>
                         Choose your coach and your plan. Your coach will build you a custom,
-                        month long training plan based on your needs.
+                        month long training plan based on your goals and needs.
                     </li>
                 </ul>
                 <div className={classes.AnswerSectionTitle}>On the app</div>
@@ -19,7 +19,7 @@ export const frequentlyAskedQuestions = [
                         Watch videos of your coach complete each drill in your custom plan.
                     </li>
                     <li>
-                        Send videos to your coach of you completing each drill. You can do this from garage, backyard, local park, anywhere!
+                        Send videos to your coach of you completing each drill. You can do this from your garage, backyard, or local park! Anywhere and anytime!
                     </li>
                     <li>
                         Receive video feedback for each drill you submit

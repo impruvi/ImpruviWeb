@@ -10,10 +10,22 @@
     font-size: 35px;
 }
 
+.TitleInline {
+    font-size: 25px;
+    display: inline-block;
+}
+
 .Pricing {
     font-weight: 700;
     font-size: 25px;
     margin-top: 10px;
+}
+
+.PricingInline {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .PricingSub {

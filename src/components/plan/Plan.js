@@ -18,10 +18,10 @@ const Plan = ({player, plan, coach, isActive}) => {
     return (
         <div className={classes.Container}>
             <div className={classes.Title}>
-                {plan.numberOfTrainings} Trainings
+                {plan.numberOfTrainings} Session<div className={classes.TitleInline}>/month</div>
             </div>
             <div className={classes.Pricing}>
-                ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(0)}/session
+                ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(0)}<div className={classes.PricingInline}>/session</div>
             </div>
             <div className={classes.PricingSub}>
                 or ${Math.floor(plan.unitAmount / 100)} per month

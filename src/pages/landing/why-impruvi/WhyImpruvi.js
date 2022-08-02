@@ -18,7 +18,7 @@ const WhyImpruvi = () => {
                         <div>
                             Your coach will build you a custom plan tailored to your
                             exact needs, providing feedback each step along
-                            the way
+                            the way.
                         </div>
                     </div>
                 </div>

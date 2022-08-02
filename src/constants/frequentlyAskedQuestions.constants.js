@@ -9,7 +9,7 @@ export const frequentlyAskedQuestions = [
                 <div className={classes.AnswerSectionTitle}>On the website</div>
                 <ul className={classes.List}>
                     <li>
-                        Choose your coach and your plan. Your coach will build you a custom,
+                        Choose your coach and your plan of 4 sessions, 8 sessions, or 12 sessions per month.Your coach will build you a custom,
                         month long training plan based on your goals and needs.
                     </li>
                 </ul>
@@ -42,10 +42,10 @@ export const frequentlyAskedQuestions = [
             <div>
                 <ul className={classes.List}>
                     <li>
-                        A customized training plan built by your chosen coach
+                        A customized training plan built by your chosen coach.
                     </li>
                     <li>
-                        Weekly training sessions varying between 4-5 drills based on your plan
+                        Training sessions vary between 4-5 drills based on your plan
                     </li>
                     <li>
                         Feedback on each drill you submit

@@ -40,11 +40,13 @@
     justify-content: center;
 }
 
+
 @media (min-width: 800px) {
     .MobileWrapper {
         display: none;
     }
 }
+
 
 @media (max-width: 800px) {
     .DesktopWrapper {

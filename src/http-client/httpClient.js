@@ -129,7 +129,10 @@ class HttpClient {
     }
 
     updatePlayer = async ({playerId, coachId, firstName, lastName, email, position, availableEquipment, availableTrainingLocations, shortTermGoal, longTermGoal, headshot}) => {
+        const currentPlayer = await this.getPlayer(playerId);
+
         const player = {
+            ...currentPlayer,
             playerId,
             coachId,
             firstName,

@@ -9,7 +9,7 @@ export const frequentlyAskedQuestions = [
                 <div className={classes.AnswerSectionTitle}>On the website</div>
                 <ul className={classes.List}>
                     <li>
-                        Choose your coach and your plan of 4 sessions, 8 sessions, or 12 sessions per month.Your coach will build you a custom,
+                        Choose your coach and your plan of 4 sessions, 8 sessions, or 12 sessions per month. Your coach will build you a custom,
                         month long training plan based on your goals and needs.
                     </li>
                 </ul>

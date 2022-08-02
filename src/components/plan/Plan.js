@@ -18,7 +18,7 @@ const Plan = ({player, plan, coach, isActive}) => {
     return (
         <div className={classes.Container}>
             <div className={classes.Title}>
-                {plan.numberOfTrainings} Session<div className={classes.TitleInline}>/month</div>
+                {plan.numberOfTrainings} Sessions<div className={classes.TitleInline}>/month</div>
             </div>
             <div className={classes.Pricing}>
                 ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(0)}<div className={classes.PricingInline}>/session</div>

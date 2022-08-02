@@ -37,8 +37,7 @@ const FindCoach = () => {
                     Choose your expert coach
                 </div>
                 <div className={classes.Subtitle}>
-                    Receive a custom training plan with videos for each drill.<br />
-                    Submit videos performing drills to your coach and receive video feedback.
+                    Select a monthly plan and download the app to start training with your coach.
                 </div>
                 <div className={classes.Coaches}>
                     {isLoading && (

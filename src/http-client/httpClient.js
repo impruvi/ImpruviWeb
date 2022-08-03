@@ -78,10 +78,19 @@ class HttpClient {
     }
 
     getPlayer = async (playerId) => {
-        const response = await this.#client.invokeApi({}, '/player/get', 'POST', {}, {
-            playerId,
-        });
-        return response.data.player;
+        try {
+            const response = await this.#client.invokeApi({}, '/player/get', 'POST', {},{
+                playerId: playerId
+            });
+            return response.data.player;
+        } catch(err) {
+            console.log(err.response.status);
+            if (err.response.status === 404) {
+                return null
+            }
+
+            throw err
+        }
     }
 
     getSubscription = async (playerId) => {
@@ -128,7 +137,7 @@ class HttpClient {
         return result.data.subscriptionPlan;
     }
 
-    updatePlayer = async ({playerId, coachId, firstName, lastName, email, position, availableEquipment, availableTrainingLocations, shortTermGoal, longTermGoal, headshot}) => {
+    updatePlayer = async ({playerId, coachId, firstName, lastName, email, position, ageRange, availableEquipment, availableTrainingLocations, shortTermGoal, longTermGoal, headshot}) => {
         const currentPlayer = await this.getPlayer(playerId);
 
         const player = {
@@ -139,6 +148,7 @@ class HttpClient {
             lastName,
             email,
             position,
+            ageRange,
             availableEquipment,
             availableTrainingLocations,
             shortTermGoal,

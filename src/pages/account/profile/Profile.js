@@ -31,9 +31,9 @@ const Profile = () => {
         try {
             const newPlayer = await httpClient.updatePlayer({
                 ...player,
-                firstName,
-                lastName,
-                email,
+                firstName: firstName.trim(),
+                lastName: lastName.trim(),
+                email: email.trim(),
                 headshot
             });
             setPlayer(newPlayer);

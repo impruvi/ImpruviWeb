@@ -24,7 +24,7 @@ const Footer = ({mode='light'}) => {
                 </div>
                 <div className={classes.Option}
                      onClick={() => window.open('https://www.linkedin.com/company/impruvi/', '_blank')}>
-                    Linkedin
+                    LinkedIn
                 </div>
             </div>
             <div className={classes.Section}>

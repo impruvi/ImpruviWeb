@@ -72,7 +72,10 @@ const SigninPopup = () => {
         } else {
             setIsSubmitting(true);
             try {
-                const result = await httpClient.signIn({email, password});
+                const result = await httpClient.signIn({
+                    email: email.trim(),
+                    password
+                });
                 setToken(result.token);
                 setPlayerId(result.player.playerId);
                 close();

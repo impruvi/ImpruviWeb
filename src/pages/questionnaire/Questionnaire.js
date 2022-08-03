@@ -88,6 +88,7 @@ const Questionnaire = () => {
         try {
             await httpClient.updatePlayer({
                 ...player,
+                ageRange,
                 position,
                 availableEquipment,
                 availableTrainingLocations,

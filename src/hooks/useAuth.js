@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useEffect, useMemo, useState} from 'react';
+import HttpClient from "../http-client/httpClient";
 
 const AuthContext = createContext({});
 
@@ -18,6 +19,15 @@ export const AuthProvider = ({children}) => {
         setToken(token);
         const playerId = localStorage.getItem('playerId');
         setPlayerId(playerId);
+
+        const httpClient = new HttpClient();
+        if (!!playerId) {
+            const player = await httpClient.getPlayer(playerId);
+            if (player === null) {
+                await signOut();
+            }
+        }
+
     }
 
     const onSetToken = async (token) => {

@@ -116,7 +116,12 @@ const InitiateSignup = ({setPlayerId, email, setEmail}) => {
         } else {
             setIsSubmitting(true);
             try {
-                const result = await httpClient.initiateSignUp({email, password, firstName, lastName});
+                const result = await httpClient.initiateSignUp({
+                    password,
+                    email: email.trim(),
+                    firstName: firstName.trim(),
+                    lastName: lastName.trim()
+                });
                 setPlayerId(result.playerId);
             } catch (e) {
                 setIsSubmissionErrorShowing(true);

@@ -9,8 +9,8 @@ export const frequentlyAskedQuestions = [
                 <div className={classes.AnswerSectionTitle}>On the website</div>
                 <ul className={classes.List}>
                     <li>
-                        Choose your coach and your plan. Your coach will build you a custom,
-                        month long training plan based on your needs and availability.
+                        Choose your coach and your plan of 4 sessions, 8 sessions, or 12 sessions per month. Your coach will build you a custom,
+                        month long training plan based on your goals and needs.
                     </li>
                 </ul>
                 <div className={classes.AnswerSectionTitle}>On the app</div>
@@ -19,7 +19,7 @@ export const frequentlyAskedQuestions = [
                         Watch videos of your coach complete each drill in your custom plan.
                     </li>
                     <li>
-                        Send videos to your coach of you completing each drill. Do this from anywhere! Garage, backyard, local park
+                        Send videos to your coach of you completing each drill. You can do this from your garage, backyard, or local park! Anywhere and anytime!
                     </li>
                     <li>
                         Receive video feedback for each drill you submit
@@ -42,13 +42,13 @@ export const frequentlyAskedQuestions = [
             <div>
                 <ul className={classes.List}>
                     <li>
-                        a customized training plan built by your chosen coach
+                        A customized training plan built by your chosen coach.
                     </li>
                     <li>
-                        Weekly training sessions (# varies with plan) with 4-5 personalized drills
+                        Training sessions vary between 4-5 drills based on your plan
                     </li>
                     <li>
-                        Expert feedback for each drill you submit
+                        Feedback on each drill you submit
                     </li>
                     <li>
                         More content coming soon!
@@ -83,7 +83,7 @@ export const frequentlyAskedQuestions = [
         answer: (
             <div>
                 Yes, you can upgrade or downgrade your plan at any time. Changes will go into effect
-                the next billing cycle
+                the next billing cycle.
             </div>
         )
     },
@@ -94,7 +94,7 @@ export const frequentlyAskedQuestions = [
             <div>
                 <ul className={classes.List}>
                     <li>
-                        Click your profile icon in the upper right of the website
+                        Click on your profile icon on the upper right corner of the webpage
                     </li>
                     <li>
                         Click "Subscription"

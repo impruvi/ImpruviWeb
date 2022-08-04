@@ -22,9 +22,9 @@ const ForCoaches = () => {
                     </div>
                     <div className={classes.Break}/>
                     <div className={classes.Row}>
-                        <div>Increased clientele</div>
-                        <div>Expanded markets</div>
-                        <div>Convenient coaching</div>
+                        <div>Increased clientele </div>
+                        <div>Expanded markets </div>
+                        <div>Convenient coaching </div>
                     </div>
                     <SubmitButton className={classes.Button} onClick={() => history.push('/become-a-coach')}>
                         Become a coach

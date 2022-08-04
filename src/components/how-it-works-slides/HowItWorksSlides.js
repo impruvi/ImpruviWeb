@@ -28,7 +28,7 @@ const slides = [
         title: 'Choose your coach',
         titleLeft: 'Choose',
         titleRight: 'your coach',
-        subTitle: 'Choose among our professional and Division 1 players! Your expert coach will develop a custom at-home training plan based on your needs and availability',
+        subTitle: 'Choose among our professional and Division 1 players! Your coach will develop a custom at-home training plan based on your needs.',
         media: FindCoachImage
     },
     {

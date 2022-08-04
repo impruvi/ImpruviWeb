@@ -5,7 +5,7 @@ import Plans from "./plans/Plans";
 
 const tabs = {
     Overview: 'Overview',
-    Plans: 'Plans'
+    Plans: 'Pricing and Plans'
 }
 
 const Tabs = ({coach, player}) => {

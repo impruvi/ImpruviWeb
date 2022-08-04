@@ -32,10 +32,10 @@ const NotableCoaches = () => {
         <div className={classes.Container}>
             <div className={classes.Content}>
                 <div className={classes.Title}>
-                    <span className={classes.Highlight}>Notable coaches</span> on Impruvi
+                    <span className={classes.Highlight}>Notable coaches</span> on imprüvi
                 </div>
                 <div className={classes.Subtitle}>
-                    Our collection of coaches includes current and former professional and division 1 players
+                    Our collection of coaches includes current and former professional and Division 1 players
                 </div>
             </div>
             {isLoading && (

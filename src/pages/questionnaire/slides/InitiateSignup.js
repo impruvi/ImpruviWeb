@@ -89,6 +89,7 @@ const InitiateSignup = ({firstName, lastName, setPlayerId, advance}) => {
     return (
         <div className={classes.Container}>
             <div className={classes.Title}>Create your account</div>
+            <div className={classes.Option}>Note: You will use this login on the app</div>
             <div className={classes.TextInputWrapper}>
                 <BasicTextInput value={email}
                                 error={hasError('email') ? 'Please provide a valid email address' : null}

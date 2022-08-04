@@ -28,7 +28,7 @@ const Desktop = ({coach, player, isLoading, onChooseCoach}) => {
                     <>
                         <div className={classes.Overview}>
                             <div className={classes.Title}>{coach.firstName} {coach.lastName}</div>
-                            <div className={classes.Subtitle}>Improves your {!!coach.focusAreas && coach.focusAreas.join(', ').replace(/, ([^,]*)$/, ' and $1')}</div>
+                            <div className={classes.Subtitle}>Specializes in {!!coach.focusAreas && coach.focusAreas.join(', ').replace(/, ([^,]*)$/, ' and $1')}</div>
 
                             <div className={classes.Bullets}>
                                 <div className={classes.Bullet}>

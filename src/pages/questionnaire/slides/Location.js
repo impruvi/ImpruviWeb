@@ -3,10 +3,10 @@ import MultiSelect from "../../../components/multi-select/MultiSelect";
 import ActionButtons from "../action-buttons/ActionButtons";
 
 const options = [
-    'park',
-    'backyard',
-    'inside (garage, living room etc.)',
-    'other'
+    'Park',
+    'Backyard',
+    'Inside (garage, living room etc.)',
+    'Other'
 ]
 
 const Location = ({trainingLocations, setTrainingLocations, advance, goBack}) => {

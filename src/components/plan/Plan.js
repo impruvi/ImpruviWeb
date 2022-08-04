@@ -18,16 +18,13 @@ const Plan = ({player, plan, coach, isActive}) => {
     return (
         <div className={classes.Container}>
             <div className={classes.Title}>
-                {plan.type}
+                {plan.numberOfTrainings} Sessions<div className={classes.TitleInline}>/month</div>
             </div>
             <div className={classes.Pricing}>
-                ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(0)}/training
+                ${((plan.unitAmount / 100) / plan.numberOfTrainings).toFixed(0)}<div className={classes.PricingInline}>/session</div>
             </div>
             <div className={classes.PricingSub}>
                 or ${Math.floor(plan.unitAmount / 100)} per month
-            </div>
-            <div className={classes.Trainings}>
-                {plan.numberOfTrainings} trainings per month
             </div>
             <SubmitButton onClick={navigateToPlan} isDisabled={isActive}>
                 {isActive ? 'Active' : 'Select'}

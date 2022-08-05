@@ -15,10 +15,10 @@ const Mobile = () => {
             </div>
             <div className={classes.Content}>
                 <div className={classes.Title}>
-                    Expert coaching in the palm of your hands.
+                    Expert coaching in the palm of your hands
                 </div>
                 <div className={classes.Subtitle}>
-                    At-home training plans custom designed for you.
+                    At-home training plans custom designed for you
                 </div>
                 <div className={classes.ActionButtons}>
                     <div className={classes.ActionButtonWrapper}>

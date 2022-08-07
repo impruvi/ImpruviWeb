@@ -22,6 +22,7 @@ const FrequentlyAskedQuestions = () => {
                 <div className={classes.Title}>Frequently Asked Questions</div>
                 {frequentlyAskedQuestions.map(question => (
                     <QuestionExpand question={question.question}
+                                    key={question.id}
                                     answer={question.answer}
                                     isExpanded={question.id === expandedQuestionId}
                                     toggleExpansion={() => toggle(question.id)}/>

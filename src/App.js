@@ -5,9 +5,9 @@ import AppInner from "./AppInner";
 import {AuthProvider} from "./hooks/useAuth";
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from "@stripe/stripe-js";
+import {getStripePublishableKey} from "./env/env";
 
-const publishableKey = 'pk_test_51LIhrlKA3EgJIYsfVJurg7PFSoPWLJFvBENrldRRY0PsNt5qzl6ehLOIJnxvjFrWiuioKmJpWHh2q4n8xt6GSbcD00vlDDHGn3';
-const stripePromise = loadStripe(publishableKey);
+const stripePromise = loadStripe(getStripePublishableKey());
 
 function App() {
     return (

@@ -6,7 +6,7 @@ const FrequentlyAskedQuestions = () => {
         <div>
             <div className={classes.Title}>Frequently asked questions</div>
             {frequentlyAskedQuestions.map(question => (
-                <div className={classes.QuestionContainer}>
+                <div className={classes.QuestionContainer} key={question.id}>
                     <div className={classes.Question}>{question.question}</div>
                     <div className={classes.Answer}>{question.answer}</div>
                 </div>

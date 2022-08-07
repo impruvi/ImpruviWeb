@@ -1,11 +1,12 @@
 import apiClientFactory from 'aws-api-gateway-client';
 import axios from 'axios';
+import {getApiGatewayEndpoint} from "../env/env";
 
 class HttpClient {
 
     #authToken = null;
     #client = apiClientFactory.newClient({
-        invokeUrl: 'https://a70qx1uv76.execute-api.us-west-2.amazonaws.com/prod',
+        invokeUrl: getApiGatewayEndpoint(),
         region: 'us-west-2',
         accessKey: 'AKIAXTDBP63P4IWBNXM6',
         secretKey: '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',

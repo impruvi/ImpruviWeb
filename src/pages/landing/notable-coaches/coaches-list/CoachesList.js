@@ -80,7 +80,7 @@ const CoachesList = ({coaches}) => {
         <div className={classes.ScrollMenu}>
             <div className={classes.ScrollMenuContainer} onScroll={handleScroll} ref={wrapperRef}>
                 {coaches.map(coach => (
-                    <div className={classes.CoachCardWrapper}>
+                    <div className={classes.CoachCardWrapper} key={coach.coachId}>
                         <CoachCard coach={coach}/>
                     </div>
                     )

@@ -5,9 +5,16 @@
 set -e
 
 domain='prod'
-distribution_id='E2VA0U1BD87QZT' # TODO get this using the domain
+distribution_id='E2VA0U1BD87QZT'
+if [ "$domain" = "prod" ]; then
+  distribution_id='E2VA0U1BD87QZT'
+else
+  distribution_id='E36I6FFQGKJITX'
+fi
 
-npm run build
+echo $distribution_id
+
+DOMAIN=$domain npm run build:$domain
 
 aws s3 sync build/ s3://$domain-impruvi-web-static-assets
 

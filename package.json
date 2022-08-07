@@ -28,8 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_DOMAIN=beta react-scripts start",
+    "build:beta": "REACT_APP_DOMAIN=beta react-scripts build",
+    "build:prod": "REACT_APP_DOMAIN=prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

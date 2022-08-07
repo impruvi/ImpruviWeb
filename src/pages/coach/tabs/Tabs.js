@@ -16,7 +16,7 @@ const Tabs = ({coach, player}) => {
         <div className={classes.Container}>
             <div className={classes.Tabs}>
                 {Object.entries(tabs).map(([_,tab]) => (
-                    <div className={classes.TabContainer}>
+                    <div className={classes.TabContainer} key={tab}>
                         <div className={selectedTab === tab ? [classes.Tab, classes.TabActive].join(' ') : classes.Tab}
                              onClick={() => setSelectedTab(tab)}>
                             {tab}

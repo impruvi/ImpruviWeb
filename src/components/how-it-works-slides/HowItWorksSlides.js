@@ -79,7 +79,7 @@ const HowItWorksSlides = () => {
     return (
         <div className={classes.Container}>
             {slides.map(slide => (
-                <>
+                <div key={slide.id}>
                     <div className={[getContainerClassName(slide.id), classes.DesktopWrapper].join(' ')}>
                         <Desktop slide={slide}
                                  canNavigateBack={slide.id !== slides[0].id}
@@ -94,7 +94,7 @@ const HowItWorksSlides = () => {
                                 navigateBack={() => changeSlide(activeSlideId - 1)}
                                 navigateForward={() => changeSlide(activeSlideId + 1)}/>
                     </div>
-                </>
+                </div>
             ))}
 
         </div>

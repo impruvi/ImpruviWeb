@@ -13,10 +13,7 @@ const NotableCoaches = () => {
     const getCoaches = async () => {
         setIsLoading(true);
         try {
-            const start = Date.now();
             const coaches = await httpClient.listCoaches();
-            const end = Date.now();
-            console.log('total time: ', end - start);
             setCoaches(coaches);
         } catch (e) {
             console.log(e);

@@ -4,8 +4,8 @@ import {useHistory} from "react-router-dom";
 
 const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
 
-    const [height, setHeight] = useState();
-    const [width, setWidth] = useState();
+    const [height, setHeight] = useState(0);
+    const [width, setWidth] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const history = useHistory();
     const [isHovered, setIsHovered] = useState(false);

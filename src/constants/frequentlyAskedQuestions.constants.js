@@ -72,7 +72,7 @@ export const frequentlyAskedQuestions = [
         question: 'Can I change my coach?',
         answer: (
             <div>
-                Yes, you can always change you coach! The updated plan will start with the next
+                Yes, you can always change your coach! The updated plan will start with the next
                 billing cycle.
             </div>
         )

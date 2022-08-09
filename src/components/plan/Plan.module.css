@@ -7,11 +7,12 @@
 }
 
 .Title {
-    font-size: 35px;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .TitleInline {
-    font-size: 25px;
+    font-size: 20px;
     display: inline-block;
 }
 

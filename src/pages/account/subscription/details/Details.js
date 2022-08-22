@@ -24,13 +24,13 @@ const Details = ({subscriptionPlan, nextPaymentDate}) => {
                             {coach?.firstName} {coach?.lastName} {subscriptionPlan.type} plan
                         </div>
                         <div className={classes.SectionText}>
-                            {subscriptionPlan.numberOfTrainings / 4} training per week ({subscriptionPlan.numberOfTrainings} per month)
+                            {subscriptionPlan.numberOfTrainings} trainings per month
                         </div>
                     </div>
                 </div>
             </div>
             <div className={classes.SectionSmall}>
-                <div className={classes.SectionTitle}>Next payment</div>
+                <div className={classes.SectionTitle}>{subscriptionPlan.isTrial ? 'Trial end' : 'Next payment'}</div>
                 <div className={classes.SectionText}>{nextPaymentDate}</div>
             </div>
             <div className={classes.SectionSmall}>

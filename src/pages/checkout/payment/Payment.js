@@ -4,11 +4,8 @@ import {useCallback, useEffect, useState} from "react";
 import {CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import useHttpClient from "../../../hooks/useHttpClient";
 import {useHistory} from "react-router-dom";
-import BasicTextInput from "../../../components/basic-text-input/BasicTextInput";
-import PaymentMethod from "../../../components/payment-method/PaymentMethod";
 import useAuth from "../../../hooks/useAuth";
-import RadioButton from "../../../components/radio-button/RadioButton";
-import Expand from "react-expand-animated";
+import PaymentInfo from "./payment-info/PaymentInfo";
 
 
 const Payment = ({plan, coach, hasSubscription}) => {
@@ -35,6 +32,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
         setIsLoading(true);
         try {
             const paymentMethods = await httpClient.getPaymentMethods();
+            console.log('paymentMethods', paymentMethods);
             setPaymentMethods(paymentMethods);
             if (paymentMethods.length > 0) {
                 setSelectedPaymentMethod(paymentMethods[0]);
@@ -48,25 +46,31 @@ const Payment = ({plan, coach, hasSubscription}) => {
         setIsLoading(false);
     }, [httpClient, playerId]);
 
+    const getOrCreatePaymentMethodId = async () => {
+        if (plan.isTrial && plan.unitAmount === 0) {
+            return '';
+        }
+
+        if (!isCreatingNewPaymentMethod) {
+            return selectedPaymentMethod.paymentMethodId;
+        } else {
+            const result = await stripe.createPaymentMethod({
+                type: 'card',
+                card: elements.getElement(CardElement),
+                billing_details: {
+                    name: nameOnCard,
+                },
+            });
+            return result.paymentMethod.id;
+        }
+    }
+
     const submit = async () => {
         setHadSubmissionError(false);
         setIsSubmitting(true);
 
         try {
-            let paymentMethodId;
-            if (!isCreatingNewPaymentMethod) {
-                paymentMethodId = selectedPaymentMethod.paymentMethodId;
-            } else {
-                const result = await stripe.createPaymentMethod({
-                    type: 'card',
-                    card: elements.getElement(CardElement),
-                    billing_details: {
-                        name: nameOnCard,
-                    },
-                });
-                paymentMethodId = result.paymentMethod.id;
-            }
-
+            const paymentMethodId = await getOrCreatePaymentMethodId();
             await httpClient.createSubscription({
                 paymentMethodId: paymentMethodId,
                 coachId: coach.coachId,
@@ -87,25 +91,34 @@ const Payment = ({plan, coach, hasSubscription}) => {
         setIsSubmitting(false);
     }
 
-    const onCreateNewPaymentMethodClick = () => {
+    const onSelectCreateNewPaymentMethod = () => {
         setIsCreatingNewPaymentMethod(true);
         setSelectedPaymentMethod(null);
     }
 
-    const onPaymentMethodClick = (paymentMethod) => {
+    const onSelectPaymentMethod = (paymentMethod) => {
         setIsCreatingNewPaymentMethod(false);
         setSelectedPaymentMethod(paymentMethod);
+    }
+
+    const getButtonText = (hasSubscription, isTrial) => {
+        if (isTrial) {
+            return 'Start trial';
+        }
+
+        return hasSubscription ? 'Update subscription' : 'Start subscription'
     }
 
     useEffect(() => {
         initialize();
     }, [initialize]);
 
+    const isFreeTrial = plan.unitAmount === 0 && plan.isTrial;
 
     return (
         <div>
             <div className={classes.Title}>
-                Pay with card
+                {isFreeTrial ? 'Start your free trial' : 'Pay with card'}
             </div>
             <div className={classes.PaymentSectionToday}>
                 <div>Total due today</div>
@@ -113,55 +126,23 @@ const Payment = ({plan, coach, hasSubscription}) => {
             </div>
 
             <div className={classes.Form}>
-                {paymentMethods.map(paymentMethod => (
-                    <div className={classes.PaymentMethodWrapper} onClick={() => onPaymentMethodClick(paymentMethod)}>
-                        <PaymentMethod paymentMethod={paymentMethod} />
-                        <RadioButton isActive={!!selectedPaymentMethod && paymentMethod.paymentMethodId === selectedPaymentMethod.paymentMethodId} />
-                    </div>
-                ))}
-                {paymentMethods.length > 0 && (
-                    <div className={classes.PaymentMethodWrapper} onClick={onCreateNewPaymentMethodClick}>
-                        Choose a different payment method
-                        <RadioButton isActive={isCreatingNewPaymentMethod} />
-                    </div>
+                {!isFreeTrial && (
+                    <PaymentInfo
+                        selectedPaymentMethod={selectedPaymentMethod}
+                        onSelectPaymentMethod={onSelectPaymentMethod}
+                        paymentMethods={paymentMethods}
+                        isCreatingNewPaymentMethod={isCreatingNewPaymentMethod}
+                        onSelectCreateNewPaymentMethod={onSelectCreateNewPaymentMethod}
+                        nameOnCard={nameOnCard}
+                        setNameOnCard={setNameOnCard}
+                    />
                 )}
-                <Expand open={isCreatingNewPaymentMethod} duration={200}>
-                    <div>
-                        <div className={classes.InputLabel}>Name on card</div>
-                        <BasicTextInput placeholder={'Name on card'}
-                                        value={nameOnCard}
-                                        onChange={setNameOnCard}/>
-                        <div className={classes.InputLabel}>Card information</div>
-                        <div className={classes.CardInputWrapper}>
-                            <CardElement options={{
-                                hidePostalCode: true,
-                                iconStyle: "solid",
-                                style: {
-                                    base: {
-                                        iconColor: "black",
-                                        color: "black",
-                                        fontWeight: 300,
-                                        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-                                        fontSize: "14px",
-                                        "::placeholder": {
-                                            color: "#bbb"
-                                        },
-                                    },
-                                    invalid: {
-                                        iconColor: "red",
-                                        color: "red"
-                                    }
-                                }
-                            }}/>
-                        </div>
-                    </div>
-                </Expand>
                 <div className={classes.SubmitButtonWrapper}>
                     <SubmitButton isSubmitting={isSubmitting}
                                   onClick={submit}
                                   isFullWidth={true}
                                   disabled={isSubmitting}>
-                        {hasSubscription ? 'Update subscription' : 'Start subscription'}
+                        {getButtonText(hasSubscription, plan.isTrial)}
                     </SubmitButton>
                 </div>
                 {hadSubmissionError && (

@@ -37,6 +37,7 @@
 
 .PlanWrapper {
     width: calc(33% - 15px);
+    margin-bottom: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
 }
@@ -65,13 +66,11 @@
 @media (max-width: 1000px) {
     .PlanWrapper {
         width: calc(50% - 15px);
-        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 700px) {
     .PlanWrapper {
         width: 100%;
-        margin-bottom: 20px;
     }
 }

@@ -57,7 +57,6 @@ const Questionnaire = () => {
 
     const slides = !!player ? [
         slideName.Intro,
-        slideName.Name,
         slideName.Position,
         slideName.Age,
         slideName.Equipment,

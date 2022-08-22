@@ -109,6 +109,13 @@ class HttpClient {
         }
     }
 
+    getSubscriptionHistory = async (playerId) => {
+        const response = await this.#client.invokeApi({}, '/player/subscription-history/get', 'POST', {}, {
+            playerId: playerId,
+        });
+        return response.data.subscriptions;
+    }
+
     cancelSubscription = async () => {
         await this.#client.invokeApi({}, '/player/subscription/cancel', 'POST', {}, {
             token: this.#authToken,

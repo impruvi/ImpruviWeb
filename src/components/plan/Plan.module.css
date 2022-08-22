@@ -1,9 +1,25 @@
 .Container {
-    padding: 30px;
     background-color: white;
     border-radius: 10px;
+    overflow: hidden;
     color: black;
     text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.TrialBanner {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    font-weight: bold;
+}
+
+.Content {
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .Title {

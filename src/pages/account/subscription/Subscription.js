@@ -82,7 +82,15 @@ const Subscription = () => {
         return subscription.cancelAtEndOfPeriod && !player.queuedSubscription;
     }
 
+    const isTrialSubscription = () => {
+        return subscription.plan.isTrial;
+    }
+
     const getNextPaymentDate = () => {
+        if (!!queuedSubscriptionPlan && !isTrialSubscription()) {
+            return '-'
+        }
+
         return moment.unix(subscription.currentPeriodEndDateEpochMillis / 1000).format('dddd, MMMM Do, YYYY');
     }
 
@@ -113,11 +121,11 @@ const Subscription = () => {
                             <>
                                 <div className={classes.Subtitle}>
                                     {subscription.plan.type}
-                                    {isSubscriptionCancelled() && (
+                                    {isSubscriptionCancelled() && !isTrialSubscription() && (
                                         <div className={classes.Badge}>Cancelled</div>
                                     )}
                                 </div>
-                                {isSubscriptionCancelled() && (
+                                {isSubscriptionCancelled() && !isTrialSubscription() && (
                                     <InfoBox icon={WarningBlue}>
                                         <div>
                                             Your subscription is paid until {getNextPaymentDate()}. After
@@ -125,32 +133,33 @@ const Subscription = () => {
                                         </div>
                                     </InfoBox>
                                 )}
-                                {!isSubscriptionCancelled() && (
+                                {(!isSubscriptionCancelled() || isTrialSubscription()) && (
                                     <Details subscriptionPlan={subscription.plan}
-                                             nextPaymentDate={!queuedSubscriptionPlan ? getNextPaymentDate() : '-'}/>
+                                             nextPaymentDate={getNextPaymentDate()}/>
                                 )}
                                 {!!queuedSubscriptionPlan && (
                                     <InfoBox icon={InfoIcon}>
                                         <div className={classes.InfoBoxText}>
                                             Your subscription is set to update upon the next billing cycle to the following plan:
                                         </div>
-                                        <Details subscriptionPlan={queuedSubscriptionPlan} nextPaymentDate={getNextPaymentDate()}/>
+                                        <Details subscriptionPlan={queuedSubscriptionPlan}
+                                                 nextPaymentDate={getNextPaymentDate()}/>
                                     </InfoBox>
                                 )}
                                 <div className={classes.ActionButtons}>
-                                    {!isSubscriptionCancelled() && (
-                                        <>
-                                            <SubmitButton className={classes.ActionButtonSecondary}
-                                                          onClick={() => setIsChangePlanPopupOpen(true)}>
-                                                Change
-                                            </SubmitButton>
-                                            <SubmitButton className={classes.ActionButtonSecondary}
-                                                          onClick={() => setIsCancelPopupOpen(true)}>
-                                                Cancel
-                                            </SubmitButton>
-                                        </>
+                                    {(!isSubscriptionCancelled() || isTrialSubscription()) && (
+                                        <SubmitButton className={classes.ActionButtonSecondary}
+                                                      onClick={() => setIsChangePlanPopupOpen(true)}>
+                                            Change
+                                        </SubmitButton>
                                     )}
-                                    {isSubscriptionCancelled() && (
+                                    {!isSubscriptionCancelled() && !isTrialSubscription() && (
+                                        <SubmitButton className={classes.ActionButtonSecondary}
+                                                      onClick={() => setIsCancelPopupOpen(true)}>
+                                            Cancel
+                                        </SubmitButton>
+                                    )}
+                                    {isSubscriptionCancelled() && !isTrialSubscription() && (
                                         <>
                                             <SubmitButton className={classes.ActionButton}
                                                           onClick={reactivateSubscription}

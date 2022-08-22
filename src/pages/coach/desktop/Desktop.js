@@ -55,10 +55,6 @@ const Desktop = ({coach, player, isLoading, onChooseCoach}) => {
                                     <img src={ArrowRight} />
                                 </SubmitButton>
 
-                                {/*<div className={classes.ButtonPrimary} onClick={onChooseCoach}>*/}
-                                {/*    Choose coach*/}
-                                {/*    <img src={ArrowRight} />*/}
-                                {/*</div>*/}
                                 <div className={classes.ButtonSecondary} onClick={() => history.push('/how-it-works')}>
                                     How it works
                                 </div>

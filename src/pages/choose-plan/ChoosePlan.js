@@ -5,6 +5,7 @@ import Plan from "../../components/plan/Plan";
 import {useParams} from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import PlaceHolder from "./placeholder/PlaceHolder";
+import {getSubscriptionPlansForDisplay} from "../../util/subscriptionUtil";
 
 const ChoosePlan = () => {
 
@@ -24,18 +25,21 @@ const ChoosePlan = () => {
         }
         setIsLoading(true);
         try {
-            const [coach, player, subscription] = await Promise.all([
+            const [coach, player, subscription, subscriptionHistory] = await Promise.all([
                 httpClient.getCoach(coachId),
                 httpClient.getPlayer(playerId),
-                httpClient.getSubscription(playerId)
+                httpClient.getSubscription(playerId),
+                httpClient.getSubscriptionHistory(playerId)
             ]);
             setPlayer(player);
             setCoach(coach);
             setCurrentSubscription(subscription);
+
             const plans = await Promise.all(
                 coach.subscriptionPlanRefs.map(subscriptionPlanRef => httpClient.getSubscriptionPlan(subscriptionPlanRef))
             );
-            setSubscriptionPlans(plans.sort((p1, p2) => p1.unitAmount - p2.unitAmount));
+
+            setSubscriptionPlans(getSubscriptionPlansForDisplay(plans, subscription, subscriptionHistory));
         } catch (e) {
             console.log(e);
         }

@@ -4,11 +4,11 @@ import classes from './PlaceHolder.module.css';
 
 const PlaceHolder = () => {
     return (
-        <div className={classes.Container}>
+        <>
             <div className={classes.LinearBackground} />
             <div className={classes.LinearBackground} />
             <div className={classes.LinearBackground} />
-        </div>
+        </>
     );
 }
 

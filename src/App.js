@@ -5,7 +5,27 @@ import AppInner from "./AppInner";
 import {AuthProvider} from "./hooks/useAuth";
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from "@stripe/stripe-js";
-import {getStripePublishableKey} from "./env/env";
+import {getStripePublishableKey, shouldReportUserSessions} from "./env/env";
+import { datadogRum } from '@datadog/browser-rum';
+
+
+if (shouldReportUserSessions()) {
+    datadogRum.init({
+        applicationId: 'e3c81fd6-ae7a-4cdf-84b7-870cf845b7ab',
+        clientToken: 'pub47e0f94d03391043d2e6a8ef582b41f3',
+        site: 'datadoghq.com',
+        service:'impruvi',
+        env:'prod',
+        // Specify a version number to identify the deployed version of your application in Datadog
+        version: '1.0.0',
+        sampleRate: 100,
+        premiumSampleRate: 100,
+        trackInteractions: true,
+        defaultPrivacyLevel:'mask-user-input'
+    });
+
+    datadogRum.startSessionReplayRecording();
+}
 
 const stripePromise = loadStripe(getStripePublishableKey());
 

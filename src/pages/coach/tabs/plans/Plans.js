@@ -4,6 +4,7 @@ import useHttpClient from "../../../../hooks/useHttpClient";
 import Plan from "../../../../components/plan/Plan";
 import useAuth from "../../../../hooks/useAuth";
 import PlaceHolder from "./placeholder/PlaceHolder";
+import {getSubscriptionPlansForDisplay, isSameSubscriptionPlan} from "../../../../util/subscriptionUtil";
 
 const Plans = ({coach, player}) => {
 
@@ -17,15 +18,23 @@ const Plans = ({coach, player}) => {
     const initialize = useCallback(async () => {
         setIsLoading(true);
         try {
+            let subscriptionHistory = []
+            let activeSubscription = null;
             if (!!playerId) {
-                const subscription = await httpClient.getSubscription(playerId);
+                const [subscription, subscriptions] = await Promise.all([
+                    httpClient.getSubscription(playerId),
+                    httpClient.getSubscriptionHistory(playerId)
+                ])
                 setCurrentSubscription(subscription);
+                subscriptionHistory = subscriptions;
+                activeSubscription = subscription;
             }
 
             const plans = await Promise.all(
                 coach.subscriptionPlanRefs.map(subscriptionPlanRef => httpClient.getSubscriptionPlan(subscriptionPlanRef))
             );
-            setSubscriptionPlans(plans.sort((p1, p2) => p1.unitAmount - p2.unitAmount));
+
+            setSubscriptionPlans(getSubscriptionPlansForDisplay(plans, activeSubscription, subscriptionHistory));
         } catch (e) {
             console.log(e);
         }

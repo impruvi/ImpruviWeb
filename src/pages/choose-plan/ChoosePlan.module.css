@@ -24,31 +24,32 @@
 
 .Plans {
     width: 100%;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
 }
 
 .PlanWrapper {
-    width: calc(33% - 15px);
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 @media (max-width: 1000px) {
-    .PlanWrapper {
-        width: calc(50% - 15px);
-        margin-bottom: 20px;
+    .Plans {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    .Container {
-        padding: 0 var(--mobile-container-padding);
+    .Plans {
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .PlanWrapper {
-        width: 100%;
+    .Container {
+        padding: 0 var(--mobile-container-padding);
     }
 }

@@ -12,34 +12,6 @@
     font-weight: 600;
 }
 
-.InputLabel {
-    font-size: 12px;
-    font-weight: 500;
-    margin: 10px 0 5px 0;
-    color: #666;
-}
-
-.NameInput {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.NameInput::placeholder {
-    color: #bbb;
-}
-
-.CardInputWrapper {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
 .SubText {
     font-size: 12px;
     color: #888;
@@ -54,17 +26,6 @@
 
 .Form {
     margin-top: 30px;
-}
-
-.PaymentMethodWrapper {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .SubmitButtonWrapper {

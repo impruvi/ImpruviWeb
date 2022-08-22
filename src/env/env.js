@@ -4,7 +4,6 @@ const Domain = {
 }
 
 export const getApiGatewayEndpoint = () => {
-    console.log(process.env.REACT_APP_DOMAIN);
     switch (process.env.REACT_APP_DOMAIN) {
         case Domain.Beta:
             return 'https://pmpq5sqn7f.execute-api.us-west-2.amazonaws.com/prod';
@@ -20,4 +19,8 @@ export const getStripePublishableKey = () => {
         default:
             return 'pk_live_51LIhrlKA3EgJIYsfCYMcP85k1N7yb1tEm6l72j4XVWIFV1sclcx9scM6UBkQIgXyjGWlD1PHHdUlSQZ659ij1c4b00xrbJv9iO'
     }
+}
+
+export const shouldReportUserSessions = () => {
+    return process.env.REACT_APP_DOMAIN === Domain.Prod;
 }

@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import {hasPlayerCompletedQuestionnaire} from "../../util/playerUtil";
 import Desktop from "./desktop/Desktop";
 import Mobile from "./mobile/Mobile";
+import {isUUID} from "../../util/uuidUtil";
 
 const Coach = () => {
 
@@ -14,36 +15,38 @@ const Coach = () => {
     const [coach, setCoach] = useState();
 
     const history = useHistory();
-    const {coachId} = useParams();
+    const {slug} = useParams();
     const {playerId} = useAuth();
 
     const {httpClient} = useHttpClient();
 
     const onChooseCoach = () => {
         if (hasPlayerCompletedQuestionnaire(player)) {
-            history.push(`/coaches/${coachId}/choose-plan`)
+            history.push(`/coaches/${coach.coachId}/choose-plan`)
         } else {
-            history.push(`/coaches/${coachId}/questionnaire`)
+            history.push(`/coaches/${coach.coachId}/questionnaire`)
         }
     }
 
     const initialize = useCallback(async () => {
-        if (!coachId) {
+        if (!slug) {
             return;
         }
         setIsLoading(true);
         try {
             const [coach, player] = await Promise.all([
-                httpClient.getCoach(coachId),
+                isUUID(slug) ? httpClient.getCoach(slug) : httpClient.getCoachBySlug(slug), // kept for backwards compatibility if coaches had sent their link anywhere
                 !!playerId ? httpClient.getPlayer(playerId) : Promise.resolve()
             ]);
+            document.title = `Train with ${coach.firstName} ${coach.lastName} - Impruvi`;
+
             setCoach(coach);
             setPlayer(player)
         } catch (e) {
             console.log(e);
         }
         setIsLoading(false);
-    }, [httpClient, coachId, playerId]);
+    }, [httpClient, slug, playerId]);
 
     useEffect(() => {
         window.scrollTo(0, 0);

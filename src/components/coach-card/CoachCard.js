@@ -40,7 +40,7 @@ const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
              style={!!height ? {height: height} : {}}
              ref={ref}
              onMouseEnter={() => setIsHovered(true)}
-             onMouseLeave={() => setIsHovered(false)} onClick={() => history.push(`/coaches/${coach.coachId}`)}>
+             onMouseLeave={() => setIsHovered(false)} onClick={() => history.push(`/coaches/${coach.slug}`)}>
             {(!isMobile || !shouldConvertToLandscapeOnMobile) && (
                 <img src={coach.cardImagePortrait?.fileLocation}
                      className={isHovered ? classes.ImageHovered : classes.Image}

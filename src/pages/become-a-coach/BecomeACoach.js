@@ -6,6 +6,8 @@ import {useEffect} from 'react';
 const BecomeACoach = () => {
 
     useEffect(() => {
+        document.title = `Become a coach - Impruvi`;
+
         window.scrollTo(0, 0);
     }, []);
 

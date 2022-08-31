@@ -668,6 +668,335 @@ const Terms = () => {
                     As a result, any European Consumer can use such platform for resolving any dispute stemming from contracts which have been entered into online. The platform is available at the following link.
                 </div>
             </div>
+
+            <div className={classes.Section}>
+                <h1>Privacy Policy</h1>
+                <h2>
+                    Personal Data processed for the following purposes and using the following services:
+                </h2>
+                <h3>Analytics</h3>
+                <div>
+                    Google Analytics with anonymized IP and Google Analytics
+                    <br />
+                    Personal Data: Trackers; Usage Data
+                </div>
+                <h3>Beta Testing</h3>
+                <div>
+                    TestFlight
+                    <br />
+                    Personal Data: various types of Data as specified in the privacy policy of the service
+                </div>
+                <h3>Collection of privacy-related preferences</h3>
+                <div>
+                    iubenda Consent Solution
+                    <br />
+                    Personal Data: Data communicated while using the service; Trackers
+                    <br />
+                    iubenda Cookie Solution
+                    <br />
+                    Personal Data: Trackers
+                </div>
+                <h3>Contacting the User</h3>
+                <div>
+                    Mailing list or newsletter
+                    <br />
+                    Personal Data: first name
+                </div>
+                <h3>Device permissions for Personal Data access</h3>
+                <div>
+                    Personal Data: Camera permission; Microphone permission; Photo Library permission; Storage permission
+                </div>
+                <h3>Handling payments</h3>
+                <div>
+                    Stripe
+                    <br />
+                    Personal Data: billing address; email address; first name; last name; payment info
+                </div>
+                <h3>Infrastructure monitoring</h3>
+                <div>
+                    Datadog
+                    <br />
+                    Personal Data: various types of Data as specified in the privacy policy of the service
+                </div>
+
+                <h2>Contact information</h2>
+                <div>
+                    Owner and Data Controller
+                    <br />
+                    Levitate Sports LLC - 3627 Stone Way N
+                    <br />
+                    Owner contact email:ryancrowleysoccer@gmail.com
+                </div>
+            </div>
+
+            <div className={classes.Section}>
+                <h2>Full policy</h2>
+                <div>
+                    Owner and Data Controller
+                    <br />
+                    Levitate Sports LLC - 3627 Stone Way N
+                    <br />
+                    Owner contact email: ryancrowleysoccer@gmail.com
+                </div>
+
+                <h3>
+                    Types of Data collected
+                </h3>
+                <div>
+                    Among the types of Personal Data that impruviapp.com collects, by itself or through third parties, there are: Camera permission; Microphone permission; Storage permission; Photo Library permission; Trackers; Data communicated while using the service; payment info; first name; last name; email address; billing address; Usage Data.
+                </div>
+                <div>
+                    Complete details on each type of Personal Data collected are provided in the dedicated sections of this privacy policy or by specific explanation texts displayed prior to the Data collection.
+                </div>
+                <div>
+                    Personal Data may be freely provided by the User, or, in case of Usage Data, collected automatically when using impruviapp.com.
+                </div>
+                <div>
+                    Unless specified otherwise, all Data requested by impruviapp.com is mandatory and failure to provide this Data may make it impossible for impruviapp.com to provide its services. In cases where impruviapp.com specifically states that some Data is not mandatory, Users are free not to communicate this Data without consequences to the availability or the functioning of the Service.
+                </div>
+                <div>
+                    Users who are uncertain about which Personal Data is mandatory are welcome to contact the Owner.
+                </div>
+                <div>
+                    Any use of Cookies – or of other tracking tools – by impruviapp.com or by the owners of third-party services used by impruviapp.com serves the purpose of providing the Service required by the User, in addition to any other purposes described in the present document and in the Cookie Policy, if available.
+                </div>
+                <div>
+                    Users are responsible for any third-party Personal Data obtained, published or shared through impruviapp.com and confirm that they have the third party's consent to provide the Data to the Owner.
+                </div>
+
+                <h3>
+                    Mode and place of processing the Data
+                </h3>
+                <h4>
+                    Methods of processing
+                </h4>
+                <div>
+                    The Owner takes appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data.
+                </div>
+                <div>
+                    The Data processing is carried out using computers and/or IT enabled tools, following organizational procedures and modes strictly related to the purposes indicated. In addition to the Owner, in some cases, the Data may be accessible to certain types of persons in charge, involved with the operation of impruviapp.com (administration, sales, marketing, legal, system administration) or external parties (such as third-party technical service providers, mail carriers, hosting providers, IT companies, communications agencies) appointed, if necessary, as Data Processors by the Owner. The updated list of these parties may be requested from the Owner at any time.
+                </div>
+                <h4>
+                    Legal basis of processing
+                </h4>
+                <div>
+                    The Owner may process Personal Data relating to Users if one of the following applies:
+                </div>
+                <div>
+                    • Users have given their consent for one or more specific purposes. Note: Under some legislations the Owner may be allowed to process Personal Data until the User objects to such processing (“opt-out”), without having to rely on consent or any other of the following legal bases. This, however, does not apply, whenever the processing of Personal Data is subject to European data protection law;
+                </div>
+                <div>
+                    • provision of Data is necessary for the performance of an agreement with the User and/or for any pre-contractual obligations thereof;
+                </div>
+                <div>
+                    • processing is necessary for compliance with a legal obligation to which the Owner is subject;
+                </div>
+                <div>
+                    • processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in the Owner;
+                </div>
+                <div>
+                    • processing is necessary for the purposes of the legitimate interests pursued by the Owner or by a third party.
+                </div>
+                <div>
+                    In any case, the Owner will gladly help to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Data is a statutory or contractual requirement, or a requirement necessary to enter into a contract.
+                </div>
+                <h4>Place</h4>
+                <div>
+                    The Data is processed at the Owner's operating offices and in any other places where the parties involved in the processing are located.
+                </div>
+                <div>
+                    Depending on the User's location, data transfers may involve transferring the User's Data to a country other than their own. To find out more about the place of processing of such transferred Data, Users can check the section containing details about the processing of Personal Data.
+                </div>
+                <div>
+                    Users are also entitled to learn about the legal basis of Data transfers to a country outside the European Union or to any international organization governed by public international law or set up by two or more countries, such as the UN, and about the security measures taken by the Owner to safeguard their Data.
+                </div>
+                <div>
+                    If any such transfer takes place, Users can find out more by checking the relevant sections of this document or inquire with the Owner using the information provided in the contact section.
+                </div>
+                <h4>
+                    Retention time
+                </h4>
+                <div>
+                    Personal Data shall be processed and stored for as long as required by the purpose they have been collected for.
+                </div>
+                <div>
+                    Therefore:
+                </div>
+                <div>
+                    • Personal Data collected for purposes related to the performance of a contract between the Owner and the User shall be retained until such contract has been fully performed.
+                </div>
+                <div>
+                    • Personal Data collected for the purposes of the Owner’s legitimate interests shall be retained as long as needed to fulfill such purposes. Users may find specific information regarding the legitimate interests pursued by the Owner within the relevant sections of this document or by contacting the Owner.
+                </div>
+                <div>
+                    The Owner may be allowed to retain Personal Data for a longer period whenever the User has given consent to such processing, as long as such consent is not withdrawn. Furthermore, the Owner may be obliged to retain Personal Data for a longer period whenever required to do so for the performance of a legal obligation or upon order of an authority.
+                </div>
+                <div>
+                    Once the retention period expires, Personal Data shall be deleted. Therefore, the right of access, the right to erasure, the right to rectification and the right to data portability cannot be enforced after expiration of the retention period.
+                </div>
+
+                <h3>
+                    The purposes of processing
+                </h3>
+                <div>
+                    The Data concerning the User is collected to allow the Owner to provide its Service, comply with its legal obligations, respond to enforcement requests, protect its rights and interests (or those of its Users or third parties), detect any malicious or fraudulent activity, as well as the following: Beta Testing, Device permissions for Personal Data access, Collection of privacy-related preferences, Handling payments, Infrastructure monitoring, Analytics and Contacting the User.
+                </div>
+                <div>
+                    For specific information about the Personal Data used for each purpose, the User may refer to the section “Detailed information on the processing of Personal Data”.
+                </div>
+
+                <h3>
+                    Device permissions for Personal Data access
+                </h3>
+                <div>
+                    Depending on the User's specific device, impruviapp.com may request certain permissions that allow it to access the User's device Data as described below.
+                </div>
+                <div>
+                    By default, these permissions must be granted by the User before the respective information can be accessed. Once the permission has been given, it can be revoked by the User at any time. In order to revoke these permissions, Users may refer to the device settings or contact the Owner for support at the contact details provided in the present document.
+                </div>
+                <div>
+                    The exact procedure for controlling app permissions may be dependent on the User's device and software.
+                </div>
+                <div>
+                    Please note that the revoking of such permissions might impact the proper functioning of impruviapp.com.
+                </div>
+                <div>
+                    If User grants any of the permissions listed below, the respective Personal Data may be processed (i.e accessed to, modified or removed) by impruviapp.com.
+                </div>
+
+                <h4>Camera permission</h4>
+                <div>
+                    Used for accessing the camera or capturing images and video from the device.
+                </div>
+                <h4>Microphone permission</h4>
+                <div>
+                    Allows accessing and recording microphone audio from the User's device.
+                </div>
+                <h4>Photo Library permission</h4>
+                <div>
+                    Allows access to the User's Photo Library.
+                </div>
+                <h4>Storage permission</h4>
+                <div>
+                    Used for accessing shared external storage, including the reading and adding of any items.
+                </div>
+
+                <h3>
+                    Detailed information on the processing of Personal Data
+                </h3>
+                <div>
+                    Personal Data is collected for the following purposes and using the following services:
+                </div>
+                <div>
+                    • Analytics
+                </div>
+                <div>
+                    • Beta Testing
+                </div>
+                <div>
+                    • Collection of privacy-related preferences
+                </div>
+                <div>
+                    • Contacting the User
+                </div>
+                <div>
+                    • Device permissions for Personal Data access
+                </div>
+                <div>
+                    • Handling payments
+                </div>
+                <div>
+                    • Infrastructure monitoring
+                </div>
+
+                <h3>The rights of Users</h3>
+                <div>
+                    Users may exercise certain rights regarding their Data processed by the Owner.
+                </div>
+                <div>
+                    In particular, Users have the right to do the following:
+                </div>
+                <div>
+                    • Withdraw their consent at any time. Users have the right to withdraw consent where they have previously given their consent to the processing of their Personal Data.
+                </div>
+                <div>
+                    • Object to processing of their Data. Users have the right to object to the processing of their Data if the processing is carried out on a legal basis other than consent. Further details are provided in the dedicated section below.
+                </div>
+                <div>
+                    • Access their Data. Users have the right to learn if Data is being processed by the Owner, obtain disclosure regarding certain aspects of the processing and obtain a copy of the Data undergoing processing.
+                </div>
+                <div>
+                    • Verify and seek rectification. Users have the right to verify the accuracy of their Data and ask for it to be updated or corrected.
+                </div>
+                <div>
+                    • Restrict the processing of their Data. Users have the right, under certain circumstances, to restrict the processing of their Data. In this case, the Owner will not process their Data for any purpose other than storing it.
+                </div>
+                <div>
+                    • Have their Personal Data deleted or otherwise removed. Users have the right, under certain circumstances, to obtain the erasure of their Data from the Owner.
+                </div>
+                <div>
+                    • Receive their Data and have it transferred to another controller. Users have the right to receive their Data in a structured, commonly used and machine readable format and, if technically feasible, to have it transmitted to another controller without any hindrance. This provision is applicable provided that the Data is processed by automated means and that the processing is based on the User's consent, on a contract which the User is part of or on pre-contractual obligations thereof.
+                </div>
+                <div>
+                    • Lodge a complaint. Users have the right to bring a claim before their competent data protection authority.
+                </div>
+
+                <h4>
+                    Details about the right to object to processing
+                </h4>
+                <div>
+                    Where Personal Data is processed for a public interest, in the exercise of an official authority vested in the Owner or for the purposes of the legitimate interests pursued by the Owner, Users may object to such processing by providing a ground related to their particular situation to justify the objection.
+                </div>
+                <div>
+                    Users must know that, however, should their Personal Data be processed for direct marketing purposes, they can object to that processing at any time without providing any justification. To learn, whether the Owner is processing Personal Data for direct marketing purposes, Users may refer to the relevant sections of this document.
+                </div>
+                <h4>
+                    How to exercise these rights
+                </h4>
+                <div>
+                    Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document. These requests can be exercised free of charge and will be addressed by the Owner as early as possible and always within one month.
+                </div>
+
+                <h3>
+                    Additional information about Data collection and processing
+                </h3>
+                <h4>Legal action</h4>
+                <div>
+                    The User's Personal Data may be used for legal purposes by the Owner in Court or in the stages leading to possible legal action arising from improper use of impruviapp.com or the related Services.
+                </div>
+                <div>
+                    The User declares to be aware that the Owner may be required to reveal personal data upon request of public authorities.
+                </div>
+                <h4>
+                    Additional information about User's Personal Data
+                </h4>
+                <div>
+                    In addition to the information contained in this privacy policy, impruviapp.com may provide the User with additional and contextual information concerning particular Services or the collection and processing of Personal Data upon request.
+                </div>
+                <h4>System logs and maintenance</h4>
+                <div>
+                    For operation and maintenance purposes, impruviapp.com and any third-party services may collect files that record interaction with impruviapp.com (System logs) use other Personal Data (such as the IP Address) for this purpose.
+                </div>
+                <h4>Information not contained in this policy</h4>
+                <div>
+                    More details concerning the collection or processing of Personal Data may be requested from the Owner at any time. Please see the contact information at the beginning of this document.
+                </div>
+                <h4>How “Do Not Track” requests are handled</h4>
+                <div>
+                    Impruviapp.com does not support “Do Not Track” requests.
+                </div>
+                <div>
+                    To determine whether any of the third-party services it uses honor the “Do Not Track” requests, please read their privacy policies.
+                </div>
+                <h4>Changes to this privacy policy</h4>
+                <div>
+                    The Owner reserves the right to make changes to this privacy policy at any time by notifying its Users on this page and possibly within impruviapp.com and/or - as far as technically and legally feasible - sending a notice to Users via any contact information available to the Owner. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom.
+                </div>
+                <div>
+                    Should the changes affect processing activities performed on the basis of the User’s consent, the Owner shall collect new consent from the User, where required.
+                </div>
+            </div>
+
         </div>
     )
 }

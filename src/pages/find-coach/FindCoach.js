@@ -12,6 +12,8 @@ const FindCoach = () => {
     const {httpClient} = useHttpClient();
 
     const initialize = useCallback(async () => {
+        document.title = 'Find a coach - Impruvi';
+
         setIsLoading(true);
         try {
             const coaches = await httpClient.listCoaches();

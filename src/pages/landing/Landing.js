@@ -6,7 +6,7 @@ import WhyImpruvi from "./why-impruvi/WhyImpruvi";
 import ForCoaches from "./for-coaches/ForCoaches";
 import FrequentlyAskedQuestions from "../../components/faq/FrequentlyAskedQuestions";
 import Footer from "../../components/footer/Footer";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 
 const Landing = () => {
 
@@ -17,6 +17,10 @@ const Landing = () => {
             howItWorksRef.current.scrollIntoView({behavior: 'smooth'})
         }
     }
+
+    useEffect(() => {
+        document.title = `Impruvi | Soccer Training`;
+    }, []);
 
     return (
         <div className={classes.Container}>

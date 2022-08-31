@@ -6,6 +6,8 @@ import {useEffect} from "react";
 const Contact = () => {
 
     useEffect(() => {
+        document.title = 'Contact us - Impruvi';
+
         window.scrollTo(0, 0);
     }, []);
 

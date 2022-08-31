@@ -6,6 +6,8 @@ import classes from './HowItWorks.module.css';
 const HowItWorks = () => {
 
     useEffect(() => {
+        document.title = 'How it works - Impruvi';
+
         window.scrollTo(0, 0);
     }, []);
 

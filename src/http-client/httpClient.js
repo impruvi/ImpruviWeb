@@ -199,6 +199,21 @@ class HttpClient {
         return response.data.coach;
     }
 
+    getCoachBySlug = async (slug) => {
+        const response = await this.#client.invokeApi({}, '/coach/get-by-slug', 'POST', {},{
+            slug: slug
+        });
+        return response.data.coach;
+    }
+
+    getDrillsForCoach = async (coachId) => {
+        const response = await this.#client.invokeApi({}, '/drills/coach/get', 'POST', {}, {
+            coachId: coachId
+        });
+
+        return response.data;
+    }
+
     getMediaUploadUrl = async (pathPrefix) => {
         const response = await this.#client.invokeApi({}, '/media-upload-url/generate', 'POST', {}, {
             pathPrefix,

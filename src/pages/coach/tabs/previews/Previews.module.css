@@ -1,0 +1,23 @@
+.Container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Preview {
+    width: calc(33% - 20px);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+    .Preview {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 700px) {
+    .Preview {
+        width: 100%;
+    }
+}

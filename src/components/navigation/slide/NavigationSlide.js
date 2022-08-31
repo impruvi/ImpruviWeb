@@ -94,7 +94,7 @@ const NavigationSlide = ({isOpen, close}) =>  {
                         <div className={[classes.FooterOption, classes.FooterOptionClickable].join(' ')} onClick={() => navigateToLink('/terms')}>
                             Terms of Service
                         </div>
-                        <div className={classes.FooterOption}>
+                        <div className={[classes.FooterOption, classes.FooterOptionClickable].join(' ')} onClick={() => navigateToLink('/privacy')}>
                             Privacy Policy
                         </div>
                         <div className={classes.FooterOption}>

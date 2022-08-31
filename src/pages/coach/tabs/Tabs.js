@@ -2,10 +2,12 @@ import classes from './Tabs.module.css';
 import {useState} from "react";
 import Overview from "./overview/Overview";
 import Plans from "./plans/Plans";
+import Previews from "./previews/Previews";
 
 const tabs = {
     Overview: 'Overview',
-    Plans: 'Pricing and Plans'
+    Plans: 'Pricing and Plans',
+    Previews: 'Previews'
 }
 
 const Tabs = ({coach, player}) => {
@@ -30,6 +32,9 @@ const Tabs = ({coach, player}) => {
             )}
             {selectedTab === tabs.Plans && (
                 <Plans coach={coach} player={player}/>
+            )}
+            {selectedTab === tabs.Previews && (
+                <Previews coach={coach} />
             )}
         </div>
     )

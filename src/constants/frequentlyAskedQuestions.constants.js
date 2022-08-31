@@ -45,13 +45,10 @@ export const frequentlyAskedQuestions = [
                         A customized training plan built by your chosen coach.
                     </li>
                     <li>
-                        Training sessions vary between 4-5 drills based on your plan
+                        Ability to submit videos and receive feedback for every drill
                     </li>
                     <li>
-                        Feedback on each drill you submit
-                    </li>
-                    <li>
-                        More content coming soon!
+                        Progress tracking and access to drill bank
                     </li>
                 </ul>
             </div>
@@ -59,6 +56,38 @@ export const frequentlyAskedQuestions = [
     },
     {
         id: '3',
+        question: 'Can I try it for free?',
+        answer: (
+            <div>
+                <ul className={classes.List}>
+                    <li>
+                        Yes! Download the app to start your free trial.
+                    </li>
+                    <li>
+                        Once your free trial is over, return to the website to purchase a training plan.
+                    </li>
+                </ul>
+            </div>
+        )
+    },
+    {
+        id: '4',
+        question: 'How long do I have to wait to begin training?',
+        answer: (
+            <div>
+                <ul className={classes.List}>
+                    <li>
+                        You don’t have to wait at all! Start training as soon as you download the app.
+                    </li>
+                    <li>
+                        Your expert coach has uploaded an intro session into your profile and will build you a custom plan following the completion of the intro session.
+                    </li>
+                </ul>
+            </div>
+        )
+    },
+    {
+        id: '5',
         question: 'How does billing work?',
         answer: (
             <div>
@@ -68,7 +97,7 @@ export const frequentlyAskedQuestions = [
         )
     },
     {
-        id: '4',
+        id: '6',
         question: 'Can I change my coach?',
         answer: (
             <div>
@@ -78,7 +107,7 @@ export const frequentlyAskedQuestions = [
         )
     },
     {
-        id: '5',
+        id: '7',
         question: 'Can I change my subscription?',
         answer: (
             <div>
@@ -88,7 +117,7 @@ export const frequentlyAskedQuestions = [
         )
     },
     {
-        id: '6',
+        id: '8',
         question: 'How do I cancel my subscription?',
         answer: (
             <div>

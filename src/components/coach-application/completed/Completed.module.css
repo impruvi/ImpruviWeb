@@ -1,0 +1,12 @@
+.Title {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin: 40px 0 10px 0;
+}
+
+.Subtitle {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+}

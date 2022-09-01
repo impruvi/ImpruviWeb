@@ -1,27 +1,59 @@
 import classes from './BecomeACoach.module.css';
 import Footer from "../../components/footer/Footer";
-import ContactOptions from "../../components/contact-options/ContactOptions";
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
+import {Helmet} from "react-helmet";
+import Quotes from "./quotes/Quotes";
+import useGlobalPopup, {popups} from "../../hooks/useGlobalPopup";
+
 
 const BecomeACoach = () => {
 
-    useEffect(() => {
-        document.title = `Become a coach - Impruvi`;
+    const {setOpenPopup} = useGlobalPopup();
 
+    useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return (
         <div className={classes.Container}>
-            <div className={classes.Title}>Become a coach</div>
-            <div className={classes.Subtitle}>
-                Want to become a coach? Text or email us and we will start the process
-                within 24 hours.
+            <Helmet>
+                <title>Become a coach - Impruvi</title>
+                <meta name="description" content="Work with your current client base, find new markets, and expand your business. Apply to become a coach here."/>
+            </Helmet>
+            <div className={classes.Header}>
+                <div className={classes.HeaderContent}>
+                    <div className={classes.HeaderTitle}>
+                        Work with your current client base, find new markets, and expand your business
+                    </div>
+                    <div className={classes.HeaderApplyButton} onClick={() => setOpenPopup(popups.CoachApplication)}>
+                        Apply
+                    </div>
+                </div>
             </div>
-            <div className={classes.ContactOptionsWrapper}>
-                <ContactOptions />
+            <div className={classes.Goal}>
+                <div className={classes.GoalContent}>
+                    <div className={classes.GoalLeft}>
+                        <div className={classes.GoalLeftTitle}>Anywhere, anytime</div>
+                        <div className={classes.GoalApplyButton} onClick={() => setOpenPopup(popups.CoachApplication)}>
+                            Apply
+                        </div>
+                    </div>
+                    <div className={classes.GoalRight}>
+                        Our goal is to provide a platform for you to grow your business and help players improve without
+                        having to deal with the physical  constraints of in-person training. Whether you offer imprüvi
+                        as a supplement to your current clients, or look to work with players outside of your geographic
+                        region, we are here for you.
+                    </div>
+                </div>
             </div>
-            <Footer />
+            <div className={classes.Quotes}>
+                <div className={classes.QuotesContent}>
+                    <Quotes />
+                </div>
+            </div>
+            <div className={classes.FooterWrapper}>
+                <Footer />
+            </div>
         </div>
     )
 }

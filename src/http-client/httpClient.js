@@ -66,6 +66,18 @@ class HttpClient {
         return result.data;
     }
 
+    createCoachApplication = async ({firstName, lastName, email, phoneNumber, experience}) => {
+        await this.#client.invokeApi({}, '/coach/application/create', 'POST', {}, {
+            application: {
+                firstName,
+                lastName,
+                email,
+                phoneNumber,
+                experience
+            }
+        });
+    }
+
     createSubscription = async ({paymentMethodId, coachId, stripeProductId, stripePriceId}) => {
         await this.#client.invokeApi({}, '/player/subscription/create', 'POST', {}, {
             token: this.#authToken,

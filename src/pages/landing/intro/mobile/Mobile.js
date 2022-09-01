@@ -23,7 +23,7 @@ const Mobile = () => {
                 <div className={classes.ActionButtons}>
                     <div className={classes.ActionButtonWrapper}>
                         <SubmitButton className={classes.ButtonPrimary}
-                                      onClick={() => history.push('/find-coach')}>
+                                      onClick={() => history.push('/coaches')}>
                             Get started
                             <img src={ArrowRight} />
                         </SubmitButton>

@@ -4,7 +4,7 @@
 # exit when any command fails
 set -e
 
-domain='beta'
+domain='prod'
 distribution_id='E2VA0U1BD87QZT'
 if [ "$domain" = "prod" ]; then
   distribution_id='E2VA0U1BD87QZT'

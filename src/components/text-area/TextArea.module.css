@@ -1,23 +1,41 @@
-.Container {
+.LabelFocused {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    color: rgba(10, 37, 64, 1);
+    font-size: 13px;
+    transition: top .1s linear, font-size .1s linear, left .1s linear;
+}
+
+.LabelUnfocused {
+    position: absolute;
+    font-size: 14px;
+    top: 15px;
+    left: 5px;
+    color: rgba(10, 37, 64, 1);
+    transition: top .1s linear, font-size .1s linear, left .1s linear;
+}
+
+.ContainerOuter {
     width: 100%;
     position: relative;
 }
 
-.TextArea {
+.Container {
     width: 100%;
-    border-radius: 3px;
-    background-color: white;
-    font-size: 16px;
-    height: 40px;
-    outline: none;
-    border: 1px solid #cdd6e5;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 15px;
     box-sizing: border-box;
     position: relative;
-    min-height: 100px;
-    padding: 10px;
-    resize: vertical;
-    overflow-y: scroll;
-    box-shadow: none;
+    margin: 10px 0;
+    -webkit-box-shadow: 0 0 0 1px rgba(218, 221, 226, 1);
+    box-shadow: 0 0 0 1px rgba(218, 221, 226, 1);
+}
+
+.ContainerFocused {
+    -webkit-box-shadow: 0 0 0 2px var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 .Error {
@@ -30,12 +48,33 @@
     margin-right: 3px;
 }
 
-.TextAreaError {
-    outline: 2px solid #D93025 !important;
+.ContainerError {
+    -webkit-box-shadow: 0 0 0 2px #D93025;
+    box-shadow: 0 0 0 2px #D93025;
 }
 
-.TextArea::placeholder {
-    font-style: italic;
-    font-size: 14px;
-    color: #a8aebd;
+.Container textarea {
+    font-size: 16px;
+    padding: 20px 5px 0 5px;
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    max-height: 150px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background: none;
+    resize: none;
+}
+
+.Container textarea::-webkit-textfield-decoration-container {
+    visibility: hidden;
+}
+
+.Icon {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 10px);
+    color: var(--color-primary);
+    font-size: 16px;
 }

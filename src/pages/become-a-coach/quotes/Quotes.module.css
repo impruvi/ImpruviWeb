@@ -1,0 +1,107 @@
+.Container {
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.Slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ActiveSlide {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 1;
+    transition: opacity 300ms linear;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 300ms;
+}
+
+.TransitioningSlide {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 300ms;
+    transition: opacity 300ms linear;
+}
+
+.HiddenSlide {
+    display: none;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 300ms;
+    transition: opacity 300ms linear;
+}
+
+.ImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Image {
+    width: 125px;
+}
+
+.Titles {
+    padding: 10px 0;
+}
+
+.Title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 1px 0;
+}
+
+.Quote {
+    padding: 10px 30px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.Controls {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.Arrows {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ArrowImage {
+    cursor: pointer;
+    width: 40px;
+}
+
+.Index {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.Dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #B5B5B5;
+    margin: 0 2px;
+}
+
+.DotActive {
+    background-color: black;
+}
+
+@media (max-width: 700px) {
+    .Quote {
+        padding: 10px 0;
+    }
+}

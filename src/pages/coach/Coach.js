@@ -1,12 +1,13 @@
 import classes from './Coach.module.css';
 import {useHistory, useParams} from "react-router-dom";
 import useHttpClient from "../../hooks/useHttpClient";
-import {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import useAuth from "../../hooks/useAuth";
 import {hasPlayerCompletedQuestionnaire} from "../../util/playerUtil";
 import Desktop from "./desktop/Desktop";
 import Mobile from "./mobile/Mobile";
 import {isUUID} from "../../util/uuidUtil";
+import {Helmet} from "react-helmet";
 
 const Coach = () => {
 
@@ -38,8 +39,6 @@ const Coach = () => {
                 isUUID(slug) ? httpClient.getCoach(slug) : httpClient.getCoachBySlug(slug), // kept for backwards compatibility if coaches had sent their link anywhere
                 !!playerId ? httpClient.getPlayer(playerId) : Promise.resolve()
             ]);
-            document.title = `Train with ${coach.firstName} ${coach.lastName} - Impruvi`;
-
             setCoach(coach);
             setPlayer(player)
         } catch (e) {
@@ -55,6 +54,12 @@ const Coach = () => {
 
     return (
         <>
+            {!!coach && (
+                <Helmet>
+                    <title>Train with {coach.firstName} {coach.lastName} - Impruvi</title>
+                    <meta name="description" content={`Train with ${coach.firstName} ${coach.lastName} from anywhere in the world. Receive custom training plans and video feedback for each drill you perform.`}/>
+                </Helmet>
+            )}
             <div className={classes.Desktop}>
                 <Desktop coach={coach}
                          player={player}

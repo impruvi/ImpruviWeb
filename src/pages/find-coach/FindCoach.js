@@ -4,6 +4,7 @@ import useHttpClient from "../../hooks/useHttpClient";
 import CoachCard from "../../components/coach-card/CoachCard";
 import Footer from "../../components/footer/Footer";
 import PlaceHolder from "./placeholder/PlaceHolder";
+import {Helmet} from "react-helmet";
 
 const FindCoach = () => {
 
@@ -12,8 +13,6 @@ const FindCoach = () => {
     const {httpClient} = useHttpClient();
 
     const initialize = useCallback(async () => {
-        document.title = 'Find a coach - Impruvi';
-
         setIsLoading(true);
         try {
             const coaches = await httpClient.listCoaches();
@@ -34,6 +33,11 @@ const FindCoach = () => {
 
     return (
         <div className={classes.Container}>
+            <Helmet>
+                <title>Find a coach - Impruvi</title>
+                <meta name="description" content="Find your perfect soccer coach. Work with coaches from anywhere in the world. Receive custom training plans and video feedback for each drill you perform."/>
+            </Helmet>
+
             <div className={classes.Content}>
                 <div className={classes.Title}>
                     Choose your expert coach

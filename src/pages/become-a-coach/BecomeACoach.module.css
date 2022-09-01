@@ -1,34 +1,137 @@
 .Container {
     width: 100%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 30px var(--desktop-container-padding);
     box-sizing: border-box;
 }
 
-.Title {
+.Header {
+    background: url("../../assets/CoachesMosaicDark.jpg") no-repeat;
+    background-size: cover;
     width: 100%;
-    font-size: 40px;
+    padding: 150px 0 75px 0;
+    box-sizing: border-box;
+}
+
+.HeaderContent {
+    max-width: 1000px;
+    padding: 0 var(--desktop-container-padding);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.HeaderTitle {
+    color: white;
+    font-size: 70px;
     font-weight: 700;
     text-align: center;
 }
 
-.Subtitle {
-    width: 100%;
-    text-align: center;
-    margin: 25px 0;
+.HeaderApplyButton {
+    background-color: white;
+    padding: 13px 50px;
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 50px;
 }
 
-.ContactOptionsWrapper {
-    margin-bottom: 100px;
+.Goal {
+    width: 100%;
+}
+
+.GoalContent {
+    max-width: 1000px;
+    padding: 75px var(--desktop-container-padding);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.GoalLeft {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.GoalLeftTitle {
+    font-size: 40px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+.GoalApplyButton {
+    background-color: var(--color-primary);
+    padding: 13px 50px;
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    margin-top: 25px;
+}
+
+.GoalRight {
+    width: 50%;
+    font-size: 18px;
+}
+
+.Quotes {
+    background-color: #F2F2F2;
+    width: 100%;
+}
+
+.QuotesContent {
+    max-width: 1000px;
+    padding: 0 var(--desktop-container-padding);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.FooterWrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 var(--desktop-container-padding);
+}
+
+@media (max-width: 1100px) {
+    .HeaderTitle {
+        font-size: 50px;
+    }
 }
 
 @media (max-width: 700px) {
-    .Container {
+    .Header {
+        padding: 75px 0 50px 0;
+    }
+
+    .HeaderTitle {
+        font-size: 33px;
+    }
+
+    .GoalLeft {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .GoalRight {
+        width: 100%;
+    }
+
+    .FooterWrapper {
         padding: 0 var(--mobile-container-padding);
     }
 }

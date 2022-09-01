@@ -60,7 +60,7 @@ const ChangePopup = ({close}) => {
                         <div className={classes.Subtitle}>
                             <div>{coach.firstName}'s plans</div>
                             <div className={classes.FindNewButton}
-                                 onClick={() => history.push('/find-coach')}>Find a new coach</div>
+                                 onClick={() => history.push('/coaches')}>Find a new coach</div>
                         </div>
                         {subscriptionPlans.map(subscriptionPlan => (
                             <div className={classes.PlanWrapper}>

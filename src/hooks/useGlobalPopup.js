@@ -6,6 +6,7 @@ export const popups = {
     SignIn: 'SignIn',
     SignUp: 'SignUp',
     ResetPassword: 'ResetPassword',
+    CoachApplication: 'CoachApplication'
 }
 
 export const GlobalPopupProvider = ({children}) => {

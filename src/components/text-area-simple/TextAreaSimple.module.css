@@ -1,0 +1,41 @@
+.Container {
+    width: 100%;
+    position: relative;
+}
+
+.TextArea {
+    width: 100%;
+    border-radius: 3px;
+    background-color: white;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #cdd6e5;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+    overflow-y: scroll;
+    box-shadow: none;
+}
+
+.Error {
+    color: #D93025;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.Error i {
+    margin-right: 3px;
+}
+
+.TextAreaError {
+    outline: 2px solid #D93025 !important;
+}
+
+.TextArea::placeholder {
+    font-style: italic;
+    font-size: 14px;
+    color: #a8aebd;
+}

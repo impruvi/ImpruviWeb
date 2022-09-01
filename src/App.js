@@ -7,6 +7,14 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from "@stripe/stripe-js";
 import {getStripePublishableKey, shouldReportUserSessions} from "./env/env";
 import { datadogRum } from '@datadog/browser-rum';
+import TagManager from 'react-gtm-module'
+
+
+const tagManagerArgs = {
+    gtmId: 'GTM-NR8TKM5'
+}
+
+TagManager.initialize(tagManagerArgs)
 
 
 if (shouldReportUserSessions()) {

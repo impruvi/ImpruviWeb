@@ -18,10 +18,6 @@ const Landing = () => {
         }
     }
 
-    useEffect(() => {
-        document.title = `Impruvi | Soccer Training`;
-    }, []);
-
     return (
         <div className={classes.Container}>
             <Intro scrollToHowItWorks={scrollToHowItWorks}/>

@@ -112,7 +112,7 @@ const Subscription = () => {
                                 <div className={classes.NoSubscriptionText}>
                                     You don't have any active subscription
                                 </div>
-                                <SubmitButton onClick={() => history.push('/find-coach')} className={classes.ButtonPrimary}>
+                                <SubmitButton onClick={() => history.push('/coaches')} className={classes.ButtonPrimary}>
                                     Choose a coach
                                 </SubmitButton>
                             </div>

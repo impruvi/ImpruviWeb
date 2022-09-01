@@ -17,29 +17,12 @@ import Account from "./pages/account/Account";
 import NavigationBar from "./components/navigation/NavigationBar";
 import Terms from "./pages/terms/Terms";
 import SubscriptionUpdated from "./pages/subscription-updated/SubscriptionUpdated";
-import {useEffect} from "react";
-import axios from 'axios'
-
-
-const blackListedIPs = [
-    '71.78.212.171',
-]
+import CoachApplicationPopup from "./components/coach-application/CoachApplicationPopup";
 
 const AppInner = () => {
 
     const location = useLocation();
     const {openPopup} = useGlobalPopup();
-
-    const getData = async () => {
-        const res = await axios.get('https://geolocation-db.com/json/')
-        if (blackListedIPs.includes(res.data.IPv4)) {
-            window.location.href = 'https://www.google.com';
-        }
-    }
-
-    useEffect(() => {
-        getData();
-    }, []);
 
     return (
         <div className={classes.App}>
@@ -56,7 +39,7 @@ const AppInner = () => {
                 <Route path="/coaches/:coachId/choose-plan" component={ChoosePlan} />
                 <Route path="/coaches/:coachId/questionnaire" component={Questionnaire} />
                 <Route path="/coaches/:slug" component={Coach} />
-                <Route path="/find-coach" component={FindCoach} />
+                <Route path="/coaches" component={FindCoach} />
                 <Route path="/how-it-works" component={HowItWorks} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/become-a-coach" component={BecomeACoach} />
@@ -66,6 +49,7 @@ const AppInner = () => {
             {openPopup === popups.SignIn && <SigninPopup />}
             {openPopup === popups.SignUp && <SignupPopup />}
             {openPopup === popups.ResetPassword && <ResetPassword />}
+            {openPopup === popups.CoachApplication && <CoachApplicationPopup />}
         </div>
     )
 }

@@ -5,7 +5,7 @@ import ImpruviIcon from "../../assets/ImpruviIconCircle.png";
 
 const AuthPopup = ({close, title, subtitle, children}) => {
     return (
-        <Popup onClickOutside={close}>
+        <Popup>
             <div className={classes.Container}>
                 <div className={classes.CloseIcon} onClick={close}>
                     <img src={XMarkIcon} />

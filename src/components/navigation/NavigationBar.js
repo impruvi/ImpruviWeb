@@ -43,7 +43,7 @@ const NavigationBar = ({mode= 'light' }) => {
                     <div className={mode === 'light' ? classes.NavRightOption : darkClasses.NavRightOption} onClick={() => history.push('/how-it-works')}>
                         How it works
                     </div>
-                    <div className={mode === 'light' ? classes.NavRightOption : darkClasses.NavRightOption} onClick={() => history.push('/find-coach')}>
+                    <div className={mode === 'light' ? classes.NavRightOption : darkClasses.NavRightOption} onClick={() => history.push('/coaches')}>
                         Find a coach
                     </div>
                     <div className={mode === 'light' ? classes.NavRightOption : darkClasses.NavRightOption} onClick={() => history.push('/become-a-coach')}>

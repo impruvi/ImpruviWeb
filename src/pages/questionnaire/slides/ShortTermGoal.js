@@ -1,5 +1,5 @@
 import classes from './QuestionnaireSlide.module.css';
-import TextArea from "../../../components/text-area/TextArea";
+import TextAreaSimple from "../../../components/text-area-simple/TextAreaSimple";
 import ActionButtons from "../action-buttons/ActionButtons";
 
 const ShortTermGoal = ({shortTermGoal, setShortTermGoal, advance, goBack}) => {
@@ -9,7 +9,7 @@ const ShortTermGoal = ({shortTermGoal, setShortTermGoal, advance, goBack}) => {
             <div className={classes.Title}>What are your goals for the next month?</div>
             <div className={classes.Subtitle}>ex. improve my left foot finishing</div>
             <div className={classes.TextInputWrapper}>
-                <TextArea value={shortTermGoal} placeholder={'Type here...'} onChange={setShortTermGoal}/>
+                <TextAreaSimple value={shortTermGoal} placeholder={'Type here...'} onChange={setShortTermGoal}/>
             </div>
             <ActionButtons onPrimaryClick={advance}
                            onSecondaryClick={goBack}

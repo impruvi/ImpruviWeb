@@ -1,0 +1,8 @@
+.Section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.SectionHalf {
+    width: calc(50% - 5px);
+}

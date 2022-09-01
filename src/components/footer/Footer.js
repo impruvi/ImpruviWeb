@@ -11,7 +11,7 @@ const Footer = ({mode='light'}) => {
             <div className={classes.Section}>
                 <div className={classes.SectionTitle}>About</div>
                 <div className={classes.Option} onClick={() => history.push('/how-it-works')}>How it works</div>
-                <div className={classes.Option} onClick={() => history.push('/find-coach')}>Find a coach</div>
+                <div className={classes.Option} onClick={() => history.push('/coaches')}>Find a coach</div>
                 <div className={classes.Option} onClick={() => history.push('/become-a-coach')}>Become a coach</div>
                 <div className={classes.Option} onClick={() => history.push('/contact')}>Contact</div>
                 <div className={classes.Option} onClick={() => history.push('/terms')}>Terms and conditions</div>

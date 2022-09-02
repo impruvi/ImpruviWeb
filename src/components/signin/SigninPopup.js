@@ -8,14 +8,16 @@ import useHttpClient from "../../hooks/useHttpClient";
 import useAuth from "../../hooks/useAuth";
 import SubmitButton from "../submit-button/SubmitButton";
 import AuthSubtitle from "../auth-subtitle/AuthSubtitle";
+import useGoogleAnalyticsClient from "../../hooks/useGoogleAnalyticsClient";
 
 
 const SigninPopup = () => {
 
     const {httpClient} = useHttpClient();
+    const {gaClient} = useGoogleAnalyticsClient();
     const {setToken, setPlayerId} = useAuth();
-
     const {setOpenPopup} = useGlobalPopup();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
@@ -78,6 +80,7 @@ const SigninPopup = () => {
                 });
                 setToken(result.token);
                 setPlayerId(result.player.playerId);
+                gaClient.sendGeneralEvent("login");
                 close();
             } catch (e) {
                 setIsSubmissionErrorShowing(true);

@@ -15,6 +15,7 @@ import useHttpClient from "../../hooks/useHttpClient";
 import useAuth from "../../hooks/useAuth";
 import Spinner from "../../components/spinner/Spinner";
 import CompleteSignup from "./slides/CompleteSignup";
+import useGoogleAnalyticsClient from "../../hooks/useGoogleAnalyticsClient";
 
 
 const slideName = {
@@ -36,6 +37,7 @@ const Questionnaire = () => {
     const history = useHistory();
     const {coachId} = useParams();
     const {httpClient} = useHttpClient();
+    const {gaClient} = useGoogleAnalyticsClient();
     const {token, playerId, setToken, setPlayerId} = useAuth();
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -79,6 +81,7 @@ const Questionnaire = () => {
     ];
 
     const submit = () => {
+        gaClient.sendGeneralEvent("questionnaire_completed");
         history.push(`/coaches/${coachId}/choose-plan`)
     }
 

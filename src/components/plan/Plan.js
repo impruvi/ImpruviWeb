@@ -2,15 +2,18 @@ import classes from './Plan.module.css';
 import {useHistory} from "react-router-dom";
 import SubmitButton from "../submit-button/SubmitButton";
 import {hasPlayerCompletedQuestionnaire} from "../../util/playerUtil";
+import useGoogleAnalyticsClient from "../../hooks/useGoogleAnalyticsClient";
 
 const Plan = ({player, plan, coach, isActive}) => {
 
     const history = useHistory();
+    const {gaClient} = useGoogleAnalyticsClient();
 
     const navigateToPlan = () => {
         if (!hasPlayerCompletedQuestionnaire(player)) {
             history.push(`/coaches/${coach.coachId}/questionnaire`);
         } else {
+            gaClient.sendGeneralEvent("plan_chosen");
             history.push(`/coaches/${coach.coachId}/product/${plan.stripeProductId}/price/${plan.stripePriceId}/checkout`);
         }
     }

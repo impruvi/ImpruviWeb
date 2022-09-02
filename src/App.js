@@ -7,15 +7,10 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from "@stripe/stripe-js";
 import {getStripePublishableKey, shouldReportUserSessions} from "./env/env";
 import { datadogRum } from '@datadog/browser-rum';
-import TagManager from 'react-gtm-module'
+import ReactGA from "react-ga4";
+import {GoogleAnalyticsClientProvider} from "./hooks/useGoogleAnalyticsClient";
 
-
-const tagManagerArgs = {
-    gtmId: 'GTM-NR8TKM5'
-}
-
-TagManager.initialize(tagManagerArgs)
-
+ReactGA.initialize("G-82QGHMLMMY");
 
 if (shouldReportUserSessions()) {
     datadogRum.init({
@@ -43,7 +38,9 @@ function App() {
             <AuthProvider>
                 <GlobalPopupProvider>
                     <HttpClientProvider>
-                        <AppInner />
+                        <GoogleAnalyticsClientProvider>
+                            <AppInner />
+                        </GoogleAnalyticsClientProvider>
                     </HttpClientProvider>
                 </GlobalPopupProvider>
             </AuthProvider>

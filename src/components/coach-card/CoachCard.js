@@ -1,6 +1,7 @@
 import classes from './CoachCard.module.css';
 import {useEffect, useRef, useState} from "react";
 import {useHistory} from "react-router-dom";
+import useGoogleAnalyticsClient from "../../hooks/useGoogleAnalyticsClient";
 
 const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
 
@@ -9,7 +10,9 @@ const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
     const [isMobile, setIsMobile] = useState(false);
     const history = useHistory();
     const [isHovered, setIsHovered] = useState(false);
+
     const ref = useRef();
+    const {gaClient} = useGoogleAnalyticsClient();
 
     const onResize = () => {
         const isMobile = window.innerWidth <= 700;
@@ -26,6 +29,12 @@ const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
         setIsMobile(isMobile);
     }
 
+    const onClick = () => {
+        gaClient.sendGeneralEvent("choose_coach");
+        history.push(`/coaches/${coach.slug}`);
+    }
+
+
     useEffect(() => {
         onResize();
     }, [onResize]);
@@ -40,7 +49,8 @@ const CoachCard = ({coach, shouldConvertToLandscapeOnMobile}) => {
              style={!!height ? {height: height} : {}}
              ref={ref}
              onMouseEnter={() => setIsHovered(true)}
-             onMouseLeave={() => setIsHovered(false)} onClick={() => history.push(`/coaches/${coach.slug}`)}>
+             onMouseLeave={() => setIsHovered(false)}
+             onClick={onClick}>
             {(!isMobile || !shouldConvertToLandscapeOnMobile) && (
                 <img src={coach.cardImagePortrait?.fileLocation}
                      className={isHovered ? classes.ImageHovered : classes.Image}

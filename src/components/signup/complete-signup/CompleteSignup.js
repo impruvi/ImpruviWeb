@@ -4,11 +4,14 @@ import {useState} from "react";
 import TextInput from "../../text-input/TextInput";
 import SubmitButton from "../../submit-button/SubmitButton";
 import useAuth from "../../../hooks/useAuth";
+import ReactGA from "react-ga4";
+import useGoogleAnalyticsClient from "../../../hooks/useGoogleAnalyticsClient";
 
 const CompleteSignup = ({onComplete, playerId}) => {
 
     const {setPlayerId, setToken} = useAuth();
     const {httpClient} = useHttpClient();
+    const {gaClient} = useGoogleAnalyticsClient();
 
     const [code, setCode] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
@@ -56,6 +59,7 @@ const CompleteSignup = ({onComplete, playerId}) => {
                 const result = await httpClient.completeSignUp({playerId, code});
                 setToken(result.token);
                 setPlayerId(result.player.playerId);
+                gaClient.sendGeneralEvent( "sign_up");
                 onComplete();
             } catch (e) {
                 setIsSubmissionErrorShowing(true);

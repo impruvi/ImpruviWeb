@@ -7,6 +7,7 @@ import Payment from "./payment/Payment";
 import Spinner from "../../components/spinner/Spinner";
 import CurrentSubscriptionWarning from "./current-subscription-warning/CurrentSubscriptionWarning";
 import useAuth from "../../hooks/useAuth";
+import useGoogleAnalyticsClient from "../../hooks/useGoogleAnalyticsClient";
 
 const Checkout = () => {
 
@@ -18,6 +19,7 @@ const Checkout = () => {
     const {playerId} = useAuth();
     const {coachId, productId, priceId} = useParams();
     const {httpClient} = useHttpClient();
+    const {gaClient} = useGoogleAnalyticsClient();
 
     const initialize = useCallback(async () => {
         if (!coachId || !productId || !priceId || !playerId) {
@@ -37,6 +39,7 @@ const Checkout = () => {
             setCurrentSubscription(subscription);
             setCoach(coach);
             setPlan(plan);
+            gaClient.sendPurchaseSubscriptionEvent(plan.unitAmount / 100);
         } catch (e) {
             console.log('had an error here');
         }

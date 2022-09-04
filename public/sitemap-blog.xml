@@ -1,0 +1,10 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://impruviapp.com/blog/how-video-coaching-can-help-players/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-video-coaching-can-help-players/primary.jpg</image:loc>
+            <image:caption>primary.jpg</image:caption>
+        </image:image>
+        <changefreq>monthly</changefreq>
+    </url>
+</urlset>

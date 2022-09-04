@@ -74,6 +74,7 @@ const NavigationSlide = ({isOpen, close}) =>  {
                     <Option path={'/coaches'} text={'Find a coach'} close={close}/>
                     <Option path={'/become-a-coach'} text={'Become a coach'} close={close}/>
                     <Option path={'/contact'} text={'Contact'}  close={close}/>
+                    <Option path={'/blog'} text={'Blog'}  close={close}/>
                     {!!player && (
                         <div className={classes.NavOption} onClick={onSignout}>Logout</div>
                     )}

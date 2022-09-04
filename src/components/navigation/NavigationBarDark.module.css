@@ -8,6 +8,19 @@
     box-sizing: border-box;
 }
 
+.ContainerSticky {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    background-color: black;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 9px -6px rgba(0,0,0, 0.2);
+}
 
 .NavRightOption {
     padding: 5px 10px;

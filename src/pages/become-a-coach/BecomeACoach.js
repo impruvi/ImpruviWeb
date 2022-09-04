@@ -4,6 +4,7 @@ import React, {useEffect} from 'react';
 import {Helmet} from "react-helmet";
 import Quotes from "./quotes/Quotes";
 import useGlobalPopup, {popups} from "../../hooks/useGlobalPopup";
+import SubmitButton from "../../components/submit-button/SubmitButton";
 
 
 const BecomeACoach = () => {
@@ -23,20 +24,20 @@ const BecomeACoach = () => {
             <div className={classes.Header}>
                 <div className={classes.HeaderContent}>
                     <div className={classes.HeaderTitle}>
-                        Work with your current client base, find new markets, and expand your business
+                        Work with your current athletes, find new clients, and expand your business
                     </div>
-                    <div className={classes.HeaderApplyButton} onClick={() => setOpenPopup(popups.CoachApplication)}>
+                    <SubmitButton className={classes.HeaderApplyButton} onClick={() => setOpenPopup(popups.CoachApplication)}>
                         Apply
-                    </div>
+                    </SubmitButton>
                 </div>
             </div>
             <div className={classes.Goal}>
                 <div className={classes.GoalContent}>
                     <div className={classes.GoalLeft}>
                         <div className={classes.GoalLeftTitle}>Anywhere, anytime</div>
-                        <div className={classes.GoalApplyButton} onClick={() => setOpenPopup(popups.CoachApplication)}>
+                        <SubmitButton className={classes.GoalApplyButton} onClick={() => setOpenPopup(popups.CoachApplication)}>
                             Apply
-                        </div>
+                        </SubmitButton>
                     </div>
                     <div className={classes.GoalRight}>
                         Our goal is to provide a platform for you to grow your business and help players improve without

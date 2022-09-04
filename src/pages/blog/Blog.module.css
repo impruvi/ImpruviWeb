@@ -1,0 +1,75 @@
+.Container {
+    max-width: 700px;
+    width: 100%;
+    margin: 60px auto 100px auto;
+    padding: 0 var(--desktop-container-padding);
+    box-sizing: border-box;
+}
+
+.Container h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+.Container h2 {
+    font-size: 25px;
+    margin: 50px 0 15px 0;
+}
+
+.Container img {
+    width: 100%;
+}
+
+.Paragraph {
+    color: #555555;
+    padding: 10px 0;
+}
+
+.Paragraph li {
+    margin-left: 20px;
+    padding: 5px 0;
+}
+
+.ActionButtonContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.ActionButton {
+    padding: 13px 30px;
+}
+
+.ProgressContainer {
+    height: 5px;
+    background-color: #F6F9FC;
+    width: 100%;
+    position: sticky;
+    top: 56px; /* height of the navigation bar */
+    left: 0;
+    z-index: 10;
+}
+
+.Progress {
+    height: 5px;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+.FooterWrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 var(--desktop-container-padding);
+}
+
+@media (max-width: 700px) {
+    .Container {
+        padding: 0 var(--mobile-container-padding);
+    }
+
+    .FooterWrapper {
+        padding: 0 var(--mobile-container-padding);
+    }
+}

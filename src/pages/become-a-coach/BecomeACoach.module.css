@@ -35,11 +35,14 @@
 .HeaderApplyButton {
     background-color: white;
     padding: 13px 50px;
-    border-radius: 3px;
-    display: inline-block;
     font-weight: 600;
-    cursor: pointer;
     margin-top: 50px;
+    color: black;
+}
+
+.HeaderApplyButton:hover {
+    opacity: .8;
+    background-color: white;
 }
 
 .Goal {
@@ -73,13 +76,8 @@
 }
 
 .GoalApplyButton {
-    background-color: var(--color-primary);
     padding: 13px 50px;
-    border-radius: 3px;
-    display: inline-block;
     font-weight: 600;
-    cursor: pointer;
-    color: white;
     margin-top: 25px;
 }
 

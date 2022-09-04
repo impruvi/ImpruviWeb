@@ -1,0 +1,49 @@
+.Container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px auto 100px auto;
+    padding: 0 var(--desktop-container-padding);
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.Post {
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.Post:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 13px 1px rgba(0,0,0,0.12);
+}
+
+.PostContent {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.PostTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.PostPreview {
+    padding: 15px 0;
+    color: #555555;
+}
+
+.Post img {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .Post {
+        width: 100%;
+    }
+}

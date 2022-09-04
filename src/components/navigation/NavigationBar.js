@@ -12,7 +12,7 @@ import HamburgerBlack from '../../assets/HamburgerBlack.png';
 import HamburgerWhite from '../../assets/HamburgerWhite.png';
 import useHttpClient from "../../hooks/useHttpClient";
 
-const NavigationBar = ({mode= 'light' }) => {
+const NavigationBar = ({mode= 'light' , sticky=false}) => {
 
     const [player, setPlayer] = useState();
     const [isSideNavOpen, setIsSignNavOpen] = useState(false);
@@ -29,14 +29,26 @@ const NavigationBar = ({mode= 'light' }) => {
             const player = await httpClient.getPlayer(playerId);
             setPlayer(player);
         }
-    }, [httpClient, playerId])
+    }, [httpClient, playerId]);
+
+    const getContainerClass = useCallback(() => {
+        if (mode === 'light') {
+            return sticky
+                ? classes.ContainerSticky
+                : classes.Container;
+        } else {
+            return sticky
+                ? darkClasses.ContainerSticky
+                : darkClasses.Container;
+        }
+    }, [mode, sticky]);
 
     useEffect(() => {
         getPlayer();
     }, [getPlayer]);
 
     return (
-        <div className={mode === 'light' ? classes.Container : darkClasses.Container}>
+        <div className={getContainerClass()}>
             <div className={classes.ContainerInner}>
                 <img src={mode === 'light' ? LogoText : LogoTextWhite} className={classes.LogoText} onClick={() => history.push('/')}/>
                 <div className={classes.NavRight}>
@@ -51,6 +63,9 @@ const NavigationBar = ({mode= 'light' }) => {
                     </div>
                     <div className={mode === 'light' ? classes.NavRightOption : darkClasses.NavRightOption} onClick={() => history.push('/contact')}>
                         Contact
+                    </div>
+                    <div className={mode === 'light' ? classes.NavRightOption : darkClasses.NavRightOption} onClick={() => history.push('/blog')}>
+                        Blog
                     </div>
                     {!player && (
                         <div className={classes.SignIn} onClick={() => setOpenPopup(popups.SignIn)}>

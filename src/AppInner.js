@@ -18,6 +18,7 @@ import NavigationBar from "./components/navigation/NavigationBar";
 import Terms from "./pages/terms/Terms";
 import SubscriptionUpdated from "./pages/subscription-updated/SubscriptionUpdated";
 import CoachApplicationPopup from "./components/coach-application/CoachApplicationPopup";
+import Blog from "./pages/blog/Blog";
 
 const AppInner = () => {
 
@@ -26,10 +27,15 @@ const AppInner = () => {
 
     return (
         <div className={classes.App}>
-            <NavigationBar mode={matchPath(location.pathname, {
-                path: '/coaches/:coachId',
-                exact: true
-            }) ? 'dark' : 'light'}/>
+            <NavigationBar
+                mode={matchPath(location.pathname, {
+                    path: '/coaches/:coachId',
+                    exact: true
+                }) ? 'dark' : 'light'}
+                sticky={!!matchPath(location.pathname, {
+                    path: '/blog',
+                    exact: false
+                })}/>
             <Switch>
                 <Route path="/terms" component={Terms} />
                 <Route path="/privacy" component={Terms} />
@@ -43,6 +49,7 @@ const AppInner = () => {
                 <Route path="/how-it-works" component={HowItWorks} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/become-a-coach" component={BecomeACoach} />
+                <Route path="/blog" component={Blog} />
                 <Route path="/" component={Landing} />
             </Switch>
 

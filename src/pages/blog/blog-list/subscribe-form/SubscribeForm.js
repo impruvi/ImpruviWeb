@@ -4,6 +4,7 @@ import BasicTextInput from "../../../../components/basic-text-input/BasicTextInp
 import useHttpClient from "../../../../hooks/useHttpClient";
 import React, {useState} from "react";
 import {isValidEmail} from "../../../../util/authUtil";
+import useGoogleAnalyticsClient from "../../../../hooks/useGoogleAnalyticsClient";
 
 const SubscribeForm = () => {
 
@@ -13,6 +14,7 @@ const SubscribeForm = () => {
     const [hasSubscribed, setHasSubscribed] = useState(false);
 
     const {httpClient} = useHttpClient();
+    const {gaClient} = useGoogleAnalyticsClient();
 
     const subscribe = async () => {
         if (!isValidEmail(email)) {
@@ -23,6 +25,7 @@ const SubscribeForm = () => {
         setIsSubmitting(true);
 
         try {
+            gaClient.sendGeneralEvent("email_list_subscription");
             await httpClient.subscribeToEmailList(email);
         } catch (e) {
             setHasError(false);

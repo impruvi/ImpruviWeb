@@ -5,16 +5,19 @@
     padding: 0 var(--desktop-container-padding);
     box-sizing: border-box;
     flex-wrap: wrap;
+    display: flex;
 }
 
 .Post {
     background-color: #F6F6F6;
     border-radius: 5px;
     box-sizing: border-box;
-    width: 50%;
+    width: 45%;
+    margin-right: 2.5%;
     cursor: pointer;
     position: relative;
     transition: all .2s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .Post:hover {

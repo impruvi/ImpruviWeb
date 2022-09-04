@@ -2,9 +2,17 @@
     <url>
         <loc>https://impruviapp.com/blog/how-video-coaching-can-help-players/</loc>
         <image:image>
-            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-video-coaching-can-help-players/primary.jpg</image:loc>
-            <image:caption>primary.jpg</image:caption>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-video-coaching-can-help-players/primary.jpeg</image:loc>
+            <image:caption>primary.jpeg</image:caption>
         </image:image>
-        <changefreq>monthly</changefreq>
+        <lastmod>2022-09-02</lastmod>
+    </url>
+    <url>
+        <loc>https://impruviapp.com/blog/why-do-i-keep-mishitting-my-shots/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/why-do-i-keep-mishitting-my-shots/primary.jpeg</image:loc>
+            <image:caption>primary.jpeg</image:caption>
+        </image:image>
+        <lastmod>2022-09-03</lastmod>
     </url>
 </urlset>

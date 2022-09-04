@@ -5,6 +5,7 @@ import classes from "./Blog.module.css";
 import Footer from "../../components/footer/Footer";
 import React, {useEffect, useState} from "react";
 import {Helmet} from "react-helmet";
+import WhyDoIKeepMishittingMyShots from "./why-do-i-keep-mishitting-my-shots/WhyDoIKeepMishittingMyShots";
 
 const Blog = () => {
 
@@ -42,6 +43,7 @@ const Blog = () => {
             )}
             <Switch>
                 <Route path="/blog/how-video-coaching-can-help-players" component={HowVideoCoachingCanHelpPlayers} />
+                <Route path="/blog/why-do-i-keep-mishitting-my-shots" component={WhyDoIKeepMishittingMyShots} />
                 <Route path="/blog" component={BlogList} />
                 <Redirect to="/blog" />
             </Switch>

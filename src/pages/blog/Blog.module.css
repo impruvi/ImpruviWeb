@@ -24,11 +24,18 @@
 .Paragraph {
     color: #555555;
     padding: 10px 0;
+    line-height: 1.5;
+    font-size: 18px;
 }
 
 .Paragraph li {
     margin-left: 20px;
     padding: 5px 0;
+}
+
+.Paragraph a {
+    color: var(--color-primary);
+    margin-right: 8px;
 }
 
 .ActionButtonContainer {

@@ -17,7 +17,7 @@ const HowVideoCoachingCanHelpPlayers = () => {
 
             <div className={classes.Container}>
                 <h1>How video coaching can help players</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-video-coaching-can-help-players/primary.jpg'} />
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-video-coaching-can-help-players/primary.jpeg'} />
                 <h2>Training on your own is required for growth, but it’s hard to do it properly</h2>
                 <div className={classes.Paragraph}>
                     As a youth soccer player, training on your own is a requirement for getting to the next level.

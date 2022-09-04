@@ -5,7 +5,11 @@ import classes from "./Blog.module.css";
 import Footer from "../../components/footer/Footer";
 import React, {useEffect, useState} from "react";
 import {Helmet} from "react-helmet";
-import WhyDoIKeepMishittingMyShots from "./why-do-i-keep-mishitting-my-shots/WhyDoIKeepMishittingMyShots";
+import HowToDevelopAMoreConsistentShot from "./how-to-develop-a-more-consistent-shot/HowToDevelopAMoreConsistentShot";
+import WhatDoYouthSoccerCoachesLookFor from "./what-do-youth-soccer-coaches-look-for/WhatDoYouthSoccerCoachesLookFor";
+import WhyAmINotPlayingOnMySoccerTeam from "./why-am-i-not-playing-on-my-soccer-team/WhyAmINotPlayingOnMySoccerTeam";
+import DoesJugglingActuallyMakeMeABetterPlayer
+    from "./does-juggling-actually-make-me-a-better-player/DoesJugglingActuallyMakeMeABetterPlayer";
 
 const Blog = () => {
 
@@ -43,7 +47,10 @@ const Blog = () => {
             )}
             <Switch>
                 <Route path="/blog/how-video-coaching-can-help-players" component={HowVideoCoachingCanHelpPlayers} />
-                <Route path="/blog/why-do-i-keep-mishitting-my-shots" component={WhyDoIKeepMishittingMyShots} />
+                <Route path="/blog/how-to-develop-a-more-consistent-shot" component={HowToDevelopAMoreConsistentShot} />
+                <Route path="/blog/what-do-youth-soccer-coaches-look-for" component={WhatDoYouthSoccerCoachesLookFor} />
+                <Route path="/blog/why-am-i-not-playing-on-my-soccer-team" component={WhyAmINotPlayingOnMySoccerTeam} />
+                <Route path="/blog/does-juggling-actually-make-me-a-better-player" component={DoesJugglingActuallyMakeMeABetterPlayer} />
                 <Route path="/blog" component={BlogList} />
                 <Redirect to="/blog" />
             </Switch>

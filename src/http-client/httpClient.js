@@ -244,6 +244,11 @@ class HttpClient {
         return axios.put(url, file, config);
     };
 
+    subscribeToEmailList = async (email) => {
+        await this.#client.invokeApi({}, '/email-list/subscribe', 'POST', {}, {
+            email,
+        });
+    }
 
     stall = async (stallTime = 2000) => {
         await new Promise(resolve => setTimeout(resolve, stallTime));

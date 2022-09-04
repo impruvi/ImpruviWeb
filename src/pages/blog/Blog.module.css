@@ -35,6 +35,11 @@
 
 .Paragraph a {
     color: var(--color-primary);
+    margin: 0 8px;
+}
+
+.Paragraph .Underline {
+    text-decoration: underline;
     margin-right: 8px;
 }
 

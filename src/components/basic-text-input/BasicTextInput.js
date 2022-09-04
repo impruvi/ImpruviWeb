@@ -1,11 +1,15 @@
 import React from 'react';
 import classes from './BasicTextInput.module.css';
 
-const BasicTextInput = ({isDisabled, type, value, error, onChange, placeholder, maxLength}) => {
+const BasicTextInput = ({isDisabled, type, value, error, onChange, placeholder, maxLength, className}) => {
 
     const containerClasses = [classes.Container];
     if (!!error) {
         containerClasses.push(classes.ContainerError);
+    }
+
+    if (!!className) {
+        containerClasses.push(className);
     }
 
     return (

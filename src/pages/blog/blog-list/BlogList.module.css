@@ -8,45 +8,23 @@
     display: flex;
 }
 
-.Post {
-    background-color: #F6F6F6;
-    border-radius: 5px;
-    box-sizing: border-box;
-    width: 45%;
-    margin-right: 2.5%;
-    cursor: pointer;
-    position: relative;
-    transition: all .2s ease-in-out;
+.Row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.Post:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 13px 1px rgba(0,0,0,0.12);
+.TwoThirds {
+    width: calc(66% - 15px);
+    margin-right: 15px;
+    margin-bottom: 20px;
+    min-height: 475px;
 }
 
-.PostContent {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.PostTitle {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 10px 0;
-}
-
-.PostPreview {
-    padding: 15px 0;
-    color: #555555;
-}
-
-.Post img {
-    width: 100%;
-}
-
-@media (max-width: 700px) {
-    .Post {
-        width: 100%;
-    }
+.OneThird {
+    width: calc(33% - 15px);
+    margin-right: 15px;
+    margin-bottom: 20px;
+    min-height: 475px;
 }

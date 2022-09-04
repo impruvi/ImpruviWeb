@@ -1,0 +1,40 @@
+.Post {
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+    height: 100%;
+    flex: 1;
+}
+
+.Post:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 13px 1px rgba(0,0,0,0.12);
+}
+
+.PostContent {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.PostTitle {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.PostPreview {
+    padding: 15px 0;
+    color: #555555;
+}
+
+.Post img {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+}
+

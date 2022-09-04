@@ -2,11 +2,15 @@ import classes from '../Blog.module.css';
 import SubmitButton from "../../../components/submit-button/SubmitButton";
 import {useHistory} from "react-router-dom";
 import {Helmet} from "react-helmet";
-import React from "react";
+import React, {useEffect} from "react";
 
 const HowVideoCoachingCanHelpPlayers = () => {
 
     const history = useHistory();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <>

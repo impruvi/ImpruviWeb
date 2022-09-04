@@ -3,16 +3,40 @@
         <loc>https://impruviapp.com/blog/how-video-coaching-can-help-players/</loc>
         <image:image>
             <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-video-coaching-can-help-players/primary.jpeg</image:loc>
-            <image:caption>primary.jpeg</image:caption>
+            <image:caption>how-video-coaching-can-help-players.jpeg</image:caption>
+        </image:image>
+        <lastmod>2022-09-01</lastmod>
+    </url>
+    <url>
+        <loc>https://impruviapp.com/blog/how-to-develop-a-more-consistent-shot/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg</image:loc>
+            <image:caption>how to develop a more consistent shot</image:caption>
         </image:image>
         <lastmod>2022-09-02</lastmod>
     </url>
     <url>
-        <loc>https://impruviapp.com/blog/why-do-i-keep-mishitting-my-shots/</loc>
+        <loc>https://impruviapp.com/blog/what-do-youth-soccer-coaches-look-for/</loc>
         <image:image>
-            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/why-do-i-keep-mishitting-my-shots/primary.jpeg</image:loc>
-            <image:caption>primary.jpeg</image:caption>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/what-do-youth-soccer-coaches-look-for/primary.jpg</image:loc>
+            <image:caption>what do youth soccer coaches look for</image:caption>
         </image:image>
         <lastmod>2022-09-03</lastmod>
+    </url>
+    <url>
+        <loc>https://impruviapp.com/blog/why-am-i-not-playing-on-my-soccer-team/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/why-am-i-not-playing-on-my-soccer-team/primary.jpeg</image:loc>
+            <image:caption>why am i not playing on my soccer team</image:caption>
+        </image:image>
+        <lastmod>2022-09-04</lastmod>
+    </url>
+    <url>
+        <loc>https://impruviapp.com/blog/does-juggling-actually-make-me-a-better-player/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/does-juggling-actually-make-me-a-better-player/primary.jpg</image:loc>
+            <image:caption>does juggling actually make me a better soccer player</image:caption>
+        </image:image>
+        <lastmod>2022-09-05</lastmod>
     </url>
 </urlset>

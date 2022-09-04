@@ -1,20 +1,25 @@
 import {Helmet} from "react-helmet";
 import classes from "../Blog.module.css";
-import React from "react";
+import React, {useEffect} from "react";
 
-const WhyDoIKeepMishittingMyShots = () => {
+const HowToDevelopAMoreConsistentShot = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <Helmet>
-                <title>Why do I keep mishitting my shots? - Impruvi</title>
+                <title>How to develop a more consistent shot? - Impruvi</title>
                 <meta name="description" content="Learn how to develop the proper shooting technique in soccer."/>
             </Helmet>
 
             <div className={classes.Container}>
-                <h1>Why do I keep mishitting my shots?</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/why-do-i-keep-mishitting-my-shots/primary.jpeg'} />
+                <h1>How to develop a more consistent shot?</h1>
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg'} />
                 <div className={classes.Paragraph}>
-                    Arguable one of the most frustrating feelings in soccer is when you line up to strike the ball with
+                    Arguably one of the most frustrating feelings in soccer is when you line up to strike the ball with
                     your laces — but when you hit the ball, rather than going directly toward the goal with a slight backspin,
                     it slices wide of the goal with a side spin. But why does this happen?
                 </div>
@@ -101,4 +106,4 @@ const WhyDoIKeepMishittingMyShots = () => {
     )
 }
 
-export default WhyDoIKeepMishittingMyShots;
+export default HowToDevelopAMoreConsistentShot;

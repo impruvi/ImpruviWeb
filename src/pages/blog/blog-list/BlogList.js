@@ -10,7 +10,7 @@ const blogs = [
         duration: '2 minute read'
     },
     {
-        title: 'How to develop a more consistent shot?',
+        title: 'How to develop a more consistent shot',
         slug: 'how-to-develop-a-more-consistent-shot',
         image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg',
         duration: '3 minute read'

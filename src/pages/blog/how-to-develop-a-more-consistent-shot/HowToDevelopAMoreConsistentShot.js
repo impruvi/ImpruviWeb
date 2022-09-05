@@ -11,12 +11,12 @@ const HowToDevelopAMoreConsistentShot = () => {
     return (
         <>
             <Helmet>
-                <title>How to develop a more consistent shot? - Impruvi</title>
+                <title>How to develop a more consistent shot - Impruvi</title>
                 <meta name="description" content="Learn how to develop the proper shooting technique in soccer."/>
             </Helmet>
 
             <div className={classes.Container}>
-                <h1>How to develop a more consistent shot?</h1>
+                <h1>How to develop a more consistent shot</h1>
                 <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg'} />
                 <div className={classes.Paragraph}>
                     Arguably one of the most frustrating feelings in soccer is when you line up to strike the ball with

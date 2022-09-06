@@ -14,7 +14,7 @@ const WhyImpruvi = () => {
         <div className={classes.Container}>
             <div className={classes.Content}>
                 <div className={classes.ContentInner}>
-                    <h2>Training on your own is required for growth. <span className={classes.Highlight}>Let's optimize it</span></h2>
+                    <h2>Training on your own is required for growth. <span className={classes.Highlight}>Let's optimize it.</span></h2>
                     <SubmitButton className={classes.ActionButton} onClick={() => history.push('/coaches')}>
                         Get started
                     </SubmitButton>
@@ -28,13 +28,13 @@ const WhyImpruvi = () => {
                             </h4>
                             <div>
                                 Our unique collection of coaches will help you acheive your goals. Want to learn what it
-                                takes to get a scholarship? Go pro? Our coaches have been there, done that
+                                takes to get a scholarship? Go pro? Our coaches have been there, done that.
                             </div>
                         </div>
                         <div className={classes.Section}>
                             <h4>
                                 <img src={ConvenienceIcon} className={classes.Icon}/>
-                                Convience
+                                Convenience
                             </h4>
                             <div>
                                 No more waiting in traffic to get in a great training session. Train from anywhere, at anytime.
@@ -47,7 +47,7 @@ const WhyImpruvi = () => {
                             </h4>
                             <div>
                                 When you train on your own, you should be working on specific drills that help your development.
-                                Your coach will identify exactley what you need and build you a custom training plan.
+                                Your coach will identify exactly what you need and build you a custom training plan.
                             </div>
                         </div>
                         <div className={classes.Section}>
@@ -56,7 +56,7 @@ const WhyImpruvi = () => {
                                 Accountability
                             </h4>
                             <div>
-                                Receive notifications to complete trainings in order to stay consistent with your plan
+                                Receive notifications to complete trainings in order to stay consistent with your plan.
                             </div>
                         </div>
                         <SubmitButton className={classes.ActionButton} onClick={() => history.push('/blog')}>

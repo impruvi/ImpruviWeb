@@ -78,15 +78,11 @@ class HttpClient {
         });
     }
 
-    createSubscription = async ({paymentMethodId, coachId, stripeProductId, stripePriceId}) => {
+    createSubscription = async ({paymentMethodId, subscriptionPlanRef}) => {
         await this.#client.invokeApi({}, '/player/subscription/create', 'POST', {}, {
             token: this.#authToken,
             paymentMethodId,
-            subscriptionPlanRef: {
-                coachId: coachId,
-                stripeProductId: stripeProductId,
-                stripePriceId: stripePriceId
-            }
+            subscriptionPlanRef: subscriptionPlanRef
         });
     }
 
@@ -146,15 +142,6 @@ class HttpClient {
         });
 
         return result.data.paymentMethods;
-    }
-
-    getSubscriptionPlan = async ({stripeProductId, stripePriceId}) => {
-        const result = await this.#client.invokeApi({}, '/subscription-plan/get', 'POST', {}, {
-            stripeProductId,
-            stripePriceId
-        });
-
-        return result.data.subscriptionPlan;
     }
 
     updatePlayer = async ({playerId, coachId, firstName, lastName, email, position, ageRange, availableEquipment, availableTrainingLocations, shortTermGoal, longTermGoal, headshot}) => {

@@ -13,7 +13,7 @@ const SubscriptionUpdated = () => {
     const [coach, setCoach] = useState();
     const [currentSubscription, setCurrentSubscription] = useState();
 
-    const {coachId, action} = useParams();
+    const {slug, action} = useParams();
 
     const {httpClient} = useHttpClient();
     const {playerId} = useAuth();
@@ -26,12 +26,12 @@ const SubscriptionUpdated = () => {
         try {
             if (action === 'created') {
                 const [coach] = await Promise.all([
-                    httpClient.getCoach(coachId)
+                    httpClient.getCoachBySlug(slug)
                 ]);
                 setCoach(coach);
             } else {
                 const [coach, subscription] = await Promise.all([
-                    httpClient.getCoach(coachId),
+                    httpClient.getCoachBySlug(slug),
                     httpClient.getSubscription(playerId)
                 ]);
                 setCoach(coach);
@@ -41,7 +41,7 @@ const SubscriptionUpdated = () => {
             console.log(e);
         }
         setIsLoading(false);
-    }, [httpClient, coachId, playerId, action]);
+    }, [httpClient, slug, playerId, action]);
 
     const getUpdateEffectiveDate = () => {
         return moment.unix(currentSubscription.currentPeriodEndDateEpochMillis / 1000).format('dddd, MMMM Do, YYYY');
@@ -53,7 +53,7 @@ const SubscriptionUpdated = () => {
 
     return (
         <div className={classes.Container}>
-            <div className={classes.Title}>{action === 'created' ? 'Payment successful!' : 'Subscription successfully updated!'}</div>
+            <div className={classes.Title}>{action === 'created' ? 'Payment successful!' : 'Plan successfully updated!'}</div>
             {isLoading && (
                 <Spinner />
             )}
@@ -62,7 +62,7 @@ const SubscriptionUpdated = () => {
                     <div className={classes.Subtitle}>
                         {action === 'created'
                             ? `Coach ${coach.firstName} is working on your custom plan and will have it loaded in the app within 24 hours.`
-                            : `Your new subscription will take effect at the end of the current billing cycle (${getUpdateEffectiveDate()}).`}
+                            : `Your new plan will take effect at the end of the current billing cycle (${getUpdateEffectiveDate()}).`}
 
                     </div>
                     <div className={classes.ActionButton}>

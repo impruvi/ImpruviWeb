@@ -14,9 +14,9 @@ const Mobile = () => {
                 <img src={CoachesMosaic} className={classes.MosaicImage}/>
             </div>
             <div className={classes.Content}>
-                <div className={classes.Title}>
+                <h1 className={classes.Title}>
                     Expert coaching in the palm of your hands
-                </div>
+                </h1>
                 <div className={classes.Subtitle}>
                     At-home training plans custom designed for you
                 </div>

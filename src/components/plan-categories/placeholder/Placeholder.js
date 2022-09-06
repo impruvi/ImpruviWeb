@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './PlaceHolder.module.css';
+import classes from './Placeholder.module.css';
 
 const PlaceHolder = () => {
     return (

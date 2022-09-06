@@ -1,16 +1,30 @@
 import classes from './Summary.module.css';
 import RedCircleCheck from "../../../assets/RedCircleCheck.png";
+import {PriceType} from "../../../model/priceType";
 
-const Summary = ({coach, plan}) => {
+const Summary = ({coach, priceType}) => {
+
+    const getSubtitle = () => {
+        switch (priceType) {
+            case PriceType.Subscription:
+                return 'Monthly subscription';
+            case PriceType.OneTimePurchase:
+                return 'Training bundle';
+            case PriceType.Trial:
+                return 'Free trial';
+        }
+    }
+
     return (
         <div>
             <div className={classes.Title}>Summary</div>
-            <div>
-                <div className={classes.Name}>
-                    Subscribe to {coach?.firstName}'s {plan?.type} plan.
-                </div>
-                <div className={classes.Description}>
-                    {plan.numberOfTrainings} trainings for the next month
+            <div className={classes.Content}>
+                <img src={coach.headshot.fileLocation} />
+                <div>
+                    <div className={classes.Name}>{coach?.firstName} {coach.lastName}</div>
+                    <div className={classes.Description}>
+                        {getSubtitle()}
+                    </div>
                 </div>
             </div>
             <div className={classes.Bullets}>

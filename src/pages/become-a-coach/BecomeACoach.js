@@ -18,7 +18,7 @@ const BecomeACoach = () => {
     return (
         <div className={classes.Container}>
             <Helmet>
-                <title>Become a coach - Impruvi</title>
+                <title>For coaches - Impruvi</title>
                 <meta name="description" content="Work with your current client base, find new markets, and expand your business. Apply to become a coach here."/>
             </Helmet>
             <div className={classes.Header}>

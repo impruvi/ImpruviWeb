@@ -22,7 +22,7 @@ const Desktop = () => {
                         <div className={classes.ActionButtonWrapper}>
                             <SubmitButton className={classes.ButtonPrimary}
                                           onClick={() => history.push('/coaches')}>
-                                Get started
+                                Start your free trial
                                 <img src={ArrowRight} />
                             </SubmitButton>
                         </div>

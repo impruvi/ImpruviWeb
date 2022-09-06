@@ -84,3 +84,9 @@
     font-weight: 600;
     flex: 0 1 auto;
 }
+
+@media (max-width: 700px) {
+    .Container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

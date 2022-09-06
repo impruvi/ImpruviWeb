@@ -1,0 +1,11 @@
+.SubText {
+    font-size: 12px;
+    color: #888;
+    margin: 10px 0;
+}
+
+.SubText span {
+    cursor: pointer;
+    text-decoration: underline;
+    white-space: pre-wrap;
+}

@@ -6,9 +6,23 @@ import useHttpClient from "../../../hooks/useHttpClient";
 import {useHistory} from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import PaymentInfo from "./payment-info/PaymentInfo";
+import Dropdown from "../../../components/dropdown/Dropdown";
+import {PriceType} from "../../../model/priceType";
+import Disclaimer from "./disclaimer/Disclaimer";
 
+const getPricingPlanDropdownItems = (coach, priceType) => {
+    return coach.pricingPlans
+        .filter(plan => plan.type === priceType)
+        .sort((p1, p2) => p1.numberOfTrainings - p2.numberOfTrainings)
+        .map(plan => {
+            return {
+                value: plan,
+                label: plan.numberOfTrainings
+            }
+        });
+}
 
-const Payment = ({plan, coach, hasSubscription}) => {
+const Payment = ({priceType, coach, hasSubscription}) => {
 
     const history = useHistory();
     const stripe = useStripe();
@@ -21,6 +35,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
     const [isCreatingNewPaymentMethod, setIsCreatingNewPaymentMethod] = useState(false);
     const [paymentMethods, setPaymentMethods] = useState([]);
     const [nameOnCard, setNameOnCard] = useState('');
+    const [selectedPlan, setSelectedPlan] = useState(getPricingPlanDropdownItems(coach, priceType)[0].value);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [hadSubmissionError, setHadSubmissionError] = useState(false);
 
@@ -32,7 +47,6 @@ const Payment = ({plan, coach, hasSubscription}) => {
         setIsLoading(true);
         try {
             const paymentMethods = await httpClient.getPaymentMethods();
-            console.log('paymentMethods', paymentMethods);
             setPaymentMethods(paymentMethods);
             if (paymentMethods.length > 0) {
                 setSelectedPaymentMethod(paymentMethods[0]);
@@ -47,7 +61,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
     }, [httpClient, playerId]);
 
     const getOrCreatePaymentMethodId = async () => {
-        if (plan.isTrial && plan.unitAmount === 0) {
+        if (priceType === PriceType.Trial) {
             return '';
         }
 
@@ -73,15 +87,13 @@ const Payment = ({plan, coach, hasSubscription}) => {
             const paymentMethodId = await getOrCreatePaymentMethodId();
             await httpClient.createSubscription({
                 paymentMethodId: paymentMethodId,
-                coachId: coach.coachId,
-                stripePriceId: plan.stripePriceId,
-                stripeProductId: plan.stripeProductId
+                subscriptionPlanRef: selectedPlan,
             });
 
             if (hasSubscription) {
-                history.push(`/coaches/${coach.coachId}/product/${plan.stripeProductId}/price/${plan.stripePriceId}/updated`)
+                history.push(`/coaches/${coach.slug}/product/${selectedPlan.stripeProductId}/price/${selectedPlan.stripePriceId}/updated`)
             } else {
-                history.push(`/coaches/${coach.coachId}/product/${plan.stripeProductId}/price/${plan.stripePriceId}/created`)
+                history.push(`/coaches/${coach.slug}/product/${selectedPlan.stripeProductId}/price/${selectedPlan.stripePriceId}/created`)
             }
         } catch (e) {
             console.error(e);
@@ -101,32 +113,41 @@ const Payment = ({plan, coach, hasSubscription}) => {
         setSelectedPaymentMethod(paymentMethod);
     }
 
-    const getButtonText = (hasSubscription, isTrial) => {
-        if (isTrial) {
-            return 'Start trial';
+    const getButtonText = () => {
+        switch (priceType) {
+            case PriceType.Subscription:
+                return hasSubscription ? 'Update subscription' : 'Start subscription';
+            case PriceType.OneTimePurchase:
+                return `Purchase ${selectedPlan.numberOfTrainings} training${selectedPlan.numberOfTrainings > 1 ? 's' : ''}`;
+            case PriceType.Trial:
+                return 'Start trial';
         }
-
-        return hasSubscription ? 'Update subscription' : 'Start subscription'
     }
 
     useEffect(() => {
         initialize();
     }, [initialize]);
 
-    const isFreeTrial = plan.unitAmount === 0 && plan.isTrial;
-
     return (
         <div>
             <div className={classes.Title}>
-                {isFreeTrial ? 'Start your free trial' : 'Pay with card'}
+                {priceType === PriceType.Trial ? 'Start your free trial' : 'Pay with card'}
             </div>
-            <div className={classes.PaymentSectionToday}>
+            <div className={classes.NumberOfTrainings}>
+                <div className={classes.NumberOfTrainingsLabel}>Number of trainings {priceType === PriceType.Subscription ? 'per month' : ''}</div>
+                <Dropdown options={getPricingPlanDropdownItems(coach, priceType)}
+                          defaultOption={selectedPlan}
+                          onSelect={setSelectedPlan}/>
+            </div>
+            <div className={classes.AmountDue}>
                 <div>Total due today</div>
-                <div>${Math.floor(plan.unitAmount / 100).toFixed(2)}</div>
+                {!!selectedPlan && (
+                    <div>${Math.floor(selectedPlan.unitAmountPerTraining * selectedPlan.numberOfTrainings / 100).toFixed(2)}</div>
+                )}
             </div>
 
             <div className={classes.Form}>
-                {!isFreeTrial && (
+                {priceType !== PriceType.Trial && (
                     <PaymentInfo
                         selectedPaymentMethod={selectedPaymentMethod}
                         onSelectPaymentMethod={onSelectPaymentMethod}
@@ -142,7 +163,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
                                   onClick={submit}
                                   isFullWidth={true}
                                   disabled={isSubmitting}>
-                        {getButtonText(hasSubscription, plan.isTrial)}
+                        {getButtonText()}
                     </SubmitButton>
                 </div>
                 {hadSubmissionError && (
@@ -151,14 +172,7 @@ const Payment = ({plan, coach, hasSubscription}) => {
                     </div>
                 )}
             </div>
-            <div className={classes.SubText}>
-                By clicking "Start subscription" you agree to our
-                &nbsp;<span onClick={() => history.push('/terms')}>Terms</span>&nbsp;
-                and authorize this recurring charge
-            </div>
-            <div className={classes.SubText}>
-                Your subscription will begin today. Cancel anytime by visiting the Subscriptions page in your account.
-            </div>
+            <Disclaimer priceType={priceType} selectedPlan={selectedPlan}/>
         </div>
     )
 }

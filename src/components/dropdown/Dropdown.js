@@ -6,17 +6,21 @@ const Dropdown = ({options, defaultOption, onSelect}) => {
         if (!defaultOption) {
             return idx === 0;
         } else {
-            return defaultOption.displayValue === option.displayValue;
+            return defaultOption.label === option.label;
         }
     }
 
+    const onChange = (event) => {
+        onSelect(JSON.parse(event.target.value));
+    }
+
     return (
-        <select className={classes.Container} onSelect={onSelect}>
+        <select className={classes.Container} onChange={onChange}>
             {options.map((option, idx) => (
-                <option value={option.value}
+                <option value={JSON.stringify(option.value)}
                         selected={isSelected(option, idx)}
                         className={classes.Option}>
-                    {option.displayValue}
+                    {option.label}
                 </option>
             ))}
         </select>

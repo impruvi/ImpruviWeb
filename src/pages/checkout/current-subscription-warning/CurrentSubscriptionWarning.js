@@ -38,8 +38,8 @@ const CurrentSubscriptionWarning = ({subscription}) => {
                 {isLoading && <Spinner />}
                 {!isLoading && (
                     <div>
-                        You currently have a subscription with {coach.firstName} {coach.lastName}.
-                        Updating your subscription will take effect at the end of your current billing cycle
+                        You currently have a plan with {coach.firstName} {coach.lastName}.
+                        Updating your plan will take effect when your current trainings expire
                         ({getUpdateEffectiveDate()}).
                     </div>
                 )}

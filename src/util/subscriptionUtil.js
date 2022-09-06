@@ -15,3 +15,19 @@ export const getSubscriptionPlansForDisplay = (plans, activeSubscription, subscr
         })
         .sort((p1, p2) => p1.unitAmount - p2.unitAmount)
 }
+
+export const getTrialPlan = (pricingPlans) => {
+    return pricingPlans.find(plan => plan.type === 'Trial');
+}
+
+export const getSubscriptionPlans = (pricingPlans) => {
+    return pricingPlans.filter(plan => plan.type === 'Subscription');
+}
+
+export const getOneTimePurchasePlans = (pricingPlans) => {
+    return pricingPlans.filter(plan => plan.type === 'OneTimePurchase');
+}
+
+export const hasUsedTrialPlan = (trialPlan, subscriptionHistory) => {
+    return !!subscriptionHistory && !!subscriptionHistory.find(sub => isSameSubscriptionPlan(sub.plan, trialPlan));
+}

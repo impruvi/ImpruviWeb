@@ -35,7 +35,7 @@ const slideName = {
 const Questionnaire = () => {
 
     const history = useHistory();
-    const {coachId} = useParams();
+    const {slug} = useParams();
     const {httpClient} = useHttpClient();
     const {gaClient} = useGoogleAnalyticsClient();
     const {token, playerId, setToken, setPlayerId} = useAuth();
@@ -82,7 +82,7 @@ const Questionnaire = () => {
 
     const submit = () => {
         gaClient.sendGeneralEvent("questionnaire_completed");
-        history.push(`/coaches/${coachId}/choose-plan`)
+        history.push(`/coaches/${slug}/choose-plan`)
     }
 
     const onComplete = async (player, token) => {
@@ -152,13 +152,13 @@ const Questionnaire = () => {
                 const player = await httpClient.getPlayer(playerId);
                 setPlayer(player);
             }
-            const coach = await httpClient.getCoach(coachId);
+            const coach = await httpClient.getCoachBySlug(slug);
             setCoach(coach);
         } catch(e) {
             console.log(e);
         }
         setIsLoading(false);
-    }, [playerId, coachId, httpClient]);
+    }, [playerId, slug, httpClient]);
 
     useEffect(() => {
         window.scrollTo(0, 0);

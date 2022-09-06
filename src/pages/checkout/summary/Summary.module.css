@@ -4,30 +4,31 @@
     margin: 10px 0 30px 0;
 }
 
+.Content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.Content img {
+    width: 70px;
+    height: 70px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
 .Name {
-}
-
-.Description {
-    font-weight: 500;
-    color: #666;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.Price {
-    font-size: 16px;
     font-weight: 600;
 }
 
-.PriceSubText {
-    color: #777;
-    font-size: 12px;
+.Description {
+    margin-top: 5px;
     font-weight: 500;
-    text-align: end;
+    color: #666666;
+    font-size: 14px;
 }
 
 .Bullets {
-    margin-top: 30px;
+
 }
 
 .Bullet {

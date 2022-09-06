@@ -29,6 +29,11 @@
     padding: 5px;
 }
 
+.TextInputWrapper {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .SaveButton {
     width: 150px;
     margin-top: 15px;

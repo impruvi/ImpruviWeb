@@ -70,9 +70,8 @@ const NavigationSlide = ({isOpen, close}) =>  {
                     {!!player && (
                         <Option path={'/account'} text={'Account'} close={close}/>
                     )}
-                    <Option path={'/how-it-works'} text={'How it works'} close={close}/>
-                    <Option path={'/coaches'} text={'Find a coach'} close={close}/>
-                    <Option path={'/become-a-coach'} text={'Become a coach'} close={close}/>
+                    <Option path={'/coaches'} text={'For players'} close={close}/>
+                    <Option path={'/become-a-coach'} text={'For coaches'} close={close}/>
                     <Option path={'/contact'} text={'Contact'}  close={close}/>
                     <Option path={'/blog'} text={'Blog'}  close={close}/>
                     {!!player && (

@@ -34,7 +34,7 @@ const FindCoach = () => {
     return (
         <div className={classes.Container}>
             <Helmet>
-                <title>Find a coach - Impruvi</title>
+                <title>For players - Impruvi</title>
                 <meta name="description" content="Find your perfect soccer coach. Work with coaches from anywhere in the world. Receive custom training plans and video feedback for each drill you perform."/>
             </Helmet>
 

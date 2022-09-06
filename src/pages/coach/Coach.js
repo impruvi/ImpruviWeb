@@ -23,9 +23,9 @@ const Coach = () => {
 
     const onChooseCoach = () => {
         if (hasPlayerCompletedQuestionnaire(player)) {
-            history.push(`/coaches/${coach.coachId}/choose-plan`)
+            history.push(`/coaches/${coach.slug}/choose-plan`)
         } else {
-            history.push(`/coaches/${coach.coachId}/questionnaire`)
+            history.push(`/coaches/${coach.slug}/questionnaire`)
         }
     }
 

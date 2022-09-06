@@ -1,50 +1,31 @@
 import classes from './ChoosePlan.module.css';
 import useHttpClient from "../../hooks/useHttpClient";
 import {useCallback, useEffect, useState} from "react";
-import Plan from "../../components/plan/Plan";
 import {useParams} from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
 import PlaceHolder from "./placeholder/PlaceHolder";
-import {getSubscriptionPlansForDisplay} from "../../util/subscriptionUtil";
+import PlanCategories from "../../components/plan-categories/PlanCategories";
 
 const ChoosePlan = () => {
 
-    const {coachId} = useParams();
+    const {slug} = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [subscriptionPlans, setSubscriptionPlans] = useState([]);
-    const [currentSubscription, setCurrentSubscription] = useState();
-    const [player, setPlayer] = useState();
     const [coach, setCoach] = useState();
 
     const {httpClient} = useHttpClient();
-    const {playerId} = useAuth();
 
     const initialize = useCallback(async () => {
-        if (!playerId || !coachId) {
+        if (!slug) {
             return;
         }
         setIsLoading(true);
         try {
-            const [coach, player, subscription, subscriptionHistory] = await Promise.all([
-                httpClient.getCoach(coachId),
-                httpClient.getPlayer(playerId),
-                httpClient.getSubscription(playerId),
-                httpClient.getSubscriptionHistory(playerId)
-            ]);
-            setPlayer(player);
+            const coach = await httpClient.getCoachBySlug(slug);
             setCoach(coach);
-            setCurrentSubscription(subscription);
-
-            const plans = await Promise.all(
-                coach.subscriptionPlanRefs.map(subscriptionPlanRef => httpClient.getSubscriptionPlan(subscriptionPlanRef))
-            );
-
-            setSubscriptionPlans(getSubscriptionPlansForDisplay(plans, subscription, subscriptionHistory));
         } catch (e) {
             console.log(e);
         }
         setIsLoading(false);
-    }, [httpClient, coachId, playerId]);
+    }, [httpClient, slug]);
 
 
     useEffect(() => {
@@ -61,19 +42,12 @@ const ChoosePlan = () => {
             {!!coach && (
                 <div className={classes.Subtitle}>Choose from one of the plans offered by {coach.firstName} {coach.lastName}</div>
             )}
-            <div className={classes.Plans}>
-                {isLoading && (
+            {isLoading && (
+                <div className={classes.Plans}>
                     <PlaceHolder />
-                )}
-                {!isLoading && subscriptionPlans.map(plan => (
-                    <div className={classes.PlanWrapper}>
-                        <Plan player={player}
-                              plan={plan}
-                              coach={coach}
-                              isActive={!!currentSubscription && currentSubscription.plan.stripePriceId === plan.stripePriceId}/>
-                    </div>
-                ))}
-            </div>
+                </div>
+            )}
+            {!isLoading && <PlanCategories coach={coach}/>}
         </div>
     )
 };

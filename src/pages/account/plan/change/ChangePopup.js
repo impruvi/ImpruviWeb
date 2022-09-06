@@ -3,18 +3,15 @@ import classes from "./ChangePopup.module.css";
 import useAuth from "../../../../hooks/useAuth";
 import {useCallback, useEffect, useState} from "react";
 import useHttpClient from "../../../../hooks/useHttpClient";
-import Plan from "../../../../components/plan/Plan";
 import Spinner from "../../../../components/spinner/Spinner";
 import XMark from '../../../../assets/XMarkBlack.png';
 import {useHistory} from "react-router-dom";
+import PlanCategories from "../../../../components/plan-categories/PlanCategories";
 
 const ChangePopup = ({close}) => {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [player, setPlayer] = useState();
     const [coach, setCoach] = useState();
-    const [currentSubscription, setCurrentSubscription] = useState();
-    const [subscriptionPlans, setSubscriptionPlans] = useState([]);
 
     const {httpClient} = useHttpClient();
     const {playerId} = useAuth();
@@ -27,17 +24,8 @@ const ChangePopup = ({close}) => {
         setIsLoading(true);
         try {
             const player = await httpClient.getPlayer(playerId);
-            setPlayer(player);
-            const [subscription, coach] = await Promise.all([
-                httpClient.getSubscription(playerId),
-                httpClient.getCoach(player.coachId)
-            ]);
-            setCurrentSubscription(subscription);
+            const coach = await httpClient.getCoach(player.coachId);
             setCoach(coach);
-            const plans = await Promise.all(
-                coach.subscriptionPlanRefs.map(subscriptionPlanRef => httpClient.getSubscriptionPlan(subscriptionPlanRef))
-            );
-            setSubscriptionPlans(plans.sort((p1, p2) => p1.unitAmount - p2.unitAmount));
         } catch (e) {
             console.log(e);
         }
@@ -62,14 +50,7 @@ const ChangePopup = ({close}) => {
                             <div className={classes.FindNewButton}
                                  onClick={() => history.push('/coaches')}>Find a new coach</div>
                         </div>
-                        {subscriptionPlans.map(subscriptionPlan => (
-                            <div className={classes.PlanWrapper}>
-                                <Plan player={player}
-                                      plan={subscriptionPlan}
-                                      coach={coach}
-                                      isActive={!!currentSubscription && currentSubscription.plan.stripePriceId === subscriptionPlan.stripePriceId}/>
-                            </div>
-                        ))}
+                        <PlanCategories coach={coach}/>
                         <div onClick={close} className={classes.Close}>
                             <img src={XMark} />
                         </div>

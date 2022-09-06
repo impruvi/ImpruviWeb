@@ -29,7 +29,7 @@ const AppInner = () => {
         <div className={classes.App}>
             <NavigationBar
                 mode={matchPath(location.pathname, {
-                    path: '/coaches/:coachId',
+                    path: '/coaches/:slug',
                     exact: true
                 }) ? 'dark' : 'light'}
                 sticky={!!matchPath(location.pathname, {
@@ -40,10 +40,10 @@ const AppInner = () => {
                 <Route path="/terms" component={Terms} />
                 <Route path="/privacy" component={Terms} />
                 <Route path="/account" component={Account} />
-                <Route path="/coaches/:coachId/product/:productId/price/:priceId/checkout" component={Checkout} />
-                <Route path="/coaches/:coachId/product/:productId/price/:priceId/:action" component={SubscriptionUpdated} />
-                <Route path="/coaches/:coachId/choose-plan" component={ChoosePlan} />
-                <Route path="/coaches/:coachId/questionnaire" component={Questionnaire} />
+                <Route path="/coaches/:slug/product/:productId/price/:priceId/:action" component={SubscriptionUpdated} />
+                <Route path="/coaches/:slug/checkout/:priceType" component={Checkout} />
+                <Route path="/coaches/:slug/choose-plan" component={ChoosePlan} />
+                <Route path="/coaches/:slug/questionnaire" component={Questionnaire} />
                 <Route path="/coaches/:slug" component={Coach} />
                 <Route path="/coaches" component={FindCoach} />
                 <Route path="/how-it-works" component={HowItWorks} />

@@ -1,6 +1,6 @@
 import useHttpClient from "../../../hooks/useHttpClient";
 import {useCallback, useEffect, useState} from "react";
-import classes from './Subscription.module.css';
+import classes from './Plan.module.css';
 import moment from 'moment';
 import CancelPopup from "./cancel/CancelPopup";
 import SubmitButton from "../../../components/submit-button/SubmitButton";
@@ -12,8 +12,9 @@ import InfoIcon from '../../../assets/InfoBlue.png'
 import Details from "./details/Details";
 import {useHistory} from "react-router-dom";
 import InfoBox from "../../../components/info-box/InfoBox";
+import {PriceType} from "../../../model/priceType";
 
-const Subscription = () => {
+const Plan = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [player, setPlayer] = useState();
@@ -40,22 +41,14 @@ const Subscription = () => {
             ]);
             setPlayer(player);
             setSubscription(subscription);
-            if (!!player.queuedSubscription) {
-                const subscriptionPlan = await httpClient.getSubscriptionPlan({
-                    stripeProductId: player.queuedSubscription.stripeProductId,
-                    stripePriceId: player.queuedSubscription.stripePriceId,
-                });
-                setQueuedSubscriptionPlan(subscriptionPlan);
-            } else {
-                setQueuedSubscriptionPlan(null);
-            }
+            setQueuedSubscriptionPlan(player.queuedSubscription);
         } catch (e) {
             console.log(e);
         }
         setIsLoading(false);
     }, [httpClient, playerId]);
 
-    const cancelSubscription = async () => {
+    const cancel = async () => {
         setIsCancelling(true);
         try {
             await httpClient.cancelSubscription();
@@ -67,7 +60,7 @@ const Subscription = () => {
         setIsCancelling(false);
     }
 
-    const reactivateSubscription = async () => {
+    const reactivate = async () => {
         setIsReactivating(true);
         try {
             await httpClient.reactivateSubscription();
@@ -78,20 +71,27 @@ const Subscription = () => {
         setIsReactivating(false);
     }
 
-    const isSubscriptionCancelled = () => {
+    const isCancelled = () => {
         return subscription.cancelAtEndOfPeriod && !player.queuedSubscription;
     }
 
-    const isTrialSubscription = () => {
-        return subscription.plan.isTrial;
+    const isTrial = () => {
+        return subscription.plan.type === PriceType.Trial;
     }
 
-    const getNextPaymentDate = () => {
-        if (!!queuedSubscriptionPlan && !isTrialSubscription()) {
-            return '-'
-        }
-
+    const planEndDate = () => {
         return moment.unix(subscription.currentPeriodEndDateEpochMillis / 1000).format('dddd, MMMM Do, YYYY');
+    }
+
+    const getPlanTypeDisplayText = () => {
+        switch (subscription.plan.type) {
+            case PriceType.Subscription:
+                return 'Subscription plan';
+            case PriceType.Trial:
+                return 'Free trial';
+            case PriceType.OneTimePurchase:
+                return 'Training bundle'
+        }
     }
 
     useEffect(() => {
@@ -100,7 +100,7 @@ const Subscription = () => {
 
     return (
         <div>
-            <div className={classes.Title}>Subscription</div>
+            <div className={classes.Title}>Plan</div>
             <div className={classes.Content}>
                 {isLoading && (
                     <Spinner />
@@ -110,59 +110,65 @@ const Subscription = () => {
                         {!subscription && (
                             <div className={classes.NoSubscription}>
                                 <div className={classes.NoSubscriptionText}>
-                                    You don't have any active subscription
+                                    You don't have any active plan
                                 </div>
                                 <SubmitButton onClick={() => history.push('/coaches')} className={classes.ButtonPrimary}>
-                                    Choose a coach
+                                    Get started for free
                                 </SubmitButton>
                             </div>
                         )}
                         {subscription && (
                             <>
                                 <div className={classes.Subtitle}>
-                                    {subscription.plan.type}
-                                    {isSubscriptionCancelled() && !isTrialSubscription() && (
+                                    {getPlanTypeDisplayText()}
+                                    {isCancelled() && !isTrial() && (
                                         <div className={classes.Badge}>Cancelled</div>
                                     )}
                                 </div>
-                                {isSubscriptionCancelled() && !isTrialSubscription() && (
+                                {isCancelled() && !isTrial() && (
                                     <InfoBox icon={WarningBlue}>
                                         <div>
-                                            Your subscription is paid until {getNextPaymentDate()}. After
+                                            Your plan is paid until {planEndDate()}. After
                                             this date you will lose access to content on the app.
                                         </div>
                                     </InfoBox>
                                 )}
-                                {(!isSubscriptionCancelled() || isTrialSubscription()) && (
-                                    <Details subscriptionPlan={subscription.plan}
-                                             nextPaymentDate={getNextPaymentDate()}/>
+                                {(!isCancelled() || isTrial()) && (
+                                    <Details coachId={subscription.plan.coachId}
+                                             priceType={subscription.plan.type} 
+                                             numberOfTrainings={subscription.plan.numberOfTrainings}
+                                             unitAmount={subscription.plan.unitAmount}
+                                             nextPaymentDate={planEndDate()}/>
                                 )}
                                 {!!queuedSubscriptionPlan && (
                                     <InfoBox icon={InfoIcon}>
                                         <div className={classes.InfoBoxText}>
-                                            Your subscription is set to update upon the next billing cycle to the following plan:
+                                            Your plan is set to update upon the next billing cycle to the following plan:
                                         </div>
-                                        <Details subscriptionPlan={queuedSubscriptionPlan}
-                                                 nextPaymentDate={getNextPaymentDate()}/>
+                                        <Details coachId={queuedSubscriptionPlan.coachId}
+                                                 priceType={queuedSubscriptionPlan.type}
+                                                 numberOfTrainings={queuedSubscriptionPlan.numberOfTrainings}
+                                                 unitAmount={queuedSubscriptionPlan.numberOfTrainings * queuedSubscriptionPlan.unitAmountPerTraining}
+                                                 nextPaymentDate={planEndDate()}/>
                                     </InfoBox>
                                 )}
                                 <div className={classes.ActionButtons}>
-                                    {(!isSubscriptionCancelled() || isTrialSubscription()) && (
+                                    {!isCancelled() && (
                                         <SubmitButton className={classes.ActionButtonSecondary}
                                                       onClick={() => setIsChangePlanPopupOpen(true)}>
                                             Change
                                         </SubmitButton>
                                     )}
-                                    {!isSubscriptionCancelled() && !isTrialSubscription() && (
+                                    {!isCancelled() && subscription.plan.type === PriceType.Subscription && (
                                         <SubmitButton className={classes.ActionButtonSecondary}
                                                       onClick={() => setIsCancelPopupOpen(true)}>
                                             Cancel
                                         </SubmitButton>
                                     )}
-                                    {isSubscriptionCancelled() && !isTrialSubscription() && (
+                                    {isCancelled() && subscription.plan.type === PriceType.Subscription && (
                                         <>
                                             <SubmitButton className={classes.ActionButton}
-                                                          onClick={reactivateSubscription}
+                                                          onClick={reactivate}
                                                           isSubmitting={isReactivating}
                                                           isDisabled={isReactivating}>
                                                 Re-activate subscription
@@ -177,9 +183,9 @@ const Subscription = () => {
             </div>
 
             {isCancelPopupOpen && (
-                <CancelPopup nextPaymentDate={getNextPaymentDate()}
+                <CancelPopup nextPaymentDate={planEndDate()}
                              close={() => setIsCancelPopupOpen(false)}
-                             cancelSubscription={cancelSubscription}
+                             cancelSubscription={cancel}
                              isCancelling={isCancelling}/>
             )}
             {isChangePlanPopupOpen && (
@@ -189,4 +195,4 @@ const Subscription = () => {
     )
 }
 
-export default Subscription;
+export default Plan;

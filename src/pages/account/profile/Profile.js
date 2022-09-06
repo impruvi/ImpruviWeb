@@ -97,9 +97,15 @@ const Profile = () => {
                         }}/>
 
                     </div>
-                    <BasicTextInput value={firstName} onChange={setFirstName} placeholder={'Enter your first name'}/>
-                    <BasicTextInput value={lastName} onChange={setLastName} placeholder={'Enter your last name'}/>
-                    <BasicTextInput value={email} onChange={setEmail} placeholder={'Enter your last email'}/>
+                    <div className={classes.TextInputWrapper}>
+                        <BasicTextInput value={firstName} onChange={setFirstName} placeholder={'Enter your first name'}/>
+                    </div>
+                    <div className={classes.TextInputWrapper}>
+                        <BasicTextInput value={lastName} onChange={setLastName} placeholder={'Enter your last name'}/>
+                    </div>
+                    <div className={classes.TextInputWrapper}>
+                        <BasicTextInput value={email} onChange={setEmail} placeholder={'Enter your last email'}/>
+                    </div>
 
                     <SubmitButton onClick={save}
                                   className={classes.SaveButton}

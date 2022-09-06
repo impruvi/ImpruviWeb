@@ -1,8 +1,8 @@
 import classes from './Tabs.module.css';
-import {useState} from "react";
+import React, {useState} from "react";
 import Overview from "./overview/Overview";
-import Plans from "./plans/Plans";
 import Previews from "./previews/Previews";
+import PlanCategories from "../../../components/plan-categories/PlanCategories";
 
 const tabs = {
     Overview: 'Overview',
@@ -10,7 +10,7 @@ const tabs = {
     Previews: 'Previews'
 }
 
-const Tabs = ({coach, player}) => {
+const Tabs = ({coach}) => {
 
     const [selectedTab, setSelectedTab] = useState(tabs.Overview);
 
@@ -31,7 +31,7 @@ const Tabs = ({coach, player}) => {
                 <Overview coach={coach}/>
             )}
             {selectedTab === tabs.Plans && (
-                <Plans coach={coach} player={player}/>
+                <PlanCategories coach={coach} />
             )}
             {selectedTab === tabs.Previews && (
                 <Previews coach={coach} />

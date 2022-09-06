@@ -39,11 +39,11 @@ const FindCoach = () => {
             </Helmet>
 
             <div className={classes.Content}>
-                <div className={classes.Title}>
+                <h1 className={classes.Title}>
                     Choose your expert coach
-                </div>
+                </h1>
                 <div className={classes.Subtitle}>
-                    Select a monthly plan and download the app to start training with your coach.
+                    Select a coach, download the app, and get started training.
                 </div>
                 <div className={classes.Coaches}>
                     {isLoading && (

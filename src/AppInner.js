@@ -46,7 +46,6 @@ const AppInner = () => {
                 <Route path="/coaches/:slug/questionnaire" component={Questionnaire} />
                 <Route path="/coaches/:slug" component={Coach} />
                 <Route path="/coaches" component={FindCoach} />
-                <Route path="/how-it-works" component={HowItWorks} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/become-a-coach" component={BecomeACoach} />
                 <Route path="/blog" component={Blog} />

@@ -16,7 +16,7 @@ const Contact = () => {
                 <title>Contact us - Impruvi</title>
                 <meta name="description" content="Seattle, WA: 425-327-7259. john@impruviapp.com"/>
             </Helmet>
-            <div className={classes.Title}>Contact us</div>
+            <h1 className={classes.Title}>Contact us</h1>
             <div className={classes.Subtitle}>
                 Any issues or questions? Text or email us and our team will
                 get back to you within 24 hours.

@@ -6,7 +6,7 @@ import {AuthProvider} from "./hooks/useAuth";
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from "@stripe/stripe-js";
 import {getStripePublishableKey, shouldReportUserSessions} from "./env/env";
-import { datadogRum } from '@datadog/browser-rum';
+import {datadogRum} from '@datadog/browser-rum';
 import ReactGA from "react-ga4";
 import {GoogleAnalyticsClientProvider} from "./hooks/useGoogleAnalyticsClient";
 

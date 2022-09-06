@@ -1,7 +1,6 @@
 import {useState} from "react";
 import classes from "../CoachApplicationPopup.module.css";
 import TextInput from "../../text-input/TextInput";
-import TextAreaSimple from "../../text-area-simple/TextAreaSimple";
 import SubmitButton from "../../submit-button/SubmitButton";
 import useHttpClient from "../../../hooks/useHttpClient";
 import {isValidEmail, isValidPhoneNumber} from "../../../util/authUtil";

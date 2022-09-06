@@ -28,6 +28,7 @@ const Blog = () => {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         document.addEventListener('scroll', updateProgress);
         return () => document.removeEventListener('scroll', updateProgress);
     }, []);

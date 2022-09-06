@@ -5,7 +5,6 @@ import ChoosePlan from "./pages/choose-plan/ChoosePlan";
 import Questionnaire from "./pages/questionnaire/Questionnaire";
 import Coach from "./pages/coach/Coach";
 import FindCoach from "./pages/find-coach/FindCoach";
-import HowItWorks from "./pages/how-it-works/HowItWorks";
 import Contact from "./pages/contact/Contact";
 import BecomeACoach from "./pages/become-a-coach/BecomeACoach";
 import Landing from "./pages/landing/Landing";

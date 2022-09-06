@@ -5,7 +5,6 @@ import useGlobalPopup, {popups} from "../../../hooks/useGlobalPopup";
 import useHttpClient from "../../../hooks/useHttpClient";
 import {useState} from "react";
 import {isValidEmail, isValidPassword} from "../../../util/authUtil";
-import ReactGA from "react-ga4";
 import useGoogleAnalyticsClient from "../../../hooks/useGoogleAnalyticsClient";
 
 const InitiateSignup = ({setPlayerId, email, setEmail}) => {

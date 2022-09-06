@@ -1,5 +1,8 @@
 .Container {
-    width: 75%;
+}
+
+.Container pre {
+    max-width: 600px;
 }
 
 .Bullets {

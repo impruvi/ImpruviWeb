@@ -4,7 +4,6 @@ import {useState} from "react";
 import TextInput from "../../text-input/TextInput";
 import SubmitButton from "../../submit-button/SubmitButton";
 import useAuth from "../../../hooks/useAuth";
-import ReactGA from "react-ga4";
 import useGoogleAnalyticsClient from "../../../hooks/useGoogleAnalyticsClient";
 
 const CompleteSignup = ({onComplete, playerId}) => {

@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useMemo, useState} from 'react';
 import HttpClient from "../http-client/httpClient";
-import { datadogRum } from '@datadog/browser-rum';
+import {datadogRum} from '@datadog/browser-rum';
 import {shouldReportUserSessions} from "../env/env";
 
 const AuthContext = createContext({});

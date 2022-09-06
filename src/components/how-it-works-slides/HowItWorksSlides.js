@@ -3,7 +3,6 @@ import IntroImage from '../../assets/how-it-works/Impruvi.png';
 import FindCoachImage from '../../assets/how-it-works/FindCoach.png';
 import DemoImage from '../../assets/how-it-works/Demos.png';
 import FeedbackImage from '../../assets/how-it-works/Feedback.png';
-import HowItWorksImage from '../../assets/HowItWorks.png';
 import {useState} from "react";
 import Desktop from "./desktop/Desktop";
 import Mobile from "./mobile/Mobile";

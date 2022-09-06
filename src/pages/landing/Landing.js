@@ -6,7 +6,7 @@ import WhyImpruvi from "./why-impruvi/WhyImpruvi";
 import ForCoaches from "./for-coaches/ForCoaches";
 import FrequentlyAskedQuestions from "../../components/faq/FrequentlyAskedQuestions";
 import Footer from "../../components/footer/Footer";
-import {useEffect, useRef} from "react";
+import {useRef} from "react";
 
 const Landing = () => {
 

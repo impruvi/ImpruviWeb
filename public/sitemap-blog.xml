@@ -39,4 +39,12 @@
         </image:image>
         <lastmod>2022-09-05</lastmod>
     </url>
+    <url>
+        <loc>https://impruviapp.com/blog/the-power-of-video-in-sports/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/the-power-of-video-in-sports/primary.jpeg</image:loc>
+            <image:caption>the power of video in sports</image:caption>
+        </image:image>
+        <lastmod>2022-09-06</lastmod>
+    </url>
 </urlset>

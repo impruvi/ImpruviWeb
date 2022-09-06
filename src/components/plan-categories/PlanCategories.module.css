@@ -1,0 +1,86 @@
+.Container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+}
+
+.PlanWrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.Plan {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    box-shadow: 0 0 13px 1px rgba(0,0,0,0.12);
+    padding: 50px 20px 20px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+}
+
+.PlanMain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+}
+
+.Title {
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.Seperator {
+    background-color: var(--color-primary);
+    height: 4px;
+    width: 60px;
+    margin: 10px 0;
+}
+
+.Price {
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.PriceSubscript {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: -5px;
+}
+
+.BulletsWrapper {
+    /*flex: 1;*/
+    /*display: flex;*/
+    align-items: flex-start;
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.Bullets {
+    width: 100%;
+    text-align: left;
+    margin: 0 0 0 20px;
+    padding: 20px 0;
+}
+
+.Bullets li {
+    margin: 5px 0;
+}
+
+.ActionButton {
+    width: 100%;
+    border-radius: 3px;
+    margin: 10px 0;
+    font-weight: 600;
+    flex: 0 1 auto;
+}

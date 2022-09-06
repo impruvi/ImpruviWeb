@@ -10,6 +10,12 @@ const blogs = [
         duration: '2 minute read'
     },
     {
+        title: 'The power of video in sports',
+        slug: 'the-power-of-video-in-sports',
+        image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/the-power-of-video-in-sports/primary.jpeg',
+        duration: '1 minute read'
+    },
+    {
         title: 'How to develop a more consistent shot',
         slug: 'how-to-develop-a-more-consistent-shot',
         image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg',

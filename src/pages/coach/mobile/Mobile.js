@@ -17,8 +17,8 @@ const Mobile = ({coach, player, isLoading, onChooseCoach}) => {
             } : {}}>
                 {!isLoading && (
                     <>
-                        <div className={classes.Title}>{coach.firstName} {coach.lastName}</div>
-                        <div className={classes.Subtitle}>Specializes in {!!coach.focusAreas && coach.focusAreas.join(', ').replace(/, ([^,]*)$/, ' and $1')}</div>
+                        <h1 className={classes.Title}>{coach.firstName} {coach.lastName}</h1>
+                        <h2 className={classes.Subtitle}>Specializes in {!!coach.focusAreas && coach.focusAreas.join(', ').replace(/, ([^,]*)$/, ' and $1')}</h2>
 
                         <div className={classes.ActionButtons}>
                             <SubmitButton className={classes.ButtonPrimary} onClick={onChooseCoach}>

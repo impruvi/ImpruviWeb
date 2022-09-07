@@ -52,7 +52,7 @@ const ThePowerOfVideoInSports = () => {
                     The utility that a coach can bring to a player is undeniable.
                 </div>
                 <div className={classes.Paragraph}>
-                    At impruvi, our goal is to merge these the value of coaching and video technology.
+                    At impruvi, our goal is to merge the value of coaching and video technology.
                     Harness this power by sending videos back and forth with your coach on our app,
                     and become an expert in anything.
                 </div>

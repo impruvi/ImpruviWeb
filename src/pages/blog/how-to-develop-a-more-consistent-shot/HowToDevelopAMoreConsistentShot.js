@@ -17,7 +17,8 @@ const HowToDevelopAMoreConsistentShot = () => {
 
             <div className={classes.Container}>
                 <h1>How to develop a more consistent shot</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg'} />
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/how-to-develop-a-more-consistent-shot/primary.jpeg'}
+                     alt={'How to develop a more consistent shot in soccer'}/>
                 <div className={classes.Paragraph}>
                     Arguably one of the most frustrating feelings in soccer is when you line up to strike the ball with
                     your laces — but when you hit the ball, rather than going directly toward the goal with a slight backspin,

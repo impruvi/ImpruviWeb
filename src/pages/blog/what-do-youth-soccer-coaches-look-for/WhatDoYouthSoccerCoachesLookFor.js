@@ -17,7 +17,8 @@ const WhatDoYouthSoccerCoachesLookFor = () => {
 
             <div className={classes.Container}>
                 <h1>What do youth soccer coaches look for?</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/what-do-youth-soccer-coaches-look-for/primary.jpg'} />
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/what-do-youth-soccer-coaches-look-for/primary.jpg'}
+                     alt={'What do youth soccer coaches look for'}/>
                 <div className={classes.Paragraph}>
                     While each individual coach will vary in what they see in a player, there are several
                     things every coach loves to see, and several things every coach absolutely

@@ -16,11 +16,12 @@ const ThePowerOfVideoInSports = () => {
         <>
             <Helmet>
                 <title>The power of video in sports - Impruvi</title>
-                <meta name="description" content="Learn how to leverage video and technology to master your sport."/>
+                <meta name="description" content="How video in private soccer lessons can help players. Learn to leverage video and technology to master your sport."/>
             </Helmet>
             <div className={classes.Container}>
                 <h1>How video coaching can help players</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/the-power-of-video-in-sports/primary.jpeg'} />
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/the-power-of-video-in-sports/primary.jpeg'}
+                     alt={'How video in private soccer lessons can help players'}/>
                 <div className={classes.Paragraph}>
                     There is no doubt that video technology has reshaped the fabric of our society.
                     The capturing, sending, and receiving of real time events has allowed people to transmit

@@ -10,6 +10,12 @@ const blogs = [
         duration: '2 minute read'
     },
     {
+        title: 'Is private soccer training worth it?',
+        slug: 'is-private-soccer-training-worth-it',
+        image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/is-private-soccer-training-worth-it/primary.jpg',
+        duration: '3 minute read'
+    },
+    {
         title: 'The power of video in sports',
         slug: 'the-power-of-video-in-sports',
         image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/the-power-of-video-in-sports/primary.jpeg',
@@ -38,7 +44,7 @@ const blogs = [
         slug: 'does-juggling-actually-make-me-a-better-player',
         image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/does-juggling-actually-make-me-a-better-player/primary.jpg',
         duration: '3 minute read'
-    }
+    },
 ]
 
 const BlogList = () => {

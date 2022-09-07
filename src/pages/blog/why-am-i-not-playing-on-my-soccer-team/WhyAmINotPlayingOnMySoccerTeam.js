@@ -17,7 +17,8 @@ const WhyAmINotPlayingOnMySoccerTeam = () => {
 
             <div className={classes.Container}>
                 <h1>Why am I not playing on my soccer team?</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/why-am-i-not-playing-on-my-soccer-team/primary.jpeg'} />
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/why-am-i-not-playing-on-my-soccer-team/primary.jpeg'}
+                     alt={'Why am I not playing on my soccer team?'}/>
                 <h2>Ask your coach</h2>
 
                 <div className={classes.Paragraph}>

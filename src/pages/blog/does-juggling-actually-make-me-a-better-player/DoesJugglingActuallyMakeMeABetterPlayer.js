@@ -17,7 +17,8 @@ const DoesJugglingActuallyMakeMeABetterPlayer = () => {
 
             <div className={classes.Container}>
                 <h1>Does juggling actually make me a better soccer player?</h1>
-                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/does-juggling-actually-make-me-a-better-player/primary.jpg'} />
+                <img src={'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/does-juggling-actually-make-me-a-better-player/primary.jpg'}
+                     alt={'Does juggling actually make me a better player. Leverage private soccer lessons to become a better player'}/>
 
                 <div className={classes.Paragraph}>
                     Juggling is a cool thing you can show to your friends, but does it actually make you a better player?

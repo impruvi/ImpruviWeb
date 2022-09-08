@@ -10,6 +10,12 @@ const blogs = [
         duration: '2 minute read'
     },
     {
+        title: 'Speed and agility in soccer',
+        slug: 'speed-and-agility-in-soccer',
+        image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/speed-and-agility-in-soccer/primary.png',
+        duration: '1 minute read'
+    },
+    {
         title: 'Is private soccer training worth it?',
         slug: 'is-private-soccer-training-worth-it',
         image: 'https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/is-private-soccer-training-worth-it/primary.jpg',

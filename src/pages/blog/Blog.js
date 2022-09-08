@@ -12,6 +12,7 @@ import DoesJugglingActuallyMakeMeABetterPlayer
     from "./does-juggling-actually-make-me-a-better-player/DoesJugglingActuallyMakeMeABetterPlayer";
 import ThePowerOfVideoInSports from "./the-power-of-video-in-sports/ThePowerOfVideoInSports";
 import IsPrivateSoccerTrainingWorthIt from "./is-private-soccer-training-worth-it/IsPrivateSoccerTrainingWorthIt";
+import SpeedAndAgilityInSoccer from "./speed-and-agility-in-soccer/SpeedAndAgilityInSoccer";
 
 const Blog = () => {
 
@@ -56,6 +57,7 @@ const Blog = () => {
                 <Route path="/blog/what-do-youth-soccer-coaches-look-for" component={WhatDoYouthSoccerCoachesLookFor} />
                 <Route path="/blog/why-am-i-not-playing-on-my-soccer-team" component={WhyAmINotPlayingOnMySoccerTeam} />
                 <Route path="/blog/does-juggling-actually-make-me-a-better-player" component={DoesJugglingActuallyMakeMeABetterPlayer} />
+                <Route path="/blog/speed-and-agility-in-soccer" component={SpeedAndAgilityInSoccer} />
                 <Route path="/blog" component={BlogList} />
                 <Redirect to="/blog" />
             </Switch>

@@ -56,4 +56,12 @@
         </image:image>
         <lastmod>2022-09-07</lastmod>
     </url>
+    <url>
+        <loc>https://impruviapp.com/blog/speed-and-agility-in-soccer/</loc>
+        <image:image>
+            <image:loc>https://prod-impruvi-media-bucket.s3.us-west-2.amazonaws.com/blog/speed-and-agility-in-soccer/primary.png</image:loc>
+            <image:caption>speed and agility in soccer</image:caption>
+        </image:image>
+        <lastmod>2022-09-08</lastmod>
+    </url>
 </urlset>
